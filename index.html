@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <!-- above-fold chooser keyartok preload (LCP): avif elsokent, a bongeszo a tamogatott formatumot valasztja -->
 <link rel="preload" as="image" type="image/avif" href="media/keyart-750left-825.avif" fetchpriority="high">
-<link rel="preload" as="image" type="image/avif" href="media/keyart-can-1280.avif" fetchpriority="high">
+<link rel="preload" as="image" type="image/avif" href="media/keyart-can-duo-900.avif" fetchpriority="high">
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Jost:wght@300;400;500;600&family=Pinyon+Script&family=Big+Shoulders:opsz,wght@10..72,100..900&display=swap" rel="stylesheet">
 <style>
 /* ============================================================
@@ -212,11 +212,17 @@ body.show-bottle::after, body.show-can::after{
 
 /* Dobozos fel: jobb-fent (atlo folott) — clip degeneralt csucs: TISZTA atlos wipe nyitaskor */
 .half--can{clip-path:polygon(55% 0,100% 0,100% 100%,46% 100%)}
-/* Aurora FEL-PANEL: a jobb bg a jobb PANELT fedi (~60%), cover, nincs zoom */
-.half--can .half__bg{left:auto;right:0;width:60%;transform:none}
-.half--can .half__bg img{object-position:62% 42%}
-/* ref scrimR: lokalis folt a jobb-felso sarokba (szoveg mogott) */
-.half--can .half__scrim{background:linear-gradient(255deg,rgba(10,9,8,.82) 8%,rgba(10,9,8,.30) 34%,transparent 55%)}
+/* Aurora FEL-PANEL: a jobb bg a jobb PANELT fedi (~60%) */
+/* a bg-doboz PONTOSAN az ek befoglaloja (bal ele 46%-nal a legszelesebb) -> a plakat minden szelessegen az ek kozepere esik */
+.half--can .half__bg{left:auto;right:0;width:54%;transform:none;background:var(--paper)}
+/* PLAKAT-MOD (David 08-10): a kliens allo 3:4 plakatja SOSEM vagodik -> contain.
+   A kepbol keszult elmosott alaptony tolti ki az ek maradek savjat, hogy ne legyen holt fekete sav. */
+.half__bg--poster::before{content:'';position:absolute;inset:-8%;z-index:0;
+  background:url(media/keyart-can-duo-blur.jpg) center/cover no-repeat;   /* 22 kB-os mini valtozat: ugyis 38px blur alatt van */
+  filter:blur(38px) brightness(.4) saturate(.72)}
+.half--can .half__bg img{position:relative;z-index:1;object-fit:contain;object-position:56% 50%}
+/* ref scrimR: halvany folt a jobb-felso sarokba (a belepo nyil ala) — a plakatot nem sotetitjuk */
+.half--can .half__scrim{background:linear-gradient(255deg,rgba(10,9,8,.55) 4%,rgba(10,9,8,.16) 26%,transparent 46%)}
 /* fesztival party-fenyek: piros / kek / magenta, finoman lelegzik (jobb-fenti ekhez tukrozve) */
 .half--can .half__party{position:absolute;inset:0;z-index:2;pointer-events:none;mix-blend-mode:screen;opacity:0;
   background:
@@ -265,12 +271,15 @@ body.show-bottle::after, body.show-can::after{
   /* recrop a stack-hez: alany + termek frame-ben, tomorebb kivagas. VILAGOS: nincs brightness-vagas. */
   /* bottle: a palack a hf-forras kozep-jobb also reszen -> object-position kozep-jobbra + kicsit le, hogy a palack + ferfi+parduc a kartyaba essen (Aurora comp-note) */
   .half--bottle .half__bg img{object-position:50% 46%;filter:none}
-  .half--can .half__bg img{object-position:52% 30%;filter:none}
+  /* can: PLAKAT-MOD — a 3:4 kliens-plakat egeszben latszik a kartyaban (contain), nincs vagas.
+     Jobbra huzva, hogy a maradek elmosott sav BALRA gyuljon: oda kerul a belepo nyil, igy nem takarja a dobozokat. */
+  .half--can .half__bg img{object-position:100% 50%;filter:none}
+  .half--can .half__cta::before{display:none}
   .half__party{display:none}
   .half--bottle .half__glow{display:none}
   /* LOKALIS scrim CSAK a szoveg mogott (tomorebb, nem globalis sotetites). bottle: FONT. can: LENT. */
   .half--bottle .half__scrim{background:linear-gradient(180deg,rgba(10,9,8,.86) 0%,rgba(10,9,8,.44) 30%,rgba(10,9,8,0) 55%)!important;opacity:1}
-  .half--can .half__scrim{background:linear-gradient(0deg,rgba(10,9,8,.86) 0%,rgba(10,9,8,.44) 28%,rgba(10,9,8,0) 52%)!important;opacity:1}
+  .half--can .half__scrim{background:linear-gradient(0deg,rgba(10,9,8,.42) 0%,rgba(10,9,8,.14) 22%,rgba(10,9,8,0) 44%)!important;opacity:1}
   /* 2-osztalyos szelektor, hogy a can jobb-igazitasat is felulirja */
   .half--bottle .half__content,.half--can .half__content{position:absolute;left:clamp(1.2rem,5vw,1.8rem);right:clamp(1.2rem,5vw,1.8rem);
     max-width:none;text-align:left;align-items:flex-start;gap:.5rem}
@@ -475,11 +484,16 @@ body.show-bottle::after, body.show-can::after{
 .row__idx{font-family:var(--font-display);color:var(--gold-bright);font-size:1.1rem;width:2.4rem}
 .row__name{font-family:var(--font-display);font-size:clamp(1.5rem,2.6vw,2.2rem)}
 .row__name small{display:block;font-family:var(--font-body);font-size:.78rem;letter-spacing:.04em;color:var(--muted);margin-top:.35rem;max-width:46ch}
-.row__tag{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
+/* David 08-11: tagek aranyban, nagyobban, enyhe graffiti-swipe hatassal */
+.row__tag{display:inline-block;font-family:var(--font-display);font-size:clamp(1.05rem,1.8vw,1.5rem);letter-spacing:.14em;text-transform:uppercase;color:var(--gold-bright);white-space:nowrap;transform:rotate(-2deg);
+  background:linear-gradient(97deg,transparent 3%,rgba(217,164,65,.16) 14%,rgba(217,164,65,.3) 50%,rgba(176,124,46,.16) 86%,transparent 97%) 50% 78%/100% .5em no-repeat;padding:.05em .35em .12em}
 /* elvek teljes szelessegben, ket hasab (David 08-05) */
 .rows--wide{margin-top:clamp(2.8rem,7vh,5rem);display:grid;grid-template-columns:1fr 1fr;
   column-gap:clamp(2.5rem,6vw,6.5rem)}
 .rows--wide .row__name{font-size:clamp(1.35rem,1.9vw,1.85rem)}
+/* David 08-11: 5 elv — csak a cim maradt, kozepre igazitva */
+.rows--wide .row{grid-template-columns:auto auto;justify-content:center;text-align:center;gap:1rem}
+.rows--wide .row__idx{width:auto}
 @media(max-width:900px){.rows--wide{display:block}}
 
 /* 9% nagy szam blokk */
@@ -622,8 +636,8 @@ body.show-bottle::after, body.show-can::after{
   background:linear-gradient(180deg, rgba(231,181,63,.07), rgba(231,181,63,0) 62%), #13100C;
   border:1px solid rgba(231,181,63,.18);border-radius:16px;overflow:hidden;
   box-shadow:0 34px 80px rgba(0,0,0,.6)}
-.view--bottle .ritual__card:nth-child(even) .ritual__media{order:2}   /* paros: kep jobbra */
-.view--bottle .ritual__media{position:relative;min-height:100%;aspect-ratio:4/5;max-height:52vh;overflow:hidden;background:var(--paper-2)}
+.view--bottle .ritual__card .ritual__media{order:2}   /* David 08-11: MINDEN kartyan kep jobbra */
+.view--bottle .ritual__media{position:relative;min-height:100%;aspect-ratio:4/5;max-height:52vh;overflow:hidden;background:var(--paper-2);justify-self:end}   /* justify-self:end (David 08-11): a 4/5 + max-height miatt keskenyebb a hasabnal -> a kartya jobb szelere zar */
 .view--bottle .ritual__media img{width:100%;height:100%;object-fit:cover;filter:brightness(.94) saturate(.96)}
 .view--bottle .ritual__body{padding:clamp(1.6rem,3vw,2.8rem) clamp(1.6rem,3vw,2.6rem);display:flex;flex-direction:column;justify-content:center}
 .view--bottle .ritual__num{display:block;font-family:var(--font-display);font-style:normal;
@@ -668,8 +682,9 @@ html:not(.js) .view--bottle .ritual__card{opacity:1;transform:none}
 .view--bottle .ed:nth-child(2) .ed__media{grid-column:7/12;aspect-ratio:1023/1537;align-self:center}
 /* uj No Rules plakat: nativ arany = vagatlan, de KISEBB meretben (David 08-05: "kisebb, nem levagva") */
 .view--bottle .ed:nth-child(3) .ed__media{grid-column:2/7;aspect-ratio:1400/1866;align-self:center}
-/* ed-szoveghasab gazdagitasa (David 08-05: "keves a szoveg" — tobb Word-mondat + sorszam-tipo) */
-.view--bottle .ed__body{align-self:center}
+/* David 08-11: csak a nagy cim maradt — kozepre (fuggolegesen a kephez + szoveg kozepre), a paros align-self:start feluliras is */
+.view--bottle .ed__body,.view--bottle .ed:nth-child(even) .ed__body{align-self:center;text-align:center}
+.view--bottle .ed__num::after{left:50%;transform:translateX(-50%)}
 .ed__num{display:block;font-family:var(--font-display);color:var(--gold-bright);font-size:1.05rem;
   letter-spacing:.14em;margin-bottom:1rem;position:relative;padding-bottom:.8rem}
 .ed__num::after{content:'';position:absolute;left:0;bottom:0;width:2.6rem;height:1px;background:var(--gold)}
@@ -866,8 +881,8 @@ html:not(.js) .view--bottle .goldline__p,html:not(.js) .view--bottle .goldline__
 .view--can .manifesto{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);
   column-gap:clamp(2rem,5vw,5rem);align-items:center;text-align:left}
 .view--can .manifesto>:not(.manifesto__fig){grid-column:1}
-.view--can .manifesto__fig{grid-column:2;grid-row:1/6;margin:0;aspect-ratio:1400/1866;
-  overflow:clip;border-radius:6px;transform:rotate(var(--tilt));box-shadow:0 22px 54px rgba(0,0,0,.5)}
+.view--can .manifesto__fig{grid-column:2;grid-row:1/6;margin:0;aspect-ratio:1400/1866;align-self:start;
+  overflow:clip;border-radius:6px;transform:rotate(var(--tilt));box-shadow:0 22px 54px rgba(0,0,0,.5)}   /* align-self:start (David 08-11): a fig a sajat nativ aranyat tartja, a bal-lenti termek nem vagodik */
 .view--can .manifesto__fig img{width:100%;height:100%;object-fit:cover;display:block}
 @media(max-width:900px){
   .view--can .manifesto{display:block}
@@ -1028,7 +1043,7 @@ body.show-can .nav__switch:hover{background:var(--pink);color:var(--ink)}
 .view--can .c-card:first-of-type{margin-top:0;padding-top:0;padding-bottom:0;border-top:0;box-shadow:none}
 /* MANIFESTO: fesztival hatterkep sotet overlay-jel (nem ures fekete) */
 /* crop-fix (David 07-30): a fejek a kep felso savjaban — a hatter fentre horgonyozva, sose vagja le oket */
-.view--can #sec-philo.c-card{background:linear-gradient(rgba(10,9,8,.6),rgba(10,9,8,.78)),url('media/brand-festival.webp') center 22%/cover}
+.view--can #sec-philo.c-card{background:linear-gradient(rgba(10,9,8,.6),rgba(10,9,8,.78)),url('media/brand-festival.webp') center 31%/cover}   /* 31% (David 08-11): a lany arca latszodjon */
 @media (prefers-reduced-motion:reduce){
   .view--can .c-card{margin-top:0;box-shadow:none}
 }
@@ -1063,7 +1078,46 @@ body.show-can .nav__switch:hover{background:var(--pink);color:var(--ink)}
 @media (max-width:768px){
   .view--bottle{--amb-tex:url('media/hf_20260708_173036_2d71e5f0-6500-49f5-b7ba-5a47db645f05-720.webp')}
   .view--can{--amb-tex:url('media/brand-festival-720.webp')}
-  .view--can #sec-philo.c-card{background:linear-gradient(rgba(10,9,8,.6),rgba(10,9,8,.78)),url('media/brand-festival-720.webp') center 22%/cover}
+  .view--can #sec-philo.c-card{background:linear-gradient(rgba(10,9,8,.6),rgba(10,9,8,.78)),url('media/brand-festival-720.webp') center 31%/cover}
+}
+
+/* =========================================================
+   DAVID 08-11 KOR — uj elemek
+   ========================================================= */
+/* 750 Kiadasok-fejlec: graffitis arany ecset-alahuzas — a script sor szelessegeig er (inline-block wrap) */
+.view--bottle .script-wrap{display:inline-block}
+.view--bottle .shead__stroke{display:block;width:100%;height:clamp(10px,1.5vw,17px);margin-top:.4rem;opacity:.92}
+
+/* 250 STORY STRIP auto-marquee: vegtelen repeat, seamless -50% varrat
+   (recept: gap helyett margin-right MINDEN panelen + will-change) */
+.view--can .hstrip__vp{overflow:clip}
+.view--can .hstrip__row{gap:0;margin-inline:0;padding:0;animation:hstripmarq 46s linear infinite;will-change:transform}
+.view--can .hpanel{margin-right:2vw}
+@keyframes hstripmarq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+/* David 08-11: hoverre SEM all meg, folyamatosan megy */
+@media (prefers-reduced-motion:reduce){
+  .view--can .hstrip__row{animation:none}
+  .view--can .hstrip__vp{overflow-x:auto;-webkit-overflow-scrolling:touch}
+}
+
+/* 250 manifesto: a cim fuggolegesen kozepre a kephez (David 08-11: a small szoveg kikerult, igy jobb) */
+@media(min-width:901px){
+  .view--can .manifesto{grid-template-rows:1fr auto auto 1fr}
+  .view--can .manifesto__tag{grid-row:2;align-self:end}
+  .view--can .manifesto__h{grid-row:3}
+  .view--can .manifesto__fig{grid-row:1/5}
+}
+
+/* 250 dwipe: HANEM ROLAD arany graffiti-punch + jatekos !!! */
+.view--can .dwipe__over{align-content:center;row-gap:clamp(.8rem,2.5vh,1.6rem)}
+.view--can .dwipe__punch{margin-top:clamp(1.4rem,6vh,3.6rem)}   /* David 08-11: picit lentebb */
+.view--can .dwipe__punch{position:relative;z-index:1;width:100%;padding-inline:var(--pad-can);font-family:var(--font-graf);font-weight:800;font-size:clamp(2.8rem,15vw,14rem);line-height:.95;color:var(--gold-bright);text-transform:uppercase;text-align:center;white-space:nowrap;letter-spacing:.01em;transform:rotate(-2.2deg);text-shadow:0 4px 30px rgba(0,0,0,.6)}
+.view--can .dwipe__bang{display:inline-block;margin-left:.08em}
+.view--can .dwipe__bang i{display:inline-block;font-style:normal;transform:rotate(-10deg)}
+.view--can .dwipe__bang i:nth-child(2){transform:rotate(6deg) translateY(-.05em)}
+.view--can .dwipe__bang i:nth-child(3){transform:rotate(14deg) translateY(.04em)}
+@media(max-width:768px){
+  .view--can .dwipe__punch{font-size:clamp(2.2rem,13.5vw,4.6rem);position:relative}
 }
 </style>
 </head>
@@ -1127,13 +1181,16 @@ body.show-can .nav__switch:hover{background:var(--pink);color:var(--ink)}
 
   <!-- DOBOZOS fel: jobb-fent, bulis/fesztival (DOM-ban elobb -> alul) -->
   <a class="half half--can" href="#view--can" data-enter="can" aria-label="250 ml Walking Pack, fesztivál oldal">
-    <div class="half__bg"><picture>
-      <source type="image/avif" sizes="100vw" srcset="media/keyart-can-768.avif 768w, media/keyart-can-1280.avif 1280w, media/keyart-can-1920.avif 1920w">
-      <source type="image/webp" sizes="100vw" srcset="media/keyart-can-768.webp 768w, media/keyart-can-1280.webp 1280w, media/keyart-can-1920.webp 1920w">
-      <img src="media/keyart-can-1920.jpg" sizes="100vw" srcset="media/keyart-can-768.jpg 768w, media/keyart-can-1280.jpg 1280w, media/keyart-can-1920.jpg 1920w" alt="ICON Spirante IX 250 ml Walking Pack, What's your story party" fetchpriority="high" decoding="async"></picture></div>
+    <!-- kliens-plakat (David 08-10): a KET termek helyesen latszik rajta (gin&tonic + vodka) -> ez valtja a regi wide keyartot.
+         ALLO 3:4 plakat, ezert NEM vagjuk: object-fit contain a felben, mogotte ugyanaz a kep elmosva tolti ki a szelt. -->
+    <div class="half__bg half__bg--poster"><picture>
+      <source type="image/avif" sizes="(max-width:768px) 84vw, 46vw" srcset="media/keyart-can-duo-600.avif 600w, media/keyart-can-duo-900.avif 900w, media/keyart-can-duo-1200.avif 1200w">
+      <source type="image/webp" sizes="(max-width:768px) 84vw, 46vw" srcset="media/keyart-can-duo-600.webp 600w, media/keyart-can-duo-900.webp 900w, media/keyart-can-duo-1200.webp 1200w">
+      <img src="media/keyart-can-duo-900.jpg" sizes="(max-width:768px) 84vw, 46vw" srcset="media/keyart-can-duo-600.jpg 600w, media/keyart-can-duo-900.jpg 900w, media/keyart-can-duo-1200.jpg 1200w" alt="ICON Spirante IX 250 ml Walking Pack plakát, What's your story medence-parti, gin &amp; tonic és vodka doboz" fetchpriority="high" decoding="async" width="1200" height="1600"></picture></div>
     <div class="half__scrim"></div>
     <div class="half__party" aria-hidden="true"></div>
     <div class="half__content">
+      <!-- festett arany szlogen-kep VISSZAKAPCSOLVA (David 08-11: "annak maradnia kell") -->
       <img class="slogan__img" src="media/slogan-puretaste.webp" srcset="media/slogan-puretaste-720.webp 720w, media/slogan-puretaste-1080.webp 1080w, media/slogan-puretaste.webp 1197w" sizes="(max-width:768px) 92vw, 977px" alt="Pure taste. Iconic moments." width="977" height="615" loading="lazy" decoding="async">
       <span class="half__cta" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
     </div>
@@ -1237,11 +1294,11 @@ body.show-can .nav__switch:hover{background:var(--pink);color:var(--ink)}
     </div>
     <!-- az 5 brand-elv TELJES szelessegben, ket hasabban (David 08-05: jobb elrendezes) -->
     <div class="rows rows--wide" data-slide-group>
-      <div class="row" data-slide="left"><span class="row__idx">01</span><span class="row__name">A pillanat érték<small>Az ICON nem a hétköznapokból menekít ki – hanem különlegessé teszi őket.</small></span></div>
-      <div class="row" data-slide="left"><span class="row__idx">02</span><span class="row__name">A stílus karakterből születik<small>Az igazi ikonok nem követik a trendeket – ők alakítják azokat.</small></span></div>
-      <div class="row" data-slide="left"><span class="row__idx">03</span><span class="row__name">A prémium minőség hozzáállás kérdése<small>A minőség nem luxus, hanem tisztelet a fogyasztó felé.</small></span></div>
-      <div class="row" data-slide="left"><span class="row__idx">04</span><span class="row__name">Az élmény közösséget teremt<small>Az ICON nem egy ital a polcon – hanem egy közös történet kezdete.</small></span></div>
-      <div class="row" data-slide="left"><span class="row__idx">05</span><span class="row__name">A saját történeted a legfontosabb<small>Nem mások elvárásai számítanak. Az számít, hogy te ki szeretnél lenni.</small></span></div>
+      <div class="row" data-slide="left"><span class="row__idx">01</span><span class="row__name">A pillanat érték</span></div>
+      <div class="row" data-slide="left"><span class="row__idx">02</span><span class="row__name">A stílus karakterből születik</span></div>
+      <div class="row" data-slide="left"><span class="row__idx">03</span><span class="row__name">A prémium minőség hozzáállás kérdése</span></div>
+      <div class="row" data-slide="left"><span class="row__idx">04</span><span class="row__name">Az élmény közösséget teremt</span></div>
+      <div class="row" data-slide="left"><span class="row__idx">05</span><span class="row__name">A saját történeted a legfontosabb</span></div>
     </div>
   <!-- gold draw-in wordmark divider (a filozofia kartya zarasa) -->
   <svg class="goldline" viewBox="0 0 600 250" fill="none" aria-label="ICON Spirante IX">
@@ -1271,7 +1328,6 @@ body.show-can .nav__switch:hover{background:var(--pink);color:var(--ink)}
         <div class="ritual__body">
           <span class="ritual__num" aria-hidden="true">I</span>
           <h3>Egy korty szabadság</h3>
-          <p>Az ICON azoknak készült, akik nem várnak a pillanatokra – hanem megteremtik őket.</p>
         </div>
       </li>
       <li class="ritual__card">
@@ -1279,7 +1335,6 @@ body.show-can .nav__switch:hover{background:var(--pink);color:var(--ink)}
         <div class="ritual__body">
           <span class="ritual__num" aria-hidden="true">II</span>
           <h3>Egy korty inspiráció</h3>
-          <p>Akik tudják, hogy a stílus nem a divatból születik, hanem a személyiségből.</p>
         </div>
       </li>
       <li class="ritual__card">
@@ -1287,7 +1342,6 @@ body.show-can .nav__switch:hover{background:var(--pink);color:var(--ink)}
         <div class="ritual__body">
           <span class="ritual__num" aria-hidden="true">III</span>
           <h3>Egy korty történet</h3>
-          <p>Akik értik, hogy a minőség nem hangos. De mindig felismerhető.</p>
         </div>
       </li>
     </ol>
@@ -1302,7 +1356,6 @@ body.show-can .nav__switch:hover{background:var(--pink);color:var(--ink)}
       <div class="band__fig" data-reveal aria-hidden="true"><span class="band__num">9</span><span class="band__pct">%</span></div>
       <div class="band__say">
         <h2 data-reveal data-d="2">A minőség nem luxus, hanem alapelv.</h2>
-        <p data-reveal data-d="3">Az élet nem a véletlenek sorozata, hanem tudatos választások története.</p>
       </div>
     </div>
   </section>
@@ -1314,7 +1367,6 @@ body.show-can .nav__switch:hover{background:var(--pink);color:var(--ink)}
       <div data-reveal data-d="1">
         <span class="eyebrow">Ízvilág</span>
         <h2 style="font-size:var(--step-3);margin-top:1rem">Egy ízvilág, amely nem csak finom, hanem karakteres.</h2>
-        <p style="margin-top:1.2rem;color:var(--muted);max-width:48ch">Ikonikus megjelenésével kitűnik, kifinomult ízvilágával pedig emlékezetes marad.</p>
         <div class="rows" style="margin-top:1.8rem">
           <div class="row"><span class="row__idx">01</span><span class="row__name" style="font-style:normal">Megjelenése</span><span class="row__tag">Ikonikus</span></div>
           <div class="row"><span class="row__idx">02</span><span class="row__name" style="font-style:normal">Ízvilága</span><span class="row__tag">Kifinomult</span></div>
@@ -1328,21 +1380,37 @@ body.show-can .nav__switch:hover{background:var(--pink);color:var(--ink)}
   <section class="wrap b-card" id="sec-editions">
     <div class="shead" data-reveal>
       <span class="eyebrow">ICON – Brand és ami mögötte rejlik</span>
-      <h2 style="margin-top:1rem;font-size:clamp(1.9rem,3.4vw,3rem)">Az ICON azért született, hogy emlékeztessen<br><span class="script" style="font-size:1.55em">valamire, amit sokan elfelejtettek.</span></h2>
-      <p>ICON egy ikonikus megjelenésű, karakteres prémium ital, amely egy különleges pillanatot, inspiráló életérzést és modern stílust hoz a mindennapokba.</p>
+      <!-- a stroke a script-wrap inline-blockban el: pontosan a "valamire...elfelejtettek." szelessegeig er (David 08-11) -->
+      <h2 style="margin-top:1rem;font-size:clamp(1.9rem,3.4vw,3rem)">Az ICON azért született, hogy emlékeztessen<br><span class="script-wrap"><span class="script" style="font-size:1.55em">valamire, amit sokan elfelejtettek.</span>
+      <svg class="shead__stroke" viewBox="0 0 600 22" preserveAspectRatio="none" aria-hidden="true">
+        <defs>
+          <linearGradient id="sheadg" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#7A5320" stop-opacity="0"/>
+            <stop offset=".1" stop-color="#B07C2E"/>
+            <stop offset=".5" stop-color="#D9A441"/>
+            <stop offset=".92" stop-color="#7A5320"/>
+            <stop offset="1" stop-color="#7A5320" stop-opacity="0"/>
+          </linearGradient>
+          <filter id="sheadf" x="-5%" y="-60%" width="110%" height="220%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.011 0.32" numOctaves="2" seed="11" result="n"/>
+            <feDisplacementMap in="SourceGraphic" in2="n" scale="9"/>
+          </filter>
+        </defs>
+        <rect x="6" y="6" width="588" height="9" rx="4.5" fill="url(#sheadg)" filter="url(#sheadf)"/>
+      </svg></span></h2>
     </div>
     <div class="editions">
       <article class="ed">
         <figure class="ed__media" data-slide="right"><img src="media/brand-yacht.webp" srcset="media/brand-yacht-720.webp 720w, media/brand-yacht.webp 1086w" sizes="(max-width:768px) 92vw, 40vw" loading="lazy" decoding="async" alt="ICON Spirante, naplemente a fedélzeten"></figure>
-        <div class="ed__body" data-slide="up"><span class="ed__num">I</span><h3 class="ed__name">Akik nem követni akarják a világot, hanem formálni azt</h3><p class="ed__desc">Akik tudják, hogy az igazi érték nem a hangos pillanatokban, hanem az emlékezetesekben születik.</p><p class="ed__more">Az ICON azoknak szól, akik hisznek abban, hogy minden nap lehetőség arra, hogy egy kicsit jobbak legyünk, mint tegnap voltunk. A stílus nem külsőség, hanem hozzáállás.</p></div>
+        <div class="ed__body" data-slide="up"><span class="ed__num">I</span><h3 class="ed__name">Akik nem követni akarják a világot, hanem formálni azt</h3></div>
       </article>
       <article class="ed">
         <figure class="ed__media" data-slide="left"><img src="media/brand-leopard.webp" srcset="media/brand-leopard-720.webp 720w, media/brand-leopard.webp 1023w" sizes="(max-width:768px) 92vw, 40vw" loading="lazy" decoding="async" alt="ICON Spirante, férfi fekete párduccal"></figure>
-        <div class="ed__body" data-slide="up"><span class="ed__num">II</span><h3 class="ed__name">Nem azért születtünk, hogy beleolvadjunk a tömegbe</h3><p class="ed__desc">Nem azért, hogy kövessük a trendeket.</p><p class="ed__more">Egy márka azoknak, akik tudják: az életük nem egy szerep – hanem egy történet. És a történet főszereplője ők maguk.</p></div>
+        <div class="ed__body" data-slide="up"><span class="ed__num">II</span><h3 class="ed__name">Nem azért születtünk, hogy beleolvadjunk a tömegbe</h3></div>
       </article>
       <article class="ed">
         <figure class="ed__media" data-slide="right"><img src="media/keyart-norules-duo.webp" srcset="media/keyart-norules-duo-720.webp 720w, media/keyart-norules-duo-1080.webp 1080w, media/keyart-norules-duo.webp 1400w" sizes="(max-width:768px) 92vw, 40vw" loading="lazy" decoding="async" alt="ICON Spirante IX üveg és doboz — No Rules, Just Vibes plakát koronás nővel"></figure>
-        <div class="ed__body" data-slide="up"><span class="ed__num">III</span><h3 class="ed__name">Az ICON a minőség és az önazonosság találkozása</h3><p class="ed__desc">Egy márka, amely nemcsak egy italt kínál, hanem egy életérzést – azt az érzést, amikor tudod, hogy a saját utadat járod.</p><p class="ed__more">Az ICON Spirante IX ezért született.</p></div>
+        <div class="ed__body" data-slide="up"><span class="ed__num">III</span><h3 class="ed__name">Az ICON a minőség és az önazonosság találkozása</h3></div>
       </article>
     </div>
   </section>
@@ -1405,8 +1473,8 @@ body.show-can .nav__switch:hover{background:var(--pink);color:var(--ink)}
 
   <!-- MARQUEE -->
   <div class="marquee" aria-hidden="true"><div class="marquee__in">
-    <span>Be your own ICON <i>✕</i> <b>Your life is your story</b> <i>✕</i> Ez egy állapot <i>✕</i> Egy korty szabadság <i>✕</i> </span>
-    <span>Be your own ICON <i>✕</i> <b>Your life is your story</b> <i>✕</i> Ez egy állapot <i>✕</i> Egy korty szabadság <i>✕</i> </span>
+    <span>Be your own ICON <i>✕</i> <b>Your life is your story</b> <i>✕</i> What's your story? <i>✕</i> Made for Icons <i>✕</i> </span>
+    <span>Be your own ICON <i>✕</i> <b>Your life is your story</b> <i>✕</i> What's your story? <i>✕</i> Made for Icons <i>✕</i> </span>
   </div></div>
 
   <!-- ITEM 4 — fesztival szin-hid: marquee -> manifesto (pink/purple villanas, nem fekete res) -->
@@ -1417,7 +1485,6 @@ body.show-can .nav__switch:hover{background:var(--pink);color:var(--ink)}
     <div class="manifesto">
       <span class="manifesto__tag" data-reveal="left">ICON – Brand</span>
       <h2 class="manifesto__h" data-reveal data-d="1">Az ICON Spirante IX<br>egy másik utat <span class="swipe-mark">mutat.</span></h2>
-      <p class="manifesto__p" data-reveal data-d="2">A világ tele van zajjal, elvárásokkal és szerepekkel. Mindenki meg akarja mondani, hogyan élj, mit válassz, ki legyél.</p>
       <figure class="manifesto__fig" data-reveal="right"><img src="media/keyart-skatepark.webp" srcset="media/keyart-skatepark-720.webp 720w, media/keyart-skatepark-1080.webp 1080w, media/keyart-skatepark.webp 1400w" sizes="(max-width:768px) 92vw, 46vw" loading="lazy" decoding="async" alt="ICON Spirante IX Walking Pack a gördeszkaparkban — What's your story?"></figure>
     </div>
   </section>
@@ -1432,8 +1499,8 @@ body.show-can .nav__switch:hover{background:var(--pink);color:var(--ink)}
       <div class="c9__fig" aria-hidden="true"><span class="c9__9"><span class="c9__9base">9</span><span class="c9__9fill">9</span></span><span class="c9__pct">%</span></div>
       <div class="c9__say">
         <p class="c9__pulse" data-reveal><span class="cpulse" aria-hidden="true"></span> Ez egy állapot.</p>
-        <h2 class="c9__h" data-reveal data-d="1">Egy különleges energia,</h2>
-        <p class="c9__body" data-reveal data-d="2">amely a pohárban kezdődik, de az emberek között válik valódi élménnyé.</p>
+        <h2 class="c9__h" data-reveal data-d="1">Egy különleges vibe,</h2>
+        <p class="c9__body" data-reveal data-d="2">amely a kezedben kezdődik, de az emberek között válik valódi élménnyé.</p>
         <p class="c9__chips" data-reveal data-d="3">
           <span class="tape">Itt valami más történik</span>
         </p>
@@ -1447,18 +1514,40 @@ body.show-can .nav__switch:hover{background:var(--pink);color:var(--ink)}
       <div class="hstrip__row">
         <article class="hpanel hpanel--p">
           <figure class="hpanel__media"><img src="media/keyart-venus-statue.webp" srcset="media/keyart-venus-statue-720.webp 720w, media/keyart-venus-statue-1080.webp 1080w, media/keyart-venus-statue.webp 1400w" sizes="(max-width:768px) 86vw, 44vw" loading="lazy" decoding="async" alt="Venus-szobor kapucnis pulóverben, arany Spirante szem-szalaggal — No Trends, This is Icon"></figure>
-          <div class="hpanel__copy"><span class="hpanel__no">01</span><h3>Az élet nem a megszokásról szól.</h3><p>Hanem a pillanatokról.</p></div>
+          <div class="hpanel__copy"><span class="hpanel__no">01</span><h3>Az élet nem a megszokásról szól.</h3></div>
         </article>
         <article class="hpanel hpanel--p">
           <figure class="hpanel__media"><img src="media/keyart-monalisa.webp" srcset="media/keyart-monalisa-720.webp 720w, media/keyart-monalisa-1080.webp 1080w, media/keyart-monalisa.webp 1400w" sizes="(max-width:768px) 86vw, 44vw" loading="lazy" decoding="async" alt="Mona Lisa nyalókával, arany Spirante szem-szalaggal — No Trends, This is Icon"></figure>
-          <div class="hpanel__copy"><span class="hpanel__no">02</span><h3>Amikor megáll az idő egy kortyra.</h3><p>Amikor egy íz, egy illat vagy egy találkozás történetté válik.</p></div>
+          <div class="hpanel__copy"><span class="hpanel__no">02</span><h3>Amikor megáll az idő egy kortyra.</h3></div>
         </article>
         <article class="hpanel">
           <figure class="hpanel__media"><img src="media/brand-fireworks.webp" srcset="media/brand-fireworks-720.webp 720w, media/brand-fireworks.webp 1054w" sizes="(max-width:768px) 86vw, 44vw" loading="lazy" decoding="async" alt="Iconic nights"></figure>
           <span class="hpanel__no">03</span>
-          <div class="hpanel__copy"><h3>Itt valami más történik.</h3><p>Egy ikonikus megjelenés, amely már messziről üzeni: itt valami más történik.</p></div>
+          <div class="hpanel__copy"><h3>Itt valami más történik.</h3></div>
         </article>
         <article class="hpanel hpanel--end">
+          <div class="hpanel__copy hpanel__copy--c">
+            <span class="hpanel__crown">✕ Icon ✕</span>
+            <span class="hpanel__big">9%</span>
+            <p class="hpanel__end-tag">Az ICON Spirante IX ezért született.</p>
+            <span class="cpulse" aria-hidden="true"></span>
+          </div>
+        </article>
+        <!-- DUPLIKALT szett a seamless -50% loophoz (David 08-11: auto-marquee, nem scroll-vezerelt) -->
+        <article class="hpanel hpanel--p" aria-hidden="true">
+          <figure class="hpanel__media"><img src="media/keyart-venus-statue.webp" srcset="media/keyart-venus-statue-720.webp 720w, media/keyart-venus-statue-1080.webp 1080w, media/keyart-venus-statue.webp 1400w" sizes="(max-width:768px) 86vw, 44vw" loading="lazy" decoding="async" alt=""></figure>
+          <div class="hpanel__copy"><span class="hpanel__no">01</span><h3>Az élet nem a megszokásról szól.</h3></div>
+        </article>
+        <article class="hpanel hpanel--p" aria-hidden="true">
+          <figure class="hpanel__media"><img src="media/keyart-monalisa.webp" srcset="media/keyart-monalisa-720.webp 720w, media/keyart-monalisa-1080.webp 1080w, media/keyart-monalisa.webp 1400w" sizes="(max-width:768px) 86vw, 44vw" loading="lazy" decoding="async" alt=""></figure>
+          <div class="hpanel__copy"><span class="hpanel__no">02</span><h3>Amikor megáll az idő egy kortyra.</h3></div>
+        </article>
+        <article class="hpanel" aria-hidden="true">
+          <figure class="hpanel__media"><img src="media/brand-fireworks.webp" srcset="media/brand-fireworks-720.webp 720w, media/brand-fireworks.webp 1054w" sizes="(max-width:768px) 86vw, 44vw" loading="lazy" decoding="async" alt=""></figure>
+          <span class="hpanel__no">03</span>
+          <div class="hpanel__copy"><h3>Itt valami más történik.</h3></div>
+        </article>
+        <article class="hpanel hpanel--end" aria-hidden="true">
           <div class="hpanel__copy hpanel__copy--c">
             <span class="hpanel__crown">✕ Icon ✕</span>
             <span class="hpanel__big">9%</span>
@@ -1470,25 +1559,16 @@ body.show-can .nav__switch:hover{background:var(--pink);color:var(--ink)}
     </div>
   </section>
 
-  <!-- KEYART band (felhuzodó kartya) -->
-  <section class="band c-card band--scene">
-    <div class="band__bg" data-parallax="0.1"><img src="media/brand-festival.webp" srcset="media/brand-festival-720.webp 720w, media/brand-festival.webp 1086w" sizes="100vw" loading="lazy" decoding="async" alt="ICON Spirante fesztivál tömeg, jó vibe"></div>
-    <div class="band__scrim"></div>
-    <div class="band__in">
-      <hr class="scene__rule" data-reveal data-d="1" aria-hidden="true">
-      <h2 data-reveal data-d="2" data-scramble>Az életük nem egy szerep – hanem egy történet.</h2>
-    </div>
-  </section>
+  <!-- (KEYART band "Az életük nem egy szerep" szekcio TOROLVE — David 08-11) -->
 
   <!-- SERVE — ticket-stub sticky-stack (felhuzodó kartya) -->
   <section class="wrap c-card" id="sec-serve">
     <div class="shead" data-reveal>
       <h2 style="font-family:var(--font-graf);margin-top:1rem">Az ICON azoknak született, akik mernek saját döntéseket hozni</h2>
-      <p>Egy olyan utat, ahol a siker nem a megfelelésről szól, hanem arról, hogy minden nap egy kicsit jobb legyél annál, aki tegnap voltál.</p>
     </div>
     <div class="stubs">
-      <div class="stub" data-reveal="left"><span class="stub__no">I</span><span class="stub__name">Akik értékelik a minőséget<small>Akik tudják, hogy a stílus nem a hangosságban, hanem a karakterben rejlik.</small></span></div>
-      <div class="stub" data-reveal="left"><span class="stub__no">II</span><span class="stub__name">Mert végül minden embernek van egy története<small>És a legjobb történeteket azok írják, akik mernek önmaguk lenni.</small></span></div>
+      <div class="stub" data-reveal="left"><span class="stub__no">I</span><span class="stub__name">Akik értékelik a minőséget</span></div>
+      <div class="stub" data-reveal="left"><span class="stub__no">II</span><span class="stub__name">Mert végül minden embernek van egy története</span></div>
     </div>
   </section>
 
@@ -1500,7 +1580,8 @@ body.show-can .nav__switch:hover{background:var(--pink);color:var(--ink)}
     </div>
     <div class="dwipe__over">
       <img src="media/party-festival-720.webp" alt="" aria-hidden="true" loading="lazy" decoding="async">
-      <span class="dwipe__graf">De ez valójában<br><em>nem az italról szól.</em></span>
+      <span class="dwipe__graf">De ez valójában<br><em>nem az italról szól<span class="dwipe__bang" aria-hidden="true"><i>!</i><i>!</i><i>!</i></span></em></span>
+      <span class="dwipe__punch">Hanem rólad</span>
     </div>
   </div>
 
@@ -1511,7 +1592,7 @@ body.show-can .nav__switch:hover{background:var(--pink);color:var(--ink)}
 
   <!-- KIADASOK — overlapping collage (felhuzodó kartya) -->
   <section class="wrap c-card" id="sec-editions">
-    <span class="ed-stamp" data-reveal="left">És a történet főszereplője ők maguk</span>
+    <!-- (ed-stamp "És a történet főszereplője ők maguk" TOROLVE — David 08-11) -->
     <div class="collage">
       <figure class="poster" data-slide="left"><img src="media/keyart-gold-emblem.webp" srcset="media/keyart-gold-emblem-720.webp 720w, media/keyart-gold-emblem-1080.webp 1080w, media/keyart-gold-emblem.webp 1400w" sizes="(max-width:768px) 92vw, 30vw" loading="lazy" decoding="async" alt="ICON Spirante IX arany festék-kehely embléma fekete alapon"><figcaption class="poster__cap">Ikonikus megjelenés<small>ICON Spirante IX</small></figcaption></figure>
       <figure class="poster" data-slide="left"><img src="media/brand-pool.webp" srcset="media/brand-pool-720.webp 720w, media/brand-pool.webp 1086w" sizes="(max-width:768px) 92vw, 30vw" loading="lazy" decoding="async" alt="ICON Spirante beach club"><figcaption class="poster__cap">Inspiráló életérzés<small>ICON Spirante IX</small></figcaption></figure>
@@ -1825,25 +1906,7 @@ body.show-can .nav__switch:hover{background:var(--pink);color:var(--ink)}
       gsap.fromTo(c9fill,{clipPath:'inset(100% 0 0 0)'},{clipPath:'inset(0% 0 0 0)',ease:'none',
         scrollTrigger:{trigger:'.view--can #sec-9',start:'top 82%',end:'center center',scrub:true,invalidateOnRefresh:true}});
     }
-    // STORY STRIP — pinned horizontal (desktop + no-reduce only)
-    gsap.matchMedia().add('(min-width:769px) and (prefers-reduced-motion:no-preference)',function(){
-      var rowEl=document.querySelector('.view--can .hstrip__row');
-      if(!rowEl) return;
-      var dist=function(){ return rowEl.scrollWidth - innerWidth; };
-      // ultrawide guard: ha a sor rovidebb a viewportnal, nincs mit gorgetni — pin kihagy, a sor kozepre zar
-      if(dist()<=40) return;
-      var stripEl=document.querySelector('.view--can .hstrip');
-      if(stripEl) stripEl.classList.add('hstrip--pinned');
-      var horiz=gsap.to(rowEl,{x:function(){return -dist();}, ease:'none',
-        scrollTrigger:{trigger:'.view--can .hstrip', pin:'.view--can .hstrip__vp',
-          start:'top top', end:function(){return '+='+dist();},
-          scrub:1, anticipatePin:1, invalidateOnRefresh:true}});
-      gsap.utils.toArray('.view--can .hpanel__media img').forEach(function(img){
-        gsap.fromTo(img,{xPercent:-10},{xPercent:10, ease:'none',
-          scrollTrigger:{trigger:img.closest('.hpanel'), containerAnimation:horiz, start:'left right', end:'right left', scrub:true}});
-      });
-      return function(){ horiz.kill(); if(stripEl) stripEl.classList.remove('hstrip--pinned'); };
-    });
+    // STORY STRIP — AUTO-MARQUEE (David 08-11): CSS keyframes viszi vegtelenben, nincs pin/scroll-vezerles
     // ticket-stub sticky-stack scale-back — CSAK scale (a yPercent lift a kovetkezo FOLE tolta az elozot)
     if(matchMedia('(min-width:769px)').matches){
       var stubs=gsap.utils.toArray('.view--can .stub');
