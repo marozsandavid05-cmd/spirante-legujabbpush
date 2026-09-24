@@ -607,6 +607,12 @@ h1,h2,h3,.slogan__txt,.band__fig,.flav b,.flyer figcaption,.nav__brand,.foot__h{
 .social__text{grid-column:1/7}
 .social__post{grid-column:7/13;justify-self:center;width:min(100%,calc(min(88vh,900px) * 931 / 1689))}
 @media(max-width:900px){.social__post{grid-column:1/-1;width:min(100%,440px)}}
+
+/* 9% SAV (David 09-24): a 9% es a szoveg a bal also sarokban, a szoveg kisebb */
+.band{align-items:flex-end}
+.band__in{flex-direction:column;align-items:flex-start;gap:.4rem;padding:0 var(--pad) clamp(2.4rem,7vh,4.5rem);max-width:var(--maxw);margin-inline:auto;box-sizing:border-box}
+.band__fig{font-size:clamp(7rem,18vw,16rem)}
+.band__h{font-size:clamp(1.4rem,2.6vw,2.5rem);max-width:22ch;padding-bottom:0}
 </style>
 </head>
 <body>
@@ -667,7 +673,6 @@ h1,h2,h3,.slogan__txt,.band__fig,.flav b,.flyer figcaption,.nav__brand,.foot__h{
     <div class="half__bed half__bed--bota" aria-hidden="true"></div>
     <div class="half__scrim" aria-hidden="true"></div>
     <figure class="half__poster half__poster--bota">
-      <span class="tape tape--top" aria-hidden="true"></span>
       <picture>
         <source type="image/webp" sizes="(max-width:767px) 88vw, 38vw" srcset="media/v2-botaniqa-760.webp 760w, media/v2-botaniqa-1200.webp 1200w, media/v2-botaniqa-1672.webp 1672w">
         <img src="media/v2-botaniqa-1200.jpg" width="1672" height="941" fetchpriority="high" decoding="async" alt="ICON Botaniqa Spritz, coming soon: Lime &amp; Cactus, Pineapple &amp; Coconut, Citrus-Lime és Cherry dobozok">
@@ -681,7 +686,6 @@ h1,h2,h3,.slogan__txt,.band__fig,.flav b,.flyer figcaption,.nav__brand,.foot__h{
     <div class="half__bed half__bed--icon" aria-hidden="true"></div>
     <div class="half__scrim" aria-hidden="true"></div>
     <figure class="half__poster half__poster--icon">
-      <span class="tape tape--top" aria-hidden="true"></span>
       <picture>
         <source type="image/webp" sizes="(max-width:767px) 88vw, 38vw" srcset="media/v2-nyito-760.webp 760w, media/v2-nyito-1200.webp 1200w, media/v2-nyito-1672.webp 1672w">
         <img src="media/v2-nyito-1200.jpg" width="1672" height="941" fetchpriority="high" decoding="async" alt="Két ICON Spirante IX doboz graffitis falon, szívet formáló festett kezek, No rules. Just vibes! felirat">
@@ -789,7 +793,6 @@ h1,h2,h3,.slogan__txt,.band__fig,.flav b,.flyer figcaption,.nav__brand,.foot__h{
         <h2 class="philo__h" id="philo-h" data-reveal><span class="philo__ln">Az&nbsp;ICON nem egyszerűen egy&nbsp;ital.</span> <span class="philo__ln"><span class="swipe">Ez egy&nbsp;állapot</span></span></h2>
       </div>
       <figure class="frame philo__poster" data-reveal>
-        <span class="tape tape--top" aria-hidden="true"></span>
         <picture>
           <img src="media/v2-statue-1024.webp" srcset="media/v2-statue-560.webp 560w, media/v2-statue-1024.webp 1024w" sizes="(max-width:900px) 84vw, 38vw" width="1024" height="1536" loading="lazy" decoding="async" alt="Klasszikus szobor kapucnis pulóverben, arany SPIRANTE szemsávval, zöldalmás ICON Spirante IX dobozzal, No trends. This is ICON felirat">
         </picture>
@@ -856,10 +859,6 @@ h1,h2,h3,.slogan__txt,.band__fig,.flav b,.flyer figcaption,.nav__brand,.foot__h{
         <div class="flyer__img"><img src="media/p-gin-900.webp" srcset="media/p-gin-540.webp 540w, media/p-gin-900.webp 900w" sizes="(max-width:767px) 60vw, 36vh" width="900" height="1350" loading="lazy" decoding="async" alt="Nő szívószállal, ICON Spirante IX doboz, No trends. This is ICON felirat"></div>
         <figcaption>Be your own ICON</figcaption>
       </figure>
-      <figure class="flyer t3">
-        <div class="flyer__img"><img src="media/keyart-skatepark-720.webp" srcset="media/keyart-skatepark-720.webp 720w, media/keyart-skatepark.webp 1400w" sizes="(max-width:767px) 60vw, 36vh" width="1400" height="1866" loading="lazy" decoding="async" alt="Tetovált férfi a skateparkban, ICON Spirante IX dobozok"></div>
-        <figcaption>What's&nbsp;your story?</figcaption>
-      </figure>
       <figure class="flyer t2">
         <div class="flyer__img"><img src="media/p-nun-900.webp" srcset="media/p-nun-540.webp 540w, media/p-nun-900.webp 900w" sizes="(max-width:767px) 60vw, 36vh" width="900" height="1200" loading="lazy" decoding="async" alt="Tetovált nő veterán autónak dőlve, két ICON Spirante IX doboz"></div>
         <figcaption>Live iconic</figcaption>
@@ -886,7 +885,7 @@ h1,h2,h3,.slogan__txt,.band__fig,.flav b,.flyer figcaption,.nav__brand,.foot__h{
   <!-- IZVILAG (a 750-es szerkezet szerint) -->
   <section class="sec" id="izvilag" aria-labelledby="flavor-h">
     <div class="wrap duo">
-      <figure class="frame duo__img" data-reveal><span class="tape tape--corner" aria-hidden="true"></span><img src="media/v3-icon5-900.webp" srcset="media/v3-icon5-540.webp 540w, media/v3-icon5-900.webp 900w" sizes="(max-width:900px) 84vw, 36vw" width="900" height="1200" loading="lazy" decoding="async" alt="Nő szívószállal, Hibiscus ICON Spirante IX doboz, No trends. This is ICON felirat"></figure>
+      <figure class="frame duo__img" data-reveal><img src="media/v3-icon5-900.webp" srcset="media/v3-icon5-540.webp 540w, media/v3-icon5-900.webp 900w" sizes="(max-width:900px) 84vw, 36vw" width="900" height="1200" loading="lazy" decoding="async" alt="Nő szívószállal, Hibiscus ICON Spirante IX doboz, No trends. This is ICON felirat"></figure>
       <div class="duo__text">
         <p class="tag">Ízvilág</p>
         <h2 class="duo__h" id="flavor-h" data-reveal>Egy&nbsp;ízvilág, amely nem csak finom, hanem <span class="swipe">karakteres</span></h2>
@@ -909,21 +908,18 @@ h1,h2,h3,.slogan__txt,.band__fig,.flav b,.flyer figcaption,.nav__brand,.foot__h{
       <div class="eds__list">
         <article class="ed">
           <figure class="frame" data-reveal>
-            <span class="tape tape--top" aria-hidden="true"></span>
-            <img src="media/keyart-monalisa-720.webp" srcset="media/keyart-monalisa-720.webp 720w, media/keyart-monalisa-1080.webp 1080w" sizes="(max-width:900px) 84vw, 38vw" width="1400" height="2104" loading="lazy" decoding="async" alt="Titokzatos nő arany graffitivel, No trends. This is ICON felirat, ICON Spirante IX doboz">
+            <img src="media/keyart-skatepark-720.webp" srcset="media/keyart-skatepark-720.webp 720w, media/keyart-skatepark-1080.webp 1080w" sizes="(max-width:900px) 84vw, 38vw" width="1400" height="1866" loading="lazy" decoding="async" alt="Tetovált férfi a skateparkban, ICON Spirante IX dobozok, What's your story? felirat">
           </figure>
           <h3 class="ed__h" data-reveal><span class="ed__ln">Akik nem követni</span><span class="ed__ln">akarják a&nbsp;világot,</span><span class="ed__ln">hanem <span class="swipe">formálni azt</span></span></h3>
         </article>
         <article class="ed ed--r">
           <figure class="frame" data-reveal>
-            <span class="tape tape--corner" aria-hidden="true"></span>
             <img src="media/p-crown-900.webp" srcset="media/p-crown-540.webp 540w, media/p-crown-900.webp 900w" sizes="(max-width:900px) 84vw, 38vw" width="900" height="1200" loading="lazy" decoding="async" alt="Arany korona és ICON felirat, No rules. Just vibes, ICON Spirante IX dobozok">
           </figure>
           <h3 class="ed__h" data-reveal><span class="ed__ln">Nem azért születtünk,</span><span class="ed__ln">hogy beleolvadjunk</span><span class="ed__ln"><span class="swipe">a&nbsp;tömegbe</span></span></h3>
         </article>
         <article class="ed">
           <figure class="frame" data-reveal>
-            <span class="tape tape--top" aria-hidden="true"></span>
             <img src="media/brand-festival.webp" srcset="media/brand-festival-720.webp 720w, media/brand-festival.webp 1086w" sizes="(max-width:900px) 84vw, 38vw" width="1086" height="1448" loading="lazy" decoding="async" alt="Fesztiválozó pár óriáskerékkel a háttérben, ICON Spirante IX dobozokkal">
           </figure>
           <h3 class="ed__h" data-reveal><span class="ed__ln">Az&nbsp;ICON a&nbsp;minőség</span><span class="ed__ln">és az&nbsp;önazonosság</span><span class="ed__ln"><span class="swipe">találkozása</span></span></h3>
@@ -1008,7 +1004,6 @@ h1,h2,h3,.slogan__txt,.band__fig,.flav b,.flyer figcaption,.nav__brand,.foot__h{
         </ul>
       </div>
       <figure class="frame social__post" data-reveal>
-        <span class="tape tape--top" aria-hidden="true"></span>
         <img src="media/v2-feed-931.webp" srcset="media/v2-feed-560.webp 560w, media/v2-feed-931.webp 931w" sizes="(max-width:900px) 92vw, 500px" width="931" height="1689" loading="lazy" decoding="async" alt="ICON Spirante Instagram-poszt: tetovált férfi kiönti a zöldalmás dobozt, a spritz egy nő poharába zúdul">
       </figure>
     </div>
@@ -1025,7 +1020,6 @@ h1,h2,h3,.slogan__txt,.band__fig,.flav b,.flyer figcaption,.nav__brand,.foot__h{
   <section class="bota" id="botaniqa" aria-labelledby="bota-h">
     <h2 class="sr-only" id="bota-h">Botaniqa Spritz, hamarosan</h2>
     <figure class="frame">
-      <span class="tape tape--top" aria-hidden="true"></span>
       <picture>
         <source type="image/webp" sizes="(max-width:1560px) 92vw, 1480px" srcset="media/v2-botaniqa-760.webp 760w, media/v2-botaniqa-1200.webp 1200w, media/v2-botaniqa-1672.webp 1672w">
         <img src="media/v2-botaniqa-1200.jpg" width="1672" height="941" loading="lazy" decoding="async" alt="ICON Botaniqa Spritz, coming soon: Lime &amp; Cactus, Pineapple &amp; Coconut, Citrus-Lime és Cherry dobozok, klasszikus szobor, trópusi gyümölcsök">
