@@ -602,6 +602,11 @@ h1,h2,h3,.slogan__txt,.band__fig,.flav b,.flyer figcaption,.nav__brand,.foot__h{
    a cim csak a kepernyoolvasonak marad (a kepen ott a festett felirat) */
 .hero__band{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
 .hero__bed{height:calc(var(--stageh) + 40px + 18vh)}
+
+/* KOVESS MINKET: a kiontos kep nagyobban (David 09-24), eredeti aranyban, vagas nelkul */
+.social__text{grid-column:1/7}
+.social__post{grid-column:7/13;justify-self:center;width:min(100%,calc(min(88vh,900px) * 931 / 1689))}
+@media(max-width:900px){.social__post{grid-column:1/-1;width:min(100%,440px)}}
 </style>
 </head>
 <body>
@@ -1009,7 +1014,7 @@ h1,h2,h3,.slogan__txt,.band__fig,.flav b,.flyer figcaption,.nav__brand,.foot__h{
       </div>
       <figure class="frame social__post" data-reveal>
         <span class="tape tape--top" aria-hidden="true"></span>
-        <img src="media/v2-feed-931.webp" srcset="media/v2-feed-560.webp 560w, media/v2-feed-931.webp 931w" sizes="(max-width:900px) 62vw, 340px" width="931" height="1689" loading="lazy" decoding="async" alt="ICON Spirante Instagram-poszt: tetovált férfi kiönti a zöldalmás dobozt, a spritz egy nő poharába zúdul">
+        <img src="media/v2-feed-931.webp" srcset="media/v2-feed-560.webp 560w, media/v2-feed-931.webp 931w" sizes="(max-width:900px) 92vw, 500px" width="931" height="1689" loading="lazy" decoding="async" alt="ICON Spirante Instagram-poszt: tetovált férfi kiönti a zöldalmás dobozt, a spritz egy nő poharába zúdul">
       </figure>
     </div>
   </section>
