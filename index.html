@@ -259,7 +259,7 @@ body.menu-open .mnav a{opacity:1;translate:0 0}
 .js [data-reveal].in{opacity:1;translate:0 0}
 
 /* ---------- HERO: a nyitokep egeszben + graffiti-sav alatta ---------- */
-.hero{--stageh:min(calc(100vw / 1.7768),calc(100svh - var(--navh)));position:relative;padding-top:var(--navh);min-height:100svh;display:flex;flex-direction:column;overflow-x:clip}
+.hero{--stageh:min(calc(100vw / 1.7768),calc(100svh - var(--navh)));position:relative;padding-top:var(--navh);display:flex;flex-direction:column;overflow-x:clip}
 .hero__stage{position:relative;z-index:1;flex:none;height:var(--stageh);overflow:hidden}
 /* a plakat melletti elmosott kepagy a stage ala is lenyulik, es alfaval atuszik a lap hatterebe:
    nincs kemeny vagas a ket oldalon (kep alfazik 0-ra a hatter folott, nem szin a szinbe) */
@@ -267,7 +267,7 @@ body.menu-open .mnav a{opacity:1;translate:0 0}
   -webkit-mask-image:linear-gradient(180deg,#000 0,#000 calc(100% - 44vh),rgba(0,0,0,.55) calc(100% - 24vh),transparent 100%);mask-image:linear-gradient(180deg,#000 0,#000 calc(100% - 44vh),rgba(0,0,0,.55) calc(100% - 24vh),transparent 100%)}
 .hero__poster{position:relative;z-index:1;height:100%;aspect-ratio:1672/941;max-width:100%;margin:0 auto}
 .hero__poster img{width:100%;height:100%;object-fit:cover}
-.hero__band{position:relative;z-index:1;flex:1;display:flex;align-items:flex-end;padding:clamp(2.6rem,6vh,4.5rem) var(--pad) clamp(2.2rem,5vh,3.6rem)}
+.hero__band{position:relative;z-index:1;flex:none;display:flex;align-items:flex-start;padding:clamp(2.6rem,6vh,4.5rem) var(--pad) clamp(2.2rem,5vh,3.6rem)}
 .hero__title{width:100%;max-width:var(--maxw);margin-inline:auto;transform:rotate(-2deg);transform-origin:0 100%}
 .hero__l1,.hero__l2{display:block}
 .hero__l1{font-size:clamp(1.6rem,3.8vw,3.4rem);color:var(--gold)}
@@ -468,8 +468,34 @@ a.soc:active{transform:scale(.985)}
 @media(max-width:767px){
   .strip--a{--fh:clamp(260px,50svh,420px)}
   .strip--b{--fh:clamp(200px,34svh,320px)}
-  .hero__band{padding-bottom:2.6rem}
+  .hero__band{padding-top:1.6rem;padding-bottom:2.2rem}
   .ticker{transform:rotate(-2.4deg)}
+  /* telefonon feszesebb ritmus: a szekciok kozott ~220 px helyett ~120 px ures hely */
+  .sec{padding-top:clamp(3.2rem,7.5svh,4.5rem);padding-bottom:clamp(3.2rem,7.5svh,4.5rem)}
+  .apps{padding-bottom:0}
+  .lip{margin-top:-5svh}
+  .philo{row-gap:clamp(2rem,4.5svh,3rem)}
+  .story{margin-top:clamp(3rem,7svh,4rem)}
+  .eds__list{gap:clamp(3rem,7svh,4rem);margin-top:clamp(2.2rem,5svh,3rem)}
+  .strip{padding-top:clamp(2.2rem,5svh,3rem);padding-bottom:clamp(2.8rem,6svh,3.6rem)}
+  .closer{padding-top:clamp(4rem,10svh,5.5rem);padding-bottom:clamp(4rem,10svh,5.5rem)}
+  .bota{padding-bottom:clamp(3rem,7svh,4rem)}
+  .foot{padding-top:clamp(3rem,7svh,4rem)}
+  /* ujjal is kenyelmesen elerheto linkek (min. 44 px magas erintesi felulet) */
+  .contact dd a{padding-block:.56rem}
+  .contact dd{margin-top:0}
+  .contact dd a.route{padding-block:.8rem}
+  .more{padding-block:.5rem}
+  .strip__toggle{width:44px;height:44px}
+  .nav__brand{padding-block:.6rem}
+  /* a legkisebb feliratok telefonon olvashatobbak (13-14 px) */
+  .tag{font-size:.86rem}
+  .chips li{font-size:.84rem}
+  .soc__txt small{font-size:.84rem}
+  .soon{font-size:.84rem}
+  .contact dt{font-size:.84rem}
+  .foot__base{font-size:.82rem}
+  .foot__18{font-size:.95rem}
 }
 
 /* ---------- REDUCED MOTION: komponalt vegallapot, kezi gorgetes a savokon ---------- */
