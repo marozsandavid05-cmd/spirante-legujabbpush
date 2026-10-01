@@ -687,6 +687,20 @@ h1,h2,h3,.slogan__txt,.band__fig,.flav b,.flyer figcaption,.nav__brand,.foot__h{
 .nav__can small{font-family:var(--f-sten);font-weight:700;text-transform:uppercase;letter-spacing:.14em;font-size:.74rem;line-height:1;color:#E7B53F}
 .nav__can:hover,.nav__can:focus-visible{background:rgba(231,181,63,.07)}
 @media (hover:hover) and (pointer:fine){.nav__can:hover img{transform:translateY(-4px) rotate(-2deg)}}
+/* NYITO (David 10-01): a BOTANIQA felirat feljebb, a felette levo ures sav es a Botaniqa-kep kozotti szabad hely kozepere.
+   A szabad hely = a kepernyo teteje es a nyil-matrica teteje kozott (a matrica 16px-szel log ki a kep fole) */
+.landing{--bw:min(24vw,400px)}
+@media(min-width:768px){
+  .slogan__img--bota{width:var(--bw)}
+  .half__content--bota{bottom:auto;top:calc((100svh - clamp(2.4rem,8svh,5.5rem) - var(--pw) / 1.7768 - 16px - var(--bw) * .4042) / 2)}
+}
+@media(min-width:768px) and (max-width:1023px){.landing{--bw:min(30vw,300px)}}
+/* 9% SAV (David 10-01): a sav a kep teljes magassagat mutatja (1672x941, nincs fent-lent vagas), a festett SPIRANTE felirat
+   es a doboz teteje latszik; az atuszas csak a kep ures szelere esik. A 9-es tetejet a background-clip:text vagta
+   (line-height .8 mellett a betu a doboz fole log), ezert a szamnak felul belso hely kell */
+@media(min-width:901px){.band{min-height:max(78vh,min(56.28vw,100svh))}.band__bg img{object-position:50% 12%}}
+.band__bg{-webkit-mask-image:linear-gradient(180deg,transparent 0,#000 6%,#000 90%,transparent 100%);mask-image:linear-gradient(180deg,transparent 0,#000 6%,#000 90%,transparent 100%)}
+.band__fig{padding-top:.14em;margin-top:-.14em;padding-bottom:.04em;margin-bottom:-.04em}
 .mnav__cans{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;padding:.6rem 0 .9rem;border-bottom:1px solid var(--line)}
 .mnav .mnav__can{display:flex;flex-direction:column;align-items:center;gap:.5rem;border-bottom:0;padding:.4rem 0;font-size:1rem}
 .mnav__can img{height:clamp(120px,18svh,170px);width:auto}
