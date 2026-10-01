@@ -653,66 +653,6 @@ h1,h2,h3,.slogan__txt,.band__fig,.flav b,.flyer figcaption,.nav__brand,.foot__h{
   .band__fig{font-size:clamp(5.5rem,30vw,9rem)}
   .band__h{font-size:clamp(1.25rem,5.6vw,1.7rem)}
 }
-
-/* ===== JAVITASI KOR 2026-10-01 (Balazs) ===== */
-.pc{display:contents}
-/* VALASZTO: kozepen a NO TRENDS, bal lent SPIRANTE IX, jobb fent BOTANIQA. A plakatok kicsit kisebbek, hogy a kozepso
-   felirat a ket plakat kozotti atlos savba ferjen (1366/1440/1920 merve, nincs atfedes) */
-.landing{--pw:min(34vw,calc(34svh * 1.7768),820px)}
-.half__poster{width:var(--pw)}
-.landing__center{top:50%;left:50%;width:min(19vw,360px);max-width:none}
-.landing__slogan{display:block;width:100%;height:auto;filter:drop-shadow(0 10px 28px rgba(0,0,0,.65))}
-.half__content--bota{left:auto;right:clamp(1.2rem,4vw,4.5rem);bottom:calc(clamp(2.4rem,8svh,5.5rem) + var(--pw) / 1.7768 + 22px)}
-.slogan__img--bota{width:min(24vw,400px)}
-@media(min-width:768px) and (max-width:1023px){.landing__center{width:min(28vw,300px)}.slogan__img--bota{width:min(30vw,300px)}}
-@media(max-width:767px){
-  .landing{--ns:min(40vw,170px)}
-  .landing__center{display:block!important;top:50%;left:50%;width:var(--ns);transform:translate(-50%,-50%) rotate(-2deg);z-index:6}
-  .half--icon .half__content{bottom:calc(var(--ns) * .3333 + 12px)}
-  .slogan__img--ix{width:min(38vw,160px)}
-  .half__poster--bota{top:auto;bottom:clamp(.9rem,2.4svh,1.4rem);transform:translateX(-50%) rotate(1.4deg)}
-  .half__content--bota{left:50%;right:auto;transform:translateX(-50%);bottom:calc(clamp(.9rem,2.4svh,1.4rem) + min(88vw,calc(22svh * 1.7768)) / 1.7768 + 10px)}
-  .slogan__img--bota{width:min(46vw,200px)}
-  /* a valaszto pink vonala a NO TRENDS felirat mogott megszakad, hogy ne vagja at a betuket */
-  .half--icon{border-bottom:0}
-  .landing::after{content:'';position:absolute;left:0;right:0;top:calc(50% - 1px);height:2px;z-index:5;pointer-events:none;
-    background:linear-gradient(90deg,var(--pink) 0,var(--pink) calc(50% - var(--ns) / 2 - 12px),transparent calc(50% - var(--ns) / 2 - 12px),transparent calc(50% + var(--ns) / 2 + 12px),var(--pink) calc(50% + var(--ns) / 2 + 12px))}
-}
-/* FEJLEC-LOGO: SPIRANTE IX szokozzel (az inline-flex elnyelte a szokozt) */
-.nav__brand{gap:.26em}
-/* LENYILO: csak a ket termekfoto */
-.nav__panel--cans{width:300px;display:grid;grid-template-columns:1fr 1fr;gap:.3rem;padding:.7rem}
-.nav__can{display:flex;flex-direction:column;align-items:center;gap:.55rem;padding:.8rem .4rem .7rem;transition:background .2s}
-.nav__can img{height:170px;width:auto;filter:drop-shadow(0 14px 18px rgba(0,0,0,.55));transition:transform .3s var(--ease)}
-.nav__can small{font-family:var(--f-sten);font-weight:700;text-transform:uppercase;letter-spacing:.14em;font-size:.74rem;line-height:1;color:#E7B53F}
-.nav__can:hover,.nav__can:focus-visible{background:rgba(231,181,63,.07)}
-@media (hover:hover) and (pointer:fine){.nav__can:hover img{transform:translateY(-4px) rotate(-2deg)}}
-.mnav__cans{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;padding:.6rem 0 .9rem;border-bottom:1px solid var(--line)}
-.mnav .mnav__can{display:flex;flex-direction:column;align-items:center;gap:.5rem;border-bottom:0;padding:.4rem 0;font-size:1rem}
-.mnav__can img{height:clamp(120px,18svh,170px);width:auto}
-.mnav__can small{font-family:var(--f-sten);font-weight:700;text-transform:uppercase;letter-spacing:.14em;font-size:.8rem;color:#E7B53F}
-/* UJ KEPEK: a kliens-kep sosem vagodik, a keret a kep sajat aranyat kapja */
-.ed .frame.fr-45{aspect-ratio:1122/1402}
-.duo__img.di-17{aspect-ratio:1163/1353}
-@media(min-width:601px){.card__img.ci-34{aspect-ratio:1088/1446}}
-/* ZARO: az ezust logo a korabbi halvany ICON-vizjel helyen, a cim mogott (a sotet ezust szandekosan visszafogott) */
-.closer__logo{position:absolute;left:50%;top:50%;margin:0;width:min(1100px,96vw);transform:translate(-50%,-50%) rotate(-3deg);pointer-events:none}
-.closer__logo img{display:block;width:100%;height:auto;mix-blend-mode:screen;opacity:.5}
-/* BOTANIQA: termekfotok (paros | 2x2 | paros), mind eredeti 2:3 aranyban */
-.bota__range{max-width:1480px;margin:clamp(2.5rem,6vh,4rem) auto 0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(.8rem,1.6vw,1.6rem);align-items:center}
-.bota__grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(.8rem,1.6vw,1.6rem);min-width:0}
-.bota__range>*,.bota__grid>*{min-width:0}
-.bota .bota__range .frame{aspect-ratio:auto;max-width:none;margin:0;transform:none}
-.bota__range img{display:block;width:100%;max-width:100%;height:auto;aspect-ratio:2/3}
-.bota .bota__range .bota__duo:first-child{transform:rotate(-1.4deg)}
-.bota .bota__range .bota__duo:last-child{transform:rotate(1.4deg)}
-@media(max-width:767px){.bota__range{grid-template-columns:repeat(2,minmax(0,1fr))}.bota__grid{grid-column:1/-1;order:-1}}
-/* KAPCSOLAT: terkep helyett az arany logo, a maradek ket hasab kozepre */
-.foot__grid{align-items:center}
-.foot__mark{grid-column:7/13;margin:0;justify-self:center;width:min(100%,620px)}
-.foot__mark img{display:block;width:100%;height:auto;mix-blend-mode:screen}
-@media(max-width:900px){.foot__mark{grid-column:1/-1;width:min(100%,420px)}}
-@media(prefers-reduced-motion:reduce){.bota .bota__range .bota__duo:first-child,.bota .bota__range .bota__duo:last-child{transform:none}}
 </style>
 </head>
 <body>
@@ -772,9 +712,6 @@ h1,h2,h3,.slogan__txt,.band__fig,.flav b,.flyer figcaption,.nav__brand,.foot__h{
   <a class="half half--bota" href="#botaniqa" data-enter="botaniqa" aria-label="Botaniqa Spritz, hamarosan">
     <div class="half__bed half__bed--bota" aria-hidden="true"></div>
     <div class="half__scrim" aria-hidden="true"></div>
-    <div class="half__content half__content--bota">
-      <img class="slogan__img slogan__img--bota" src="media/slogan-botaniqa-1080.webp?v=4" srcset="media/slogan-botaniqa-720.webp?v=4 720w, media/slogan-botaniqa-1080.webp?v=4 1080w, media/slogan-botaniqa.webp?v=4 1200w" sizes="(max-width:767px) 46vw, 410px" width="1200" height="485" decoding="async" alt="BOTANIQA">
-    </div>
     <figure class="half__poster half__poster--bota">
       <picture>
         <source type="image/webp" sizes="(max-width:767px) 88vw, 38vw" srcset="media/v2-botaniqa-760.webp 760w, media/v2-botaniqa-1200.webp 1200w, media/v2-botaniqa-1672.webp 1672w">
@@ -796,7 +733,7 @@ h1,h2,h3,.slogan__txt,.band__fig,.flav b,.flyer figcaption,.nav__brand,.foot__h{
       <span class="sticker" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span>
     </figure>
     <div class="half__content">
-      <img class="slogan__img slogan__img--ix" src="media/slogan-spirante-ix-1080.webp?v=4" srcset="media/slogan-spirante-ix-720.webp?v=4 720w, media/slogan-spirante-ix-1080.webp?v=4 1080w, media/slogan-spirante-ix.webp?v=4 1200w" sizes="(max-width:767px) 46vw, 410px" width="1200" height="731" decoding="async" alt="SPIRANTE IX">
+      <img class="slogan__img" src="media/slogan-notrends.webp" srcset="media/slogan-notrends-720.webp 720w, media/slogan-notrends-1080.webp 1080w, media/slogan-notrends.webp 1200w" sizes="(max-width:767px) 46vw, 410px" width="1200" height="770" decoding="async" alt="No trends. This is ICON.">
     </div>
   </a>
 
@@ -807,7 +744,8 @@ h1,h2,h3,.slogan__txt,.band__fig,.flav b,.flyer figcaption,.nav__brand,.foot__h{
   </svg>
 
   <div class="landing__center">
-    <img class="landing__slogan" src="media/slogan-notrends-uj-720.webp?v=4" srcset="media/slogan-notrends-uj-720.webp?v=4 720w, media/slogan-notrends-uj-1080.webp?v=4 1080w, media/slogan-notrends-uj.webp?v=4 1200w" sizes="(max-width:767px) 42vw, 360px" width="1200" height="800" decoding="async" alt="NO TRENDS. This is ICON">
+    <div class="landing__brand">ICON Spirante &amp; Botaniqa</div>
+    <div class="landing__tag">Be your own <b>ICON</b><br>Your life is your story</div>
   </div>
 </section>
 
@@ -815,43 +753,41 @@ h1,h2,h3,.slogan__txt,.band__fig,.flav b,.flyer figcaption,.nav__brand,.foot__h{
      NAVIGACIO
      ========================================================= -->
 <nav class="nav" aria-label="Fő navigáció">
-  <a class="nav__brand" href="#" data-back aria-label="Vissza a választáshoz"><span>Spirante</span> <b>IX</b></a>
+  <a class="nav__brand" href="#" data-back aria-label="Vissza a választáshoz">Spirante <b>IX</b></a>
   <ul class="nav__menu">
     <li><a class="nav__link" href="#philo" data-scroll>Icon Philosophy</a></li>
     <li class="nav__drop">
       <a class="nav__link" href="#termekek" data-scroll>Icon Spirante IX</a>
       <button class="nav__caret" type="button" aria-expanded="false" aria-controls="dd-termek" aria-label="Termékek"><svg viewBox="0 0 12 12"><path d="M2 4l4 4 4-4"/></svg></button>
-      <div class="nav__panel nav__panel--cans" id="dd-termek">
-        <a class="nav__can" href="#can-greenapple" data-scroll aria-label="Green Apple &amp; Grapefruit &amp; Lime, vodka, 9%, 250 ml">
-          <img src="media/can-cut-greenapple-560.webp" width="226" height="655" decoding="async" alt="">
-          <small>Green Apple</small>
+      <div class="nav__panel" id="dd-termek">
+        <a class="nav__prod" href="#can-greenapple" data-scroll>
+          <span><b>Green Apple &amp; Grapefruit &amp; Lime</b><small>Premium spritz with vodka · 9% · 250&nbsp;ml</small></span>
         </a>
-        <a class="nav__can" href="#can-hibiscus" data-scroll aria-label="Hibiscus, gin &amp; tonic, 9%, 250 ml">
-          <img src="media/can-cut-hibiscus-560.webp" width="231" height="654" decoding="async" alt="">
-          <small>Hibiscus</small>
+        <a class="nav__prod" href="#can-hibiscus" data-scroll>
+          <span><b>Hibiscus</b><small>Premium spritz with gin &amp; tonic · 9% · 250&nbsp;ml</small></span>
         </a>
       </div>
     </li>
+    <li><a class="nav__link" href="#izvilag" data-scroll>Ízvilág</a></li>
     <li><a class="nav__link" href="#megjelenesek" data-scroll>Megjelenéseink</a></li>
     <li><a class="nav__link" href="#hirek" data-scroll>Hírek</a></li>
     <li><a class="nav__link" href="#social" data-scroll>Kövess minket</a></li>
     <li><a class="nav__link" href="#kapcsolat" data-scroll>Kapcsolat</a></li>
   </ul>
-  <a class="nav__switch" href="#botaniqa" data-scroll>Botaniqa</a>
+  <a class="nav__switch" href="#botaniqa" data-scroll>Másik oldal</a>
   <button class="nav__burger" type="button" aria-expanded="false" aria-controls="mnav" aria-label="Menü megnyitása"><span></span><span></span></button>
 </nav>
 <div class="mnav" id="mnav" hidden>
   <a href="#philo" data-scroll>Icon Philosophy</a>
   <a href="#termekek" data-scroll>Icon Spirante IX</a>
-  <div class="mnav__cans">
-    <a class="mnav__can" href="#can-greenapple" data-scroll aria-label="Green Apple &amp; Grapefruit &amp; Lime, vodka, 9%, 250 ml"><img src="media/can-cut-greenapple-560.webp" width="226" height="655" loading="lazy" decoding="async" alt=""><small>Green Apple</small></a>
-    <a class="mnav__can" href="#can-hibiscus" data-scroll aria-label="Hibiscus, gin &amp; tonic, 9%, 250 ml"><img src="media/can-cut-hibiscus-560.webp" width="231" height="654" loading="lazy" decoding="async" alt=""><small>Hibiscus</small></a>
-  </div>
+  <a class="mnav__sub" href="#can-greenapple" data-scroll>Green Apple &amp; Grapefruit &amp; Lime</a>
+  <a class="mnav__sub" href="#can-hibiscus" data-scroll>Hibiscus</a>
+  <a href="#izvilag" data-scroll>Ízvilág</a>
   <a href="#megjelenesek" data-scroll>Megjelenéseink</a>
   <a href="#hirek" data-scroll>Hírek</a>
   <a href="#social" data-scroll>Kövess minket</a>
   <a href="#kapcsolat" data-scroll>Kapcsolat</a>
-  <a class="mnav__switch" href="#botaniqa" data-scroll>Botaniqa</a>
+  <a class="mnav__switch" href="#botaniqa" data-scroll>Másik oldal</a>
 </div>
 
 <!-- =========================================================
@@ -898,8 +834,7 @@ h1,h2,h3,.slogan__txt,.band__fig,.flav b,.flyer figcaption,.nav__brand,.foot__h{
       </div>
       <figure class="frame philo__poster" data-reveal>
         <picture>
-          <source type="image/avif" sizes="(max-width:900px) 84vw, 38vw" srcset="media/p-vodka-statue2-560.avif 560w, media/p-vodka-statue2-1024.avif 1024w">
-          <img src="media/p-vodka-statue2-1024.webp" srcset="media/p-vodka-statue2-560.webp 560w, media/p-vodka-statue2-1024.webp 1024w" sizes="(max-width:900px) 84vw, 38vw" width="1024" height="1536" loading="lazy" decoding="async" alt="Klasszikus szobor kapucnis pulóverben, arany SPIRANTE szemsávval, zöldalmás ICON Spirante IX dobozzal, No trends. This is ICON felirat">
+          <img src="media/v2-statue-1024.webp" srcset="media/v2-statue-560.webp 560w, media/v2-statue-1024.webp 1024w" sizes="(max-width:900px) 84vw, 38vw" width="1024" height="1536" loading="lazy" decoding="async" alt="Klasszikus szobor kapucnis pulóverben, arany SPIRANTE szemsávval, zöldalmás ICON Spirante IX dobozzal, No trends. This is ICON felirat">
         </picture>
       </figure>
       <ul class="principles">
@@ -934,7 +869,7 @@ h1,h2,h3,.slogan__txt,.band__fig,.flav b,.flyer figcaption,.nav__brand,.foot__h{
             <h3 class="card__h">Egy&nbsp;korty inspiráció</h3>
             <p class="card__prod">Hibiscus · gin &amp; tonic · 9% · 250&nbsp;ml</p>
           </div>
-          <figure class="card__img ci-34"><picture class="pc"><source type="image/avif" sizes="(max-width:900px) 92vw, 42vw" srcset="media/p-gin-icon2-540.avif 540w, media/p-gin-icon2-900.avif 900w, media/p-gin-icon2-1088.avif 1088w"><img src="media/p-gin-icon2-900.webp" srcset="media/p-gin-icon2-540.webp 540w, media/p-gin-icon2-900.webp 900w, media/p-gin-icon2-1088.webp 1088w" sizes="(max-width:900px) 92vw, 42vw" width="1088" height="1446" loading="lazy" decoding="async" alt="Hibiscus ICON Spirante IX doboz, nő nyalókával, arany SPIRANTE szemsáv, No trends. This is ICON felirat"></picture></figure>
+          <figure class="card__img"><img src="media/p-jewel-900.webp" srcset="media/p-jewel-540.webp 540w, media/p-jewel-900.webp 900w" sizes="(max-width:900px) 92vw, 42vw" width="900" height="1350" loading="lazy" decoding="async" alt="ICON Spirante IX Hibiscus doboz arany fényben, Every sip is magic felirat"></figure>
         </li>
         <li class="card">
           <div class="card__body">
@@ -950,7 +885,7 @@ h1,h2,h3,.slogan__txt,.band__fig,.flav b,.flyer figcaption,.nav__brand,.foot__h{
 
   <!-- 9% SAV (a 750-es band helye) -->
   <section class="band" aria-label="9%">
-    <div class="band__bg" aria-hidden="true"><picture class="pc"><source type="image/avif" sizes="100vw" srcset="media/band-splash-720.avif 720w, media/band-splash-1280.avif 1280w, media/band-splash-1672.avif 1672w"><img src="media/band-splash-1280.webp" srcset="media/band-splash-720.webp 720w, media/band-splash-1280.webp 1280w, media/band-splash-1672.webp 1672w" sizes="100vw" width="1672" height="941" loading="lazy" decoding="async" alt=""></picture></div>
+    <div class="band__bg" aria-hidden="true"><img src="media/brand-party-wide-1920.webp" srcset="media/brand-party-wide-720.webp 720w, media/brand-party-wide-1280.webp 1280w, media/brand-party-wide-1920.webp 1920w" sizes="100vw" width="1920" height="1072" loading="lazy" decoding="async" alt=""></div>
     <div class="band__in wrap">
       <p class="band__fig" data-reveal aria-hidden="true">9<span>%</span></p>
       <h2 class="band__h" data-reveal>A&nbsp;minőség nem luxus, hanem <span class="swipe">alapelv</span></h2>
@@ -961,36 +896,24 @@ h1,h2,h3,.slogan__txt,.band__fig,.flav b,.flyer figcaption,.nav__brand,.foot__h{
   <section class="strip strip--a" id="galeria" aria-label="Plakátok" data-speed="52">
     <div class="strip__row">
       <figure class="flyer t1">
-        <div class="flyer__img"><picture class="pc"><source type="image/avif" sizes="(max-width:767px) 60vw, 36vh" srcset="media/p-pool2-540.avif 540w, media/p-pool2-900.avif 900w"><img src="media/p-pool2-900.webp" srcset="media/p-pool2-540.webp 540w, media/p-pool2-900.webp 900w" sizes="(max-width:767px) 60vw, 36vh" width="1122" height="1402" loading="lazy" decoding="async" alt="Két fiatal medenceparti lépcsőn, zöldalmás ICON Spirante IX dobozzal, What's your story? felirat"></picture></div>
-        <figcaption>Good times. Great drinks</figcaption>
+        <div class="flyer__img"><img src="media/p-gin-900.webp" srcset="media/p-gin-540.webp 540w, media/p-gin-900.webp 900w" sizes="(max-width:767px) 60vw, 36vh" width="900" height="1350" loading="lazy" decoding="async" alt="Nő szívószállal, ICON Spirante IX doboz, No trends. This is ICON felirat"></div>
+        <figcaption>Be your own ICON</figcaption>
       </figure>
       <figure class="flyer t2">
         <div class="flyer__img"><img src="media/p-nun-900.webp" srcset="media/p-nun-540.webp 540w, media/p-nun-900.webp 900w" sizes="(max-width:767px) 60vw, 36vh" width="900" height="1200" loading="lazy" decoding="async" alt="Tetovált nő veterán autónak dőlve, két ICON Spirante IX doboz"></div>
         <figcaption>Live iconic</figcaption>
       </figure>
       <figure class="flyer t1">
-        <div class="flyer__img"><picture class="pc"><source type="image/avif" sizes="(max-width:767px) 60vw, 36vh" srcset="media/p-apple-540.avif 540w, media/p-apple-900.avif 900w"><img src="media/p-apple-900.webp" srcset="media/p-apple-540.webp 540w, media/p-apple-900.webp 900w" sizes="(max-width:767px) 60vw, 36vh" width="1159" height="1357" loading="lazy" decoding="async" alt="Zöldalmás ICON Spirante IX doboz zöld almával, grapefruittal, limemal és jéggel, arany ICON felirat"></picture></div>
-        <figcaption>Pure taste. Iconic moments</figcaption>
+        <div class="flyer__img"><img src="media/keyart-venus-statue-720.webp" srcset="media/keyart-venus-statue-720.webp 720w, media/keyart-venus-statue.webp 1400w" sizes="(max-width:767px) 60vw, 36vh" width="1400" height="2100" loading="lazy" decoding="async" alt="Klasszikus Vénusz-szobor ICON Spirante IX dobozzal"></div>
+        <figcaption>No trends. This is ICON</figcaption>
       </figure>
       <figure class="flyer t2">
-        <div class="flyer__img"><img src="media/p-jewel-900.webp" srcset="media/p-jewel-540.webp 540w, media/p-jewel-900.webp 900w" sizes="(max-width:767px) 60vw, 36vh" width="900" height="1350" loading="lazy" decoding="async" alt="ICON Spirante IX Hibiscus doboz arany fényben, Every sip is magic felirat"></div>
-        <figcaption>Every sip is magic</figcaption>
+        <div class="flyer__img"><img src="media/brand-pool-720.webp" srcset="media/brand-pool-720.webp 720w, media/brand-pool.webp 1086w" sizes="(max-width:767px) 60vw, 36vh" width="1086" height="1448" loading="lazy" decoding="async" alt="Medenceparti, két fiatal ICON Spirante IX dobozzal"></div>
+        <figcaption>Good times. Great drinks</figcaption>
       </figure>
       <figure class="flyer t1">
-        <div class="flyer__img"><picture class="pc"><source type="image/avif" sizes="(max-width:767px) 60vw, 36vh" srcset="media/p-citrus-540.avif 540w, media/p-citrus-900.avif 900w"><img src="media/p-citrus-900.webp" srcset="media/p-citrus-540.webp 540w, media/p-citrus-900.webp 900w" sizes="(max-width:767px) 60vw, 36vh" width="1122" height="1402" loading="lazy" decoding="async" alt="Zöldalmás ICON Spirante IX doboz grapefruit- és limeszelettel, vízcseppekkel"></picture></div>
-        <figcaption>Lightly sparkling</figcaption>
-      </figure>
-      <figure class="flyer t2">
         <div class="flyer__img"><img src="media/keyart-gold-emblem-720.webp" srcset="media/keyart-gold-emblem-720.webp 720w, media/keyart-gold-emblem.webp 1400w" sizes="(max-width:767px) 60vw, 36vh" width="1400" height="2100" loading="lazy" decoding="async" alt="Arany ICON Spirante IX embléma, lightly sparkling"></div>
         <figcaption>Made for icons</figcaption>
-      </figure>
-      <figure class="flyer t1">
-        <div class="flyer__img"><picture class="pc"><source type="image/avif" sizes="(max-width:767px) 60vw, 36vh" srcset="media/p-ambassador-760.avif 760w, media/p-ambassador-1200.avif 1200w, media/p-ambassador-1672.avif 1672w"><img src="media/p-ambassador-1200.webp" srcset="media/p-ambassador-760.webp 760w, media/p-ambassador-1200.webp 1200w, media/p-ambassador-1672.webp 1672w" sizes="(max-width:767px) 60vw, 36vh" width="1672" height="941" loading="lazy" decoding="async" alt="Tetovált, ősz szakállas férfi két ICON Spirante IX dobozzal, Hibiscus és Green Apple"></picture></div>
-        <figcaption>What's your story?</figcaption>
-      </figure>
-      <figure class="flyer t2">
-        <div class="flyer__img"><img src="media/p-gin-900.webp" srcset="media/p-gin-540.webp 540w, media/p-gin-900.webp 900w" sizes="(max-width:767px) 60vw, 36vh" width="900" height="1350" loading="lazy" decoding="async" alt="Nő szívószállal, ICON Spirante IX doboz, No trends. This is ICON felirat"></div>
-        <figcaption>Be your own ICON</figcaption>
       </figure>
     </div>
     <button class="strip__toggle" type="button" aria-pressed="false" aria-label="Plakátsáv megállítása">
@@ -1002,7 +925,7 @@ h1,h2,h3,.slogan__txt,.band__fig,.flav b,.flyer figcaption,.nav__brand,.foot__h{
   <!-- IZVILAG (a 750-es szerkezet szerint) -->
   <section class="sec" id="izvilag" aria-labelledby="flavor-h">
     <div class="wrap duo">
-      <figure class="frame duo__img di-17" data-reveal><picture class="pc"><source type="image/avif" sizes="(max-width:900px) 84vw, 36vw" srcset="media/p-duo-cans-540.avif 540w, media/p-duo-cans-900.avif 900w"><img src="media/p-duo-cans-900.webp" srcset="media/p-duo-cans-540.webp 540w, media/p-duo-cans-900.webp 900w" sizes="(max-width:900px) 84vw, 36vw" width="1163" height="1353" loading="lazy" decoding="async" alt="Hibiscus és Green Apple ICON Spirante IX doboz egymás mellett, arany ICON Spirante felirat"></picture></figure>
+      <figure class="frame duo__img" data-reveal><img src="media/v3-icon5-900.webp" srcset="media/v3-icon5-540.webp 540w, media/v3-icon5-900.webp 900w" sizes="(max-width:900px) 84vw, 36vw" width="900" height="1200" loading="lazy" decoding="async" alt="Nő szívószállal, Hibiscus ICON Spirante IX doboz, No trends. This is ICON felirat"></figure>
       <div class="duo__text">
         <p class="tag">Ízvilág</p>
         <h2 class="duo__h" id="flavor-h" data-reveal>Egy&nbsp;ízvilág, amely nem csak finom, hanem <span class="swipe">karakteres</span></h2>
@@ -1024,8 +947,8 @@ h1,h2,h3,.slogan__txt,.band__fig,.flav b,.flyer figcaption,.nav__brand,.foot__h{
       </div>
       <div class="eds__list">
         <article class="ed">
-          <figure class="frame fr-45" data-reveal>
-            <picture class="pc"><source type="image/avif" sizes="(max-width:900px) 84vw, 38vw" srcset="media/p-bar-540.avif 540w, media/p-bar-900.avif 900w"><img src="media/p-bar-900.webp" srcset="media/p-bar-540.webp 540w, media/p-bar-900.webp 900w" sizes="(max-width:900px) 84vw, 38vw" width="1122" height="1402" loading="lazy" decoding="async" alt="Fiatal társaság bárpultnál, zöldalmás ICON Spirante IX doboz, No trends. This is ICON felirat"></picture>
+          <figure class="frame" data-reveal>
+            <img src="media/keyart-skatepark-720.webp" srcset="media/keyart-skatepark-720.webp 720w, media/keyart-skatepark-1080.webp 1080w" sizes="(max-width:900px) 84vw, 38vw" width="1400" height="1866" loading="lazy" decoding="async" alt="Tetovált férfi a skateparkban, ICON Spirante IX dobozok, What's your story? felirat">
           </figure>
           <h3 class="ed__h" data-reveal><span class="ed__ln">Akik nem követni</span><span class="ed__ln">akarják a&nbsp;világot,</span><span class="ed__ln">hanem <span class="swipe">formálni azt</span></span></h3>
         </article>
@@ -1036,8 +959,8 @@ h1,h2,h3,.slogan__txt,.band__fig,.flav b,.flyer figcaption,.nav__brand,.foot__h{
           <h3 class="ed__h" data-reveal><span class="ed__ln">Nem azért születtünk,</span><span class="ed__ln">hogy beleolvadjunk</span><span class="ed__ln"><span class="swipe">a&nbsp;tömegbe</span></span></h3>
         </article>
         <article class="ed">
-          <figure class="frame fr-45" data-reveal>
-            <picture class="pc"><source type="image/avif" sizes="(max-width:900px) 84vw, 38vw" srcset="media/p-club-540.avif 540w, media/p-club-900.avif 900w"><img src="media/p-club-900.webp" srcset="media/p-club-540.webp 540w, media/p-club-900.webp 900w" sizes="(max-width:900px) 84vw, 38vw" width="1122" height="1402" loading="lazy" decoding="async" alt="Nő lila felsőben koncerten, felemelt ICON Spirante IX dobozzal, Be your own ICON felirat"></picture>
+          <figure class="frame" data-reveal>
+            <img src="media/brand-festival.webp" srcset="media/brand-festival-720.webp 720w, media/brand-festival.webp 1086w" sizes="(max-width:900px) 84vw, 38vw" width="1086" height="1448" loading="lazy" decoding="async" alt="Fesztiválozó pár óriáskerékkel a háttérben, ICON Spirante IX dobozokkal">
           </figure>
           <h3 class="ed__h" data-reveal><span class="ed__ln">Az&nbsp;ICON a&nbsp;minőség</span><span class="ed__ln">és az&nbsp;önazonosság</span><span class="ed__ln"><span class="swipe">találkozása</span></span></h3>
         </article>
@@ -1049,17 +972,17 @@ h1,h2,h3,.slogan__txt,.band__fig,.flav b,.flyer figcaption,.nav__brand,.foot__h{
   <section class="sec apps" id="megjelenesek" aria-labelledby="apps-h">
     <div class="wrap apps__head">
       <h2 class="apps__h" id="apps-h" data-reveal>Megjelenéseink</h2>
-      <p class="tag">Expo · Városban</p>
+      <p class="tag">Fesztivál · Expo</p>
     </div>
     <div class="strip strip--b" data-speed="46">
       <div class="strip__row">
       <figure class="flyer t1">
-        <div class="flyer__img"><picture class="pc"><source type="image/avif" sizes="(max-width:767px) 60vw, 36vh" srcset="media/e-stand-760.avif 760w, media/e-stand-1200.avif 1200w, media/e-stand-1536.avif 1536w"><img src="media/e-stand-1200.webp" srcset="media/e-stand-760.webp 760w, media/e-stand-1200.webp 1200w, media/e-stand-1536.webp 1536w" sizes="(max-width:767px) 60vw, 36vh" width="1536" height="1024" loading="lazy" decoding="async" alt="ICON Spirante IX kiállítási stand bárpulttal, What's your story? és No trends. This is ICON falakkal"></picture></div>
-        <figcaption>Expo</figcaption>
+        <div class="flyer__img"><img src="media/e-sator-760.webp" srcset="media/e-sator-760.webp 760w, media/e-sator-1200.webp 1200w" sizes="(max-width:767px) 60vw, 36vh" width="1200" height="800" loading="lazy" decoding="async" alt="ICON Spirante IX fesztiválsátor óriáskerékkel a háttérben, két vendég dobozzal"></div>
+          <figcaption>Fesztivál</figcaption>
       </figure>
       <figure class="flyer t2">
-        <div class="flyer__img"><picture class="pc"><source type="image/avif" sizes="(max-width:767px) 60vw, 36vh" srcset="media/e-busstop-760.avif 760w, media/e-busstop-1200.avif 1200w, media/e-busstop-1536.avif 1536w"><img src="media/e-busstop-1200.webp" srcset="media/e-busstop-760.webp 760w, media/e-busstop-1200.webp 1200w, media/e-busstop-1536.webp 1536w" sizes="(max-width:767px) 60vw, 36vh" width="1536" height="1024" loading="lazy" decoding="async" alt="ICON Spirante IX plakát esti buszmegállóban, zöldalmás doboz"></picture></div>
-        <figcaption>Városban</figcaption>
+        <div class="flyer__img"><img src="media/e-expo-760.webp" srcset="media/e-expo-760.webp 760w, media/e-expo-1200.webp 1200w" sizes="(max-width:767px) 60vw, 36vh" width="1200" height="800" loading="lazy" decoding="async" alt="ICON Spirante IX kiállítási stand, What's your story? és No trends. This is ICON falakkal"></div>
+          <figcaption>Expo</figcaption>
       </figure>
       </div>
       <button class="strip__toggle" type="button" aria-pressed="false" aria-label="Plakátsáv megállítása">
@@ -1094,7 +1017,8 @@ h1,h2,h3,.slogan__txt,.band__fig,.flav b,.flyer figcaption,.nav__brand,.foot__h{
   <section class="sec lip" id="social" aria-labelledby="social-h">
     <div class="wrap social__grid">
       <div class="social__text">
-        <h2 class="social__h" id="social-h" data-reveal>Kövess <span class="swipe">minket</span></h2>
+        <p class="tag">Kövess minket a&nbsp;közösségi médiában is</p>
+        <h2 class="social__h" id="social-h" data-reveal>Követsz <span class="swipe">minket?</span></h2>
         <ul class="soc-list">
           <li>
             <a class="soc" href="https://www.instagram.com/iconspirante/" target="_blank" rel="noopener" aria-label="Instagram: @iconspirante (új lapon nyílik)">
@@ -1127,7 +1051,7 @@ h1,h2,h3,.slogan__txt,.band__fig,.flav b,.flyer figcaption,.nav__brand,.foot__h{
 
   <!-- ZARO -->
   <section class="closer" aria-labelledby="closer-h">
-    <figure class="closer__logo"><picture class="pc"><source type="image/avif" sizes="(max-width:767px) 80vw, 520px" srcset="media/logo-silver-760.avif 760w, media/logo-silver-1200.avif 1200w"><img src="media/logo-silver-1200.webp" srcset="media/logo-silver-760.webp 760w, media/logo-silver-1200.webp 1200w" sizes="(max-width:767px) 80vw, 520px" width="1774" height="887" loading="lazy" decoding="async" alt="ICON Spirante &amp; Botaniqa Spritz logó"></picture></figure>
+    <div class="closer__mark" aria-hidden="true">ICON</div>
     <h2 id="closer-h" data-reveal>Mert a&nbsp;legnagyobb ikonok nem a&nbsp;reflektorfényben születnek</h2>
     <button class="btn" data-back type="button">Vissza a&nbsp;választáshoz</button>
   </section>
@@ -1141,16 +1065,6 @@ h1,h2,h3,.slogan__txt,.band__fig,.flav b,.flyer figcaption,.nav__brand,.foot__h{
         <img src="media/v2-botaniqa-1200.jpg" width="1672" height="941" loading="lazy" decoding="async" alt="ICON Botaniqa Spritz, coming soon: Lime &amp; Cactus, Pineapple &amp; Coconut, Citrus-Lime és Cherry dobozok, klasszikus szobor, trópusi gyümölcsök">
       </picture>
     </figure>
-    <div class="bota__range">
-      <figure class="frame bota__duo"><picture class="pc"><source type="image/avif" sizes="(max-width:767px) 46vw, 30vw" srcset="media/b-duo-cactus-400.avif 400w, media/b-duo-cactus-760.avif 760w"><img src="media/b-duo-cactus-760.webp" srcset="media/b-duo-cactus-400.webp 400w, media/b-duo-cactus-760.webp 760w" sizes="(max-width:767px) 46vw, 30vw" width="1066" height="1599" loading="lazy" decoding="async" alt="Két ICON Botaniqa Spritz Lime &amp; Cactus doboz kaktusszal és limemal"></picture></figure>
-      <div class="bota__grid">
-        <figure class="frame"><picture class="pc"><source type="image/avif" sizes="(max-width:767px) 46vw, 15vw" srcset="media/b-cactus-400.avif 400w, media/b-cactus-760.avif 760w"><img src="media/b-cactus-760.webp" srcset="media/b-cactus-400.webp 400w, media/b-cactus-760.webp 760w" sizes="(max-width:767px) 46vw, 15vw" width="1024" height="1536" loading="lazy" decoding="async" alt="ICON Botaniqa Spritz Lime &amp; Cactus, 4,5%"></picture></figure>
-        <figure class="frame"><picture class="pc"><source type="image/avif" sizes="(max-width:767px) 46vw, 15vw" srcset="media/b-pineapple-400.avif 400w, media/b-pineapple-760.avif 760w"><img src="media/b-pineapple-760.webp" srcset="media/b-pineapple-400.webp 400w, media/b-pineapple-760.webp 760w" sizes="(max-width:767px) 46vw, 15vw" width="1024" height="1536" loading="lazy" decoding="async" alt="ICON Botaniqa Spritz Pineapple &amp; Coconut, 4,5%"></picture></figure>
-        <figure class="frame"><picture class="pc"><source type="image/avif" sizes="(max-width:767px) 46vw, 15vw" srcset="media/b-citrus-400.avif 400w, media/b-citrus-760.avif 760w"><img src="media/b-citrus-760.webp" srcset="media/b-citrus-400.webp 400w, media/b-citrus-760.webp 760w" sizes="(max-width:767px) 46vw, 15vw" width="1024" height="1536" loading="lazy" decoding="async" alt="ICON Botaniqa Spritz Citrus-Lime, 0,00%"></picture></figure>
-        <figure class="frame"><picture class="pc"><source type="image/avif" sizes="(max-width:767px) 46vw, 15vw" srcset="media/b-cherry-400.avif 400w, media/b-cherry-760.avif 760w"><img src="media/b-cherry-760.webp" srcset="media/b-cherry-400.webp 400w, media/b-cherry-760.webp 760w" sizes="(max-width:767px) 46vw, 15vw" width="1024" height="1536" loading="lazy" decoding="async" alt="ICON Botaniqa Spritz Cherry, 0,00%"></picture></figure>
-      </div>
-      <figure class="frame bota__duo"><picture class="pc"><source type="image/avif" sizes="(max-width:767px) 46vw, 30vw" srcset="media/b-duo-pineapple-400.avif 400w, media/b-duo-pineapple-760.avif 760w"><img src="media/b-duo-pineapple-760.webp" srcset="media/b-duo-pineapple-400.webp 400w, media/b-duo-pineapple-760.webp 760w" sizes="(max-width:767px) 46vw, 30vw" width="1066" height="1599" loading="lazy" decoding="async" alt="Két ICON Botaniqa Spritz Pineapple &amp; Coconut doboz ananásszal és kókusszal"></picture></figure>
-    </div>
   </section>
 
   <!-- KAPCSOLAT + TERKEP -->
@@ -1163,20 +1077,27 @@ h1,h2,h3,.slogan__txt,.band__fig,.flav b,.flyer figcaption,.nav__brand,.foot__h{
           <div>
             <dt>E-mail</dt>
             <dd><a href="mailto:info@iconspirante.eu">info@iconspirante.eu</a></dd>
+            <dd><a href="mailto:info@iconspirits.eu">info@iconspirits.eu</a></dd>
           </div>
           <div>
             <dt>Telefon</dt>
             <dd><a href="tel:+36203501212">+36&nbsp;20&nbsp;350&nbsp;1212</a></dd>
+            <dd><a href="tel:+36203930220">+36&nbsp;20&nbsp;393&nbsp;0220</a></dd>
           </div>
           <div>
             <dt>Cím</dt>
-            <dd><span>Adóraktár</span></dd>
+            <!-- Forras: Gyor MJV uzletnyilvantartas (2026.07.08): ICON SPIRANTE Kft., "Icon Spirits Ital Nagyker", 9023 Gyor, Tihanyi Arpad ut 23. Balazzsal megerositendo. -->
+            <dd><span>9023 Győr, Tihanyi Árpád út 23.</span></dd>
+            <dd><a class="route" href="https://www.google.com/maps/dir/?api=1&amp;destination=Gy%C5%91r%2C%20Tihanyi%20%C3%81rp%C3%A1d%20%C3%BAt%2023" target="_blank" rel="noopener">Útvonaltervezés <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a></dd>
           </div>
         </dl>
       </div>
-      <figure class="foot__mark"><picture class="pc"><source type="image/avif" sizes="(max-width:900px) 84vw, 44vw" srcset="media/logo-gold-450.avif 450w, media/logo-gold-900.avif 900w"><img src="media/logo-gold-900.webp" srcset="media/logo-gold-450.webp 450w, media/logo-gold-900.webp 900w" sizes="(max-width:900px) 84vw, 44vw" width="1774" height="887" loading="lazy" decoding="async" alt="ICON Spirante &amp; Botaniqa Spritz logó"></picture></figure>
+      <div class="foot__map">
+        <div class="map" id="map" role="region" aria-label="Térkép: 9023 Győr, Tihanyi Árpád út 23."></div>
+      </div>
     </div>
     <div class="foot__base">
+      <img class="foot__logo" src="media/v2-logo-900.webp" width="900" height="450" loading="lazy" decoding="async" alt="ICON Spirante &amp; Botaniqa Spritz">
       <span class="foot__tag">Be your own ICON. Your life is your story.</span>
       <span class="foot__18" aria-label="Csak 18 éven felülieknek">18+</span>
       <span>A&nbsp;túlzott alkoholfogyasztás károsítja az&nbsp;egészséget. Csak 18 éven felülieknek.</span>
@@ -1380,8 +1301,6 @@ h1,h2,h3,.slogan__txt,.band__fig,.flav b,.flyer figcaption,.nav__brand,.foot__h{
       var id=a.getAttribute('href'); if(!id || id.charAt(0)!=='#') return;
       var t=$(id); if(!t) return;
       e.preventDefault(); closeMenu(); setDrop(false);
-      /* a lenyilo :focus-within miatt nyitva maradna a fokuszalt linkkel: a fokusz lekerul */
-      if(drop && drop.contains(a)) a.blur();
       jumpTo(t,false);
     });
   });
@@ -1422,7 +1341,7 @@ h1,h2,h3,.slogan__txt,.band__fig,.flav b,.flyer figcaption,.nav__brand,.foot__h{
   /* ---- LENYILO: Icon Spirante IX termekek ---- */
   var drop=$('.nav__drop'), caret=$('.nav__caret'), dropOpen=false;
   function setDrop(v){ dropOpen=!!v; if(drop) drop.classList.toggle('is-open',dropOpen); if(caret) caret.setAttribute('aria-expanded',dropOpen?'true':'false'); }
-  if(caret) caret.addEventListener('click',function(e){ e.stopPropagation(); setDrop(!dropOpen); if(!dropOpen) caret.blur(); });
+  if(caret) caret.addEventListener('click',function(e){ e.stopPropagation(); setDrop(!dropOpen); });
   doc.addEventListener('click',function(e){ if(dropOpen && drop && !drop.contains(e.target)) setDrop(false); });
 
   /* ---- MOBIL MENU ---- */
@@ -1498,6 +1417,62 @@ h1,h2,h3,.slogan__txt,.band__fig,.flav b,.flyer figcaption,.nav__brand,.foot__h{
     });
   }
 
+  /* ---- TERKEP: MapLibre (lokalis) + OpenFreeMap vektorcsempe (kulcs nelkul), arany-pink szinezes ---- */
+  function initMap(){
+    var el=$('#map'); if(!el) return;
+    var LAT=47.68018, LNG=17.64497; /* 9023 Gyor, Tihanyi Arpad ut 23. (Icon Spirits Ital Nagyker) */
+    function fallback(){
+      if(el.__map) return;
+      el.classList.add('map--fallback');
+      el.innerHTML='<a class="map__link" href="https://www.openstreetmap.org/?mlat='+LAT+'&amp;mlon='+LNG+'#map=16/'+LAT+'/'+LNG+'" target="_blank" rel="noopener">Térkép megnyitása</a>';
+    }
+    function tint(style){
+      var PAL={
+        'background':'#0E0816','water':'#231234','waterway':'#231234','building':'#170C21',
+        'landuse_residential':'#120A1B','landcover_wood':'#15101C','landuse_park':'#15101C',
+        'highway_minor':'#3A2A12','highway_path':'#2A1F10','highway_major_casing':'rgba(0,0,0,0)',
+        'highway_major_inner':'#9A7426','highway_major_subtle':'#9A7426',
+        'highway_motorway_casing':'rgba(0,0,0,0)','highway_motorway_inner':'#E7B53F','highway_motorway_subtle':'#E7B53F',
+        'railway':'#3A2440','railway_minor':'#3A2440','railway_transit':'#3A2440'
+      };
+      (style.layers||[]).forEach(function(l){
+        var c=PAL[l.id]; l.paint=l.paint||{};
+        if(c){
+          if(l.type==='background') l.paint['background-color']=c;
+          else if(l.type==='fill') l.paint['fill-color']=c;
+          else if(l.type==='line') l.paint['line-color']=c;
+        }
+        if(l.type==='symbol' && l.paint['text-color']){ l.paint['text-color']='rgba(231,181,63,.72)'; l.paint['text-halo-color']='rgba(14,8,22,.95)'; }
+      });
+      return style;
+    }
+    function build(){
+      fetch('https://tiles.openfreemap.org/styles/dark').then(function(r){ if(!r.ok) throw 0; return r.json(); }).then(function(style){
+        var map=new maplibregl.Map({container:el,style:tint(style),center:[LNG,LAT],zoom:15.3,attributionControl:{compact:true},cooperativeGestures:!!touch});
+        map.on('styleimagemissing',function(e){ if(!map.hasImage(e.id)) map.addImage(e.id,{width:1,height:1,data:new Uint8Array(4)}); });
+        map.scrollZoom.disable();
+        map.addControl(new maplibregl.NavigationControl({showCompass:false}),'top-right');
+        var pin=doc.createElement('span'); pin.className='pin'; pin.innerHTML='<span class="pin__lbl">ICON Spirits</span>';
+        new maplibregl.Marker({element:pin}).setLngLat([LNG,LAT]).addTo(map);
+        el.__map=map;
+      }).catch(fallback);
+    }
+    function start(){
+      if(el.__started) return; el.__started=true;
+      if(typeof fetch==='undefined'){ fallback(); return; }
+      var css=doc.createElement('link'); css.rel='stylesheet'; css.href='js/vendor/maplibre-gl.css'; doc.head.appendChild(css);
+      var sc=doc.createElement('script'); sc.src='js/vendor/maplibre-gl.js'; sc.async=true;
+      sc.onload=function(){ try{ build(); }catch(err){ fallback(); } };
+      sc.onerror=fallback;
+      doc.head.appendChild(sc);
+      setTimeout(function(){ if(!el.__map) fallback(); },12000);
+    }
+    if('IntersectionObserver' in window){
+      var mio=new IntersectionObserver(function(es){ if(es[0].isIntersecting){ mio.disconnect(); start(); } },{rootMargin:'700px 0px'});
+      mio.observe(el);
+    } else start();
+  }
+
   /* ---- HATTER: a gorgetes sorolja a hangulatot (alkony -> ejszaka) es a reflektor-szineket ---- */
   function initStage(){
     var amb=$('.amb'); if(!amb) return;
@@ -1528,6 +1503,7 @@ h1,h2,h3,.slogan__txt,.band__fig,.flav b,.flyer figcaption,.nav__brand,.foot__h{
     setupLoop($('.ticker'),70);
     $$('.strip').forEach(function(s){ setupLoop(s,parseFloat(s.getAttribute('data-speed'))||50); });
     initMotion();
+    initMap();
     initStage();
   }
 
