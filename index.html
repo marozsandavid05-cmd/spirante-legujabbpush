@@ -757,7 +757,7 @@ h1,h2,h3,.slogan__txt,.band__fig,.flav b,.flyer figcaption,.nav__brand,.foot__h{
     <div class="lo-brand">Icon Spirante</div>
     <div class="lo-ix">IX</div>
     <div class="loader__bar"><i></i></div>
-    <form class="agegate" id="ageGate" novalidate hidden>
+    <form class="agegate" id="ageGate" novalidate autocomplete="off" hidden>
       <p class="agegate__lead">Add meg a&nbsp;születési dátumodat a&nbsp;belépéshez.</p>
       <div class="agegate__fields">
         <label class="agegate__f">
@@ -1259,10 +1259,12 @@ h1,h2,h3,.slogan__txt,.band__fig,.flav b,.flyer figcaption,.nav__brand,.foot__h{
 
   /* ---- LOADER + KORKAPU ---- */
   var loaded=false, loaderEl=$('.loader'), bar=$('.loader__bar i');
-  var STORAGE_KEY='spirante_age_ok', STORAGE_VAL='1';
+  /* A korkapu minden látogatásnál kötelező: semmit nem mentünk, a régi mentést töröljük */
+  try{ localStorage.removeItem('spirante_age_ok'); sessionStorage.removeItem('spirante_age_ok'); }catch(e){}
   var ageOk=false;
-  try{ ageOk=localStorage.getItem(STORAGE_KEY)===STORAGE_VAL; }catch(e){ ageOk=false; }
-  var gatePassed=ageOk;
+  var gatePassed=false;
+  /* vissza/előre gombbal visszatérve a böngésző a memóriából hozná vissza a már beengedett oldalt */
+  addEventListener('pageshow',function(ev){ if(ev.persisted) location.reload(); });
   function landingIn(){ var l=$('.landing'); if(l) l.classList.add('is-in'); }
   function dismissLoader(){
     if(loaded) return; loaded=true;
@@ -1280,6 +1282,8 @@ h1,h2,h3,.slogan__txt,.band__fig,.flav b,.flyer figcaption,.nav__brand,.foot__h{
   };
   function showGate(){
     if(!gateEl) return;
+    [elY,elM,elD].forEach(function(el){ if(el) el.value=''; });
+    if(elErr) elErr.textContent='';
     gateEl.removeAttribute('hidden');
     if(loaderEl) loaderEl.classList.add('age-gate-on');
     body.classList.add('age-locked');
@@ -1287,7 +1291,6 @@ h1,h2,h3,.slogan__txt,.band__fig,.flav b,.flyer figcaption,.nav__brand,.foot__h{
     setTimeout(function(){ if(elY) elY.focus(); },60);
   }
   function passGate(){
-    try{ localStorage.setItem(STORAGE_KEY,STORAGE_VAL); }catch(e){}
     gatePassed=true;
     body.classList.remove('age-locked');
     dismissLoader();
