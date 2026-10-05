@@ -765,6 +765,17 @@ h1,h2,h3,.slogan__txt,.band__fig,.flav b,.flyer figcaption,.nav__brand,.foot__h{
 .closer__slogan img{display:block;width:100%;height:auto;filter:drop-shadow(0 10px 28px rgba(0,0,0,.6))}
 @media(max-width:900px){.philo__txt{grid-column:1/-1}}
 @media(prefers-reduced-motion:reduce){.philo__poster--b{transform:none}}
+
+/* EKEZET-VEDELEM (2026-10-05, David: „az ö betű hibás”): az arany szoveg-maszk csak a dobozon belul fest, a line-height:1
+   koruli cimeknel az ekezet a doboz fole log es levagodik. Belso hely felul, ugyanannyi negativ margoval: a betu nem mozdul */
+.philo__sub{padding-top:.22em;margin-block-start:calc(clamp(-1.5rem,-3vh,-.5rem) - .22em)}
+.flav b{padding-top:.22em;margin-top:-.22em}
+.ed h3,.ed--r h3{padding-top:.22em;margin-top:-.22em}
+@media(max-width:900px){.ed h3,.ed--r h3{margin-top:calc(2rem - .22em)}}
+#apps-h,#news-h,#closer-h{padding-top:.22em;margin-top:-.22em}
+.social__h{padding-top:.22em;margin-top:calc(1.1rem - .22em)}
+.closer__line{padding-top:.22em;margin-top:calc(clamp(1.2rem,3vh,2rem) - .22em)}
+.duo__h{padding-top:.22em;margin-top:calc(1rem - .22em)}
 </style>
 </head>
 <body>
