@@ -787,6 +787,11 @@ h1,h2,h3,.slogan__txt,.band__fig,.flav b,.flyer figcaption,.nav__brand,.foot__h{
 .ed__txt p+p{margin-top:1.05rem}
 .ed__txt .ed__mid{font-family:var(--f-disp);font-weight:700;text-transform:uppercase;letter-spacing:.02em;font-size:clamp(1.05rem,1.35vw,1.3rem);line-height:1.45;color:#DCBB68}
 @media(max-width:900px){.ed__txt{grid-column:1/-1;margin-top:2rem;max-width:none}}
+
+/* ZARO (2026-10-05, David): a szoveg le, az arany ICON Spirante & Botaniqa logo a helyen, rendes meretben (fekete hattere screen-nel eltunik) */
+.closer__brand{position:relative;margin:0 auto;width:min(640px,84vw)}
+.closer__brand img{display:block;width:100%;height:auto}
+.closer__brand + .closer__slogan{margin-top:clamp(.6rem,2vh,1.4rem)}
 </style>
 </head>
 <body>
@@ -1235,12 +1240,8 @@ h1,h2,h3,.slogan__txt,.band__fig,.flav b,.flyer figcaption,.nav__brand,.foot__h{
   </section>
 
   <!-- ZARO -->
-  <section class="closer" aria-labelledby="closer-h">
-    <div class="closer__top">
-    <figure class="closer__logo"><picture class="pc"><source type="image/avif" sizes="(max-width:767px) 80vw, 520px" srcset="media/logo-silver-760.avif 760w, media/logo-silver-1200.avif 1200w"><img src="media/logo-silver-1200.webp" srcset="media/logo-silver-760.webp 760w, media/logo-silver-1200.webp 1200w" sizes="(max-width:767px) 80vw, 520px" width="1774" height="887" loading="lazy" decoding="async" alt="ICON Spirante &amp; Botaniqa Spritz logó"></picture></figure>
-    <h2 id="closer-h" data-reveal>Az&nbsp;az én utam, amit jó érzéssel járok, még ha másnak nem is&nbsp;tetszik!</h2>
-    <p class="closer__line" data-reveal>Ez az&nbsp;én utam</p>
-    </div>
+  <section class="closer" aria-label="ICON Spirante &amp; Botaniqa Spritz">
+    <figure class="closer__brand" data-reveal><picture class="pc"><source type="image/avif" sizes="(max-width:767px) 84vw, 640px" srcset="media/logo-gold-alfa-450.avif 450w, media/logo-gold-alfa-900.avif 900w"><img src="media/logo-gold-alfa-900.webp" srcset="media/logo-gold-alfa-450.webp 450w, media/logo-gold-alfa-900.webp 900w" sizes="(max-width:767px) 84vw, 640px" width="900" height="450" loading="lazy" decoding="async" alt="ICON Spirante &amp; Botaniqa Spritz"></picture></figure>
     <figure class="closer__slogan" data-reveal><img src="media/slogan-beyourownicon-1080.webp?v=5" srcset="media/slogan-beyourownicon-720.webp?v=5 720w, media/slogan-beyourownicon-1080.webp?v=5 1080w, media/slogan-beyourownicon.webp?v=5 1200w" sizes="(max-width:767px) 82vw, 560px" width="1200" height="561" loading="lazy" decoding="async" alt="Be your own ICON"></figure>
     <button class="btn" data-back type="button">Vissza a&nbsp;választáshoz</button>
   </section>
