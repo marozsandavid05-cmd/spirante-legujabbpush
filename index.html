@@ -1315,7 +1315,7 @@ h1,h2,h3,.slogan__txt,.band__fig,.flav b,.flyer figcaption,.nav__brand,.foot__h{
         map.on('styleimagemissing',function(e){ if(!map.hasImage(e.id)) map.addImage(e.id,{width:1,height:1,data:new Uint8Array(4)}); });
         map.scrollZoom.disable();
         map.addControl(new maplibregl.NavigationControl({showCompass:false}),'top-right');
-        var pin=doc.createElement('span'); pin.className='pin'; pin.innerHTML='<span class="pin__lbl">ICON Spirits</span>';
+        var pin=doc.createElement('span'); pin.className='pin'; pin.innerHTML='<span class="pin__lbl">ICON Spirante</span>';
         new maplibregl.Marker({element:pin}).setLngLat([LNG,LAT]).addTo(map);
         el.__map=map;
       }).catch(fallback);
