@@ -792,6 +792,14 @@ h1,h2,h3,.slogan__txt,.band__fig,.flav b,.flyer figcaption,.nav__brand,.foot__h{
 .closer__brand{position:relative;margin:0 auto;width:min(640px,84vw)}
 .closer__brand img{display:block;width:100%;height:auto}
 .closer__brand + .closer__slogan{margin-top:clamp(.6rem,2vh,1.4rem)}
+
+/* 2026-10-05: Nem azert szulettunk kartya, bal oldalt kep balra dontve (a jobb oldali korona tukorkepe) */
+.ed--r .frame--emb{grid-column:1/6;order:1;aspect-ratio:3/4;transform:rotate(-1.8deg)}
+.ed--r .frame--emb img{width:100%;height:100%;object-fit:cover;object-position:50% 42%}
+@media(max-width:900px){.ed--r .frame--emb{grid-column:2/12;order:3;max-width:460px;justify-self:center;width:100%;margin-top:2rem}}
+/* 2026-10-05: termekes menureszek hattere (elmosott tomeg, sotet fatyol) */
+.nav__panel--cans,.mnav__cans{background:linear-gradient(180deg,rgba(11,5,18,.42),rgba(11,5,18,.78)),url(media/stage-poster.jpg?v=t2) center/cover no-repeat}
+.mnav__cans{padding-inline:.6rem}
 </style>
 </head>
 <body>
@@ -1076,10 +1084,6 @@ h1,h2,h3,.slogan__txt,.band__fig,.flav b,.flyer figcaption,.nav__brand,.foot__h{
         <div class="flyer__img"><picture class="pc"><source type="image/avif" sizes="(max-width:767px) 60vw, 36vh" srcset="media/p-citrus-540.avif?v=sr1 540w, media/p-citrus-900.avif?v=sr1 900w"><img src="media/p-citrus-900.webp?v=sr1" srcset="media/p-citrus-540.webp?v=sr1 540w, media/p-citrus-900.webp?v=sr1 900w" sizes="(max-width:767px) 60vw, 36vh" width="1122" height="1402" loading="lazy" decoding="async" alt="Zöldalmás ICON Spirante IX doboz grapefruit- és limeszelettel, vízcseppekkel"></picture></div>
         <figcaption>Sparkling Rush</figcaption>
       </figure>
-      <figure class="flyer t2">
-        <div class="flyer__img"><img src="media/keyart-gold-emblem-720.webp?v=sr1" srcset="media/keyart-gold-emblem-720.webp?v=sr1 720w, media/keyart-gold-emblem.webp?v=sr1 1024w" sizes="(max-width:767px) 60vw, 36vh" width="1024" height="1536" loading="lazy" decoding="async" alt="Arany ICON Spirante IX embléma, Sparkling Rush"></div>
-        <figcaption>Made for icons</figcaption>
-      </figure>
       <figure class="flyer t3">
         <div class="flyer__img"><picture class="pc"><source type="image/avif" sizes="(max-width:767px) 60vw, 36vh" srcset="media/p-makeicon-540.avif 540w, media/p-makeicon-900.avif 900w"><img src="media/p-makeicon-900.webp" srcset="media/p-makeicon-540.webp 540w, media/p-makeicon-900.webp 900w" sizes="(max-width:767px) 60vw, 36vh" width="1122" height="1402" loading="lazy" decoding="async" alt="Két ICON Spirante IX doboz sötét talapzaton arany fényívvel, Make it ICON felirat"></picture></div>
         <figcaption>Make it ICON</figcaption>
@@ -1150,7 +1154,7 @@ h1,h2,h3,.slogan__txt,.band__fig,.flav b,.flyer figcaption,.nav__brand,.foot__h{
           <figure class="frame" data-reveal>
             <img src="media/p-crown-900.webp?v=sr1" srcset="media/p-crown-540.webp?v=sr1 540w, media/p-crown-900.webp?v=sr1 900w" sizes="(max-width:900px) 84vw, 38vw" width="900" height="1200" loading="lazy" decoding="async" alt="Arany korona és ICON felirat, No rules. Just vibes, ICON Spirante IX dobozok">
           </figure>
-          <h3 class="ed__h" data-reveal><span class="ed__ln">Nem azért születtünk,</span><span class="ed__ln">hogy beleolvadjunk</span><span class="ed__ln"><span class="swipe">a&nbsp;tömegbe</span></span></h3>
+          <figure class="frame frame--emb" data-reveal><img src="media/keyart-gold-emblem-720.webp?v=sr1" srcset="media/keyart-gold-emblem-720.webp?v=sr1 720w, media/keyart-gold-emblem.webp?v=sr1 1024w" sizes="(max-width:900px) 84vw, 38vw" width="1024" height="1536" loading="lazy" decoding="async" alt="Arany ICON Spirante IX embléma, Sparkling Rush"></figure>
         </article>
       </div>
     </div>
