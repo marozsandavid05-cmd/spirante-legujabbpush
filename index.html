@@ -1213,7 +1213,9 @@ h1,h2,h3,.slogan__txt,.band__fig,.flav b,.flyer figcaption,.nav__brand,.foot__h{
           </div>
         </dl>
       </div>
-      <figure class="foot__mark"><picture class="pc"><source type="image/avif" sizes="(max-width:900px) 84vw, 44vw" srcset="media/logo-gold-450.avif 450w, media/logo-gold-900.avif 900w"><img src="media/logo-gold-900.webp" srcset="media/logo-gold-450.webp 450w, media/logo-gold-900.webp 900w" sizes="(max-width:900px) 84vw, 44vw" width="1774" height="887" loading="lazy" decoding="async" alt="ICON Spirante &amp; Botaniqa Spritz logó"></picture></figure>
+      <div class="foot__map">
+        <div class="map" id="map" role="region" aria-label="Térkép: 9023 Győr, Tihanyi Árpád út 23."></div>
+      </div>
     </div>
     <div class="foot__base">
       <span class="foot__tag">Be your own ICON. Your life is your story.</span>
@@ -1255,6 +1257,62 @@ h1,h2,h3,.slogan__txt,.band__fig,.flav b,.flyer figcaption,.nav__brand,.foot__h{
     (function lraf(t){ lenis.raf(t); requestAnimationFrame(lraf); })();
     lenis.on('scroll',function(){ if(hasST) ScrollTrigger.update(); });
     lenis.stop();
+  }
+
+/* ---- TERKEP: MapLibre (lokalis) + OpenFreeMap vektorcsempe (kulcs nelkul), arany-pink szinezes ---- */
+  function initMap(){
+    var el=$('#map'); if(!el) return;
+    var LAT=47.68018, LNG=17.64497; /* 9023 Gyor, Tihanyi Arpad ut 23. (Icon Spirits Ital Nagyker) */
+    function fallback(){
+      if(el.__map) return;
+      el.classList.add('map--fallback');
+      el.innerHTML='<a class="map__link" href="https://www.openstreetmap.org/?mlat='+LAT+'&amp;mlon='+LNG+'#map=16/'+LAT+'/'+LNG+'" target="_blank" rel="noopener">Térkép megnyitása</a>';
+    }
+    function tint(style){
+      var PAL={
+        'background':'#0E0816','water':'#231234','waterway':'#231234','building':'#170C21',
+        'landuse_residential':'#120A1B','landcover_wood':'#15101C','landuse_park':'#15101C',
+        'highway_minor':'#3A2A12','highway_path':'#2A1F10','highway_major_casing':'rgba(0,0,0,0)',
+        'highway_major_inner':'#9A7426','highway_major_subtle':'#9A7426',
+        'highway_motorway_casing':'rgba(0,0,0,0)','highway_motorway_inner':'#E7B53F','highway_motorway_subtle':'#E7B53F',
+        'railway':'#3A2440','railway_minor':'#3A2440','railway_transit':'#3A2440'
+      };
+      (style.layers||[]).forEach(function(l){
+        var c=PAL[l.id]; l.paint=l.paint||{};
+        if(c){
+          if(l.type==='background') l.paint['background-color']=c;
+          else if(l.type==='fill') l.paint['fill-color']=c;
+          else if(l.type==='line') l.paint['line-color']=c;
+        }
+        if(l.type==='symbol' && l.paint['text-color']){ l.paint['text-color']='rgba(231,181,63,.72)'; l.paint['text-halo-color']='rgba(14,8,22,.95)'; }
+      });
+      return style;
+    }
+    function build(){
+      fetch('https://tiles.openfreemap.org/styles/dark').then(function(r){ if(!r.ok) throw 0; return r.json(); }).then(function(style){
+        var map=new maplibregl.Map({container:el,style:tint(style),center:[LNG,LAT],zoom:15.3,attributionControl:{compact:true},cooperativeGestures:!!touch});
+        map.on('styleimagemissing',function(e){ if(!map.hasImage(e.id)) map.addImage(e.id,{width:1,height:1,data:new Uint8Array(4)}); });
+        map.scrollZoom.disable();
+        map.addControl(new maplibregl.NavigationControl({showCompass:false}),'top-right');
+        var pin=doc.createElement('span'); pin.className='pin'; pin.innerHTML='<span class="pin__lbl">ICON Spirits</span>';
+        new maplibregl.Marker({element:pin}).setLngLat([LNG,LAT]).addTo(map);
+        el.__map=map;
+      }).catch(fallback);
+    }
+    function start(){
+      if(el.__started) return; el.__started=true;
+      if(typeof fetch==='undefined'){ fallback(); return; }
+      var css=doc.createElement('link'); css.rel='stylesheet'; css.href='js/vendor/maplibre-gl.css'; doc.head.appendChild(css);
+      var sc=doc.createElement('script'); sc.src='js/vendor/maplibre-gl.js'; sc.async=true;
+      sc.onload=function(){ try{ build(); }catch(err){ fallback(); } };
+      sc.onerror=fallback;
+      doc.head.appendChild(sc);
+      setTimeout(function(){ if(!el.__map) fallback(); },12000);
+    }
+    if('IntersectionObserver' in window){
+      var mio=new IntersectionObserver(function(es){ if(es[0].isIntersecting){ mio.disconnect(); start(); } },{rootMargin:'700px 0px'});
+      mio.observe(el);
+    } else start();
   }
 
   /* ---- LOADER + KORKAPU ---- */
@@ -1570,6 +1628,7 @@ h1,h2,h3,.slogan__txt,.band__fig,.flav b,.flyer figcaption,.nav__brand,.foot__h{
     setupLoop($('.ticker'),70);
     $$('.strip').forEach(function(s){ setupLoop(s,parseFloat(s.getAttribute('data-speed'))||50); });
     initMotion();
+    initMap();
     initStage();
   }
 
