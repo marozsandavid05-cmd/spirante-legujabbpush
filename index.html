@@ -5,8 +5,198 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- JS-jelenlet jelzo: a rejtett-indulas + nezet-valtas CSS CSAK ezzel aktiv. No-JS -> minden tartalom latszik. -->
 <script>document.documentElement.className += ' js';</script>
-<title>ICON Spirante IX · Be your own ICON</title>
-<meta name="description" content="Az ICON Spirante IX nem egyszerűen egy ital. Egy gondolat, egy érzés, egy pillanat. Be your own ICON. Your life is your story.">
+<!-- Egyetlen változat. A „vodka” és „gin” szó szándékosan NINCS a title-ben és a description-ben: az EU 2019/787 12. cikk (2) szerint a szeszes ital nevére utalás mellé ugyanabban a látómezőben az alkoholos összetevők aránya kell, ez egy találati snippetben nem fér el (SEO-TERV.md 3. és 5. pont). -->
+<title>ICON Spirante IX · Prémium dobozos spritz, két ízben</title>
+<meta name="description" content="ICON Spirante IX prémium dobozos spritz fehérborból, két ízben: Green Apple és Hibiscus, 250 ml-es dobozban. Csak 18 éven felülieknek.">
+<link rel="canonical" href="https://iconspirante.eu/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+
+<!-- Favikon: a fájlok a gyökérbe kerülnek (Claude tesztelés\spirante-seo-2026-10-05\favicon\) -->
+<link rel="icon" href="favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="192x192" href="favicon-192x192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+
+<!-- Open Graph és Twitter/X kártya: termék és szlogen nélküli logókép (Grt. 18. § (2) a) szigorú olvasata) -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="hu_HU">
+<meta property="og:site_name" content="ICON Spirante IX">
+<meta property="og:url" content="https://iconspirante.eu/">
+<meta property="og:title" content="ICON Spirante IX · Prémium dobozos spritz">
+<meta property="og:description" content="Két íz, egy doboz: Green Apple és Hibiscus, fehérborból készült prémium spritz, 250 ml. Csak 18 éven felülieknek.">
+<meta property="og:image" content="https://iconspirante.eu/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Arany ICON logó, Spirante és Botaniqa Spritz felirat, sötét háttéren">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ICON Spirante IX · Prémium dobozos spritz">
+<meta name="twitter:description" content="Két íz, egy doboz: Green Apple és Hibiscus, fehérborból készült prémium spritz, 250 ml. Csak 18 éven felülieknek.">
+<meta name="twitter:image" content="https://iconspirante.eu/og-image.jpg">
+<meta name="twitter:image:alt" content="Arany ICON logó, Spirante és Botaniqa Spritz felirat, sötét háttéren">
+
+<!-- Strukturált adat: a json-ld.json tartalma egy az egyben ide -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://iconspirante.eu/#org",
+      "name": "ICON Spirante",
+      "legalName": "ICON SPIRANTE Korlátolt Felelősségű Társaság",
+      "alternateName": [
+        "ICON SPIRANTE Kft.",
+        "ICON Spirante IX"
+      ],
+      "url": "https://iconspirante.eu/",
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://iconspirante.eu/#logo",
+        "url": "https://iconspirante.eu/logo-google-512.png",
+        "contentUrl": "https://iconspirante.eu/logo-google-512.png",
+        "width": 512,
+        "height": 512,
+        "caption": "ICON Spirante"
+      },
+      "image": {
+        "@id": "https://iconspirante.eu/#logo"
+      },
+      "email": "info@iconspirante.eu",
+      "telephone": "+36 20 350 1212",
+      "taxID": "33055806-2-08",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Fő utca 38.",
+        "addressLocality": "Tápszentmiklós",
+        "postalCode": "9094",
+        "addressCountry": "HU"
+      },
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "contactType": "customer service",
+          "email": "info@iconspirante.eu",
+          "telephone": "+36 20 350 1212",
+          "availableLanguage": [
+            "hu"
+          ]
+        },
+        {
+          "@type": "ContactPoint",
+          "contactType": "sales",
+          "email": "sales@iconspirante.eu",
+          "availableLanguage": [
+            "hu",
+            "de"
+          ]
+        }
+      ],
+      "sameAs": [
+        "https://www.instagram.com/iconspirante/",
+        "https://www.facebook.com/iconspirante/"
+      ],
+      "brand": {
+        "@id": "https://iconspirante.eu/#brand"
+      }
+    },
+    {
+      "@type": "Brand",
+      "@id": "https://iconspirante.eu/#brand",
+      "name": "ICON Spirante",
+      "logo": {
+        "@id": "https://iconspirante.eu/#logo"
+      },
+      "slogan": "Be your own ICON"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://iconspirante.eu/#website",
+      "url": "https://iconspirante.eu/",
+      "name": "ICON Spirante IX",
+      "inLanguage": "hu",
+      "publisher": {
+        "@id": "https://iconspirante.eu/#org"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://iconspirante.eu/#webpage",
+      "url": "https://iconspirante.eu/",
+      "name": "ICON Spirante IX · Prémium dobozos spritz, két ízben",
+      "inLanguage": "hu",
+      "isPartOf": {
+        "@id": "https://iconspirante.eu/#website"
+      },
+      "about": {
+        "@id": "https://iconspirante.eu/#org"
+      },
+      "primaryImageOfPage": {
+        "@id": "https://iconspirante.eu/#logo"
+      },
+      "hasPart": [
+        {
+          "@id": "https://iconspirante.eu/#can-greenapple"
+        },
+        {
+          "@id": "https://iconspirante.eu/#can-hibiscus"
+        }
+      ]
+    },
+    {
+      "@type": "Product",
+      "@id": "https://iconspirante.eu/#can-greenapple",
+      "name": "ICON Spirante IX Green Apple",
+      "description": "Prémium spritz fehérborból, zöldalma, grapefruit és lime ízzel. 250 ml-es doboz, Sparkling Rush.",
+      "image": "https://iconspirante.eu/media/can-cut-greenapple.png",
+      "url": "https://iconspirante.eu/#can-greenapple",
+      "category": "Alkoholtartalmú ital > Dobozos spritz",
+      "brand": {
+        "@id": "https://iconspirante.eu/#brand"
+      },
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Kiszerelés",
+          "value": "250 ml"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Alkoholtartalom",
+          "value": "9% vol"
+        }
+      ]
+    },
+    {
+      "@type": "Product",
+      "@id": "https://iconspirante.eu/#can-hibiscus",
+      "name": "ICON Spirante IX Hibiscus",
+      "description": "Prémium spritz fehérborból, hibiszkusz-tonik ízzel. 250 ml-es doboz, Sparkling Rush.",
+      "image": "https://iconspirante.eu/media/can-cut-hibiscus.png",
+      "url": "https://iconspirante.eu/#can-hibiscus",
+      "category": "Alkoholtartalmú ital > Dobozos spritz",
+      "brand": {
+        "@id": "https://iconspirante.eu/#brand"
+      },
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Kiszerelés",
+          "value": "250 ml"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Alkoholtartalom",
+          "value": "9% vol"
+        }
+      ]
+    }
+  ]
+}
+</script>
 <meta name="theme-color" content="#0B0512">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
