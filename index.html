@@ -776,6 +776,17 @@ h1,h2,h3,.slogan__txt,.band__fig,.flav b,.flyer figcaption,.nav__brand,.foot__h{
 .social__h{padding-top:.22em;margin-top:calc(1.1rem - .22em)}
 .closer__line{padding-top:.22em;margin-top:calc(clamp(1.2rem,3vh,2rem) - .22em)}
 .duo__h{padding-top:.22em;margin-top:calc(1rem - .22em)}
+
+/* GYUJTO 2026-10-05: kozos Valassz a menu-dobozok alatt; brand-szekcio 1. kartya szovegblokk */
+.nav__pick,.mnav__pick{grid-column:1/-1;justify-self:center;font-family:var(--f-sten);font-weight:700;text-transform:uppercase;letter-spacing:.22em;color:#DCBB68;line-height:1}
+.nav__pick{font-size:.8rem;padding:.35rem 0 .45rem}
+.mnav__pick{font-size:.86rem;padding:.2rem 0 .1rem}
+.ed__txt{grid-column:7/13;align-self:center;max-width:34rem}
+.ed__txt .ed__lead{font-family:var(--f-disp);font-weight:800;text-transform:uppercase;font-size:clamp(1.7rem,2.9vw,2.7rem);line-height:1.12;padding-top:.22em;margin-top:-.22em;margin-bottom:clamp(1.1rem,2.4vh,1.6rem)}
+.ed__txt p{font-size:clamp(1rem,1.15vw,1.12rem);line-height:1.7;color:#E3CC94}
+.ed__txt p+p{margin-top:1.05rem}
+.ed__txt .ed__mid{font-family:var(--f-disp);font-weight:700;text-transform:uppercase;letter-spacing:.02em;font-size:clamp(1.05rem,1.35vw,1.3rem);line-height:1.45;color:#DCBB68}
+@media(max-width:900px){.ed__txt{grid-column:1/-1;margin-top:2rem;max-width:none}}
 </style>
 </head>
 <body>
@@ -887,12 +898,11 @@ h1,h2,h3,.slogan__txt,.band__fig,.flav b,.flyer figcaption,.nav__brand,.foot__h{
       <div class="nav__panel nav__panel--cans" id="dd-termek">
         <a class="nav__can" href="#can-greenapple" data-scroll aria-label="Green Apple &amp; Grapefruit &amp; Lime, vodka, 9%, 250 ml">
           <img src="media/can-cut-greenapple-560.webp?v=sr2" width="227" height="655" decoding="async" alt="">
-          <small>Green Apple</small>
         </a>
         <a class="nav__can" href="#can-hibiscus" data-scroll aria-label="Hibiscus, gin &amp; tonic, 9%, 250 ml">
           <img src="media/can-cut-hibiscus-560.webp?v=sr2" width="219" height="655" decoding="async" alt="">
-          <small>Hibiscus</small>
         </a>
+        <span class="nav__pick">Válassz</span>
       </div>
     </li>
     <li><a class="nav__link" href="#megjelenesek" data-scroll>Megjelenéseink</a></li>
@@ -907,8 +917,9 @@ h1,h2,h3,.slogan__txt,.band__fig,.flav b,.flyer figcaption,.nav__brand,.foot__h{
   <a href="#philo" data-scroll>Icon Philosophy</a>
   <a href="#termekek" data-scroll>Icon Spirante IX</a>
   <div class="mnav__cans">
-    <a class="mnav__can" href="#can-greenapple" data-scroll aria-label="Green Apple &amp; Grapefruit &amp; Lime, vodka, 9%, 250 ml"><img src="media/can-cut-greenapple-560.webp?v=sr2" width="227" height="655" loading="lazy" decoding="async" alt=""><small>Green Apple</small></a>
-    <a class="mnav__can" href="#can-hibiscus" data-scroll aria-label="Hibiscus, gin &amp; tonic, 9%, 250 ml"><img src="media/can-cut-hibiscus-560.webp?v=sr2" width="219" height="655" loading="lazy" decoding="async" alt=""><small>Hibiscus</small></a>
+    <a class="mnav__can" href="#can-greenapple" data-scroll aria-label="Green Apple &amp; Grapefruit &amp; Lime, vodka, 9%, 250 ml"><img src="media/can-cut-greenapple-560.webp?v=sr2" width="227" height="655" loading="lazy" decoding="async" alt=""></a>
+    <a class="mnav__can" href="#can-hibiscus" data-scroll aria-label="Hibiscus, gin &amp; tonic, 9%, 250 ml"><img src="media/can-cut-hibiscus-560.webp?v=sr2" width="219" height="655" loading="lazy" decoding="async" alt=""></a>
+    <span class="mnav__pick">Válassz</span>
   </div>
   <a href="#megjelenesek" data-scroll>Megjelenéseink</a>
   <a href="#social" data-scroll>Kövess minket</a>
@@ -974,7 +985,11 @@ h1,h2,h3,.slogan__txt,.band__fig,.flav b,.flyer figcaption,.nav__brand,.foot__h{
           <li data-reveal><span class="pr__t">Az&nbsp;élmény közösséget teremt</span><span class="pr__d">Az ICON nem egy ital a&nbsp;polcon, hanem egy közös történet kezdete.</span></li>
           <li data-reveal><span class="pr__t">A&nbsp;te életed a&nbsp;te történeted</span><span class="pr__d">Nem mások elvárásai számítanak. Az számít, hogy te ki szeretnél lenni.</span></li>
         </ul>
-        <p class="philo__prod" data-reveal>Prémium spritz vodkával. Fehérbor és vodka, zöldalma, grapefruit és lime. Sparkling Rush, 9% alkohol, 250&nbsp;ml.</p>
+        <p class="philo__prod" data-reveal>Premium spritz vodkával<br>
+          Fehérbor &amp; zöldalma-grapefruit-lime íz<br>
+          9% alkohol<br>
+          250&nbsp;ml<br>
+          Sparkling Rush</p>
       </div>
       <figure class="frame philo__poster philo__poster--b" data-reveal><picture class="pc"><source type="image/avif" sizes="(max-width:900px) 92vw, 46vw" srcset="media/p-gin-icon2-540.avif 540w, media/p-gin-icon2-900.avif 900w, media/p-gin-icon2-1088.avif 1088w"><img src="media/p-gin-icon2-900.webp" srcset="media/p-gin-icon2-540.webp 540w, media/p-gin-icon2-900.webp 900w, media/p-gin-icon2-1088.webp 1088w" sizes="(max-width:900px) 92vw, 46vw" width="1088" height="1446" loading="lazy" decoding="async" alt="Hibiscus ICON Spirante IX doboz, nő nyalókával, arany SPIRANTE szemsáv, No trends. This is ICON felirat"></picture></figure>
       <div class="philo__txt">
@@ -982,7 +997,11 @@ h1,h2,h3,.slogan__txt,.band__fig,.flav b,.flyer figcaption,.nav__brand,.foot__h{
         <p class="philo__big" data-reveal>Az ICON, <span class="swipe">rólad</span> szól!</p>
         <p class="philo__p" data-reveal>Arról a&nbsp;pillanatról, amikor eldöntöd, hogy nem mások elvárásai szerint élsz, hanem a&nbsp;saját történetedet írod.</p>
         <p class="philo__p" data-reveal>Mert végül minden embernek van egy története. És a&nbsp;legjobb történeteket azok írják, akik mernek önmaguk lenni.</p>
-        <p class="philo__prod" data-reveal>Prémium spritz gin-tonikkal. Fehérbor és gin, hibiszkusz. Sparkling Rush, 9% alkohol, 250&nbsp;ml.</p>
+        <p class="philo__prod" data-reveal>Premium spritz gin-nel<br>
+          Fehérbor &amp; hibiszkusz-tonik íz<br>
+          9% alkohol<br>
+          250&nbsp;ml<br>
+          Sparkling Rush</p>
       </div>
     </div>
   </section>
@@ -1005,7 +1024,7 @@ h1,h2,h3,.slogan__txt,.band__fig,.flav b,.flyer figcaption,.nav__brand,.foot__h{
         <li class="card" id="can-hibiscus">
           <div class="card__body">
             <span class="card__num" aria-hidden="true">II</span>
-            <h3 class="card__h">Ne kövess mást, alakítsd az&nbsp;életed</h3>
+            <h3 class="card__h">Ne kövess másokat, alakíts te a&nbsp;saját életed</h3>
           </div>
           <figure class="card__img"><img src="media/p-jewel-900.webp?v=sr1" srcset="media/p-jewel-540.webp?v=sr1 540w, media/p-jewel-900.webp?v=sr1 900w" sizes="(max-width:900px) 92vw, 42vw" width="900" height="1350" loading="lazy" decoding="async" alt="ICON Spirante IX Hibiscus doboz arany fényben, Every sip is magic felirat"></figure>
         </li>
@@ -1092,8 +1111,8 @@ h1,h2,h3,.slogan__txt,.band__fig,.flav b,.flyer figcaption,.nav__brand,.foot__h{
         <h2 class="duo__h" id="flavor-h" data-reveal>Egy&nbsp;íz, amely egy új <span class="swipe">világba</span> repít téged</h2>
         <ul class="flav">
           <li data-reveal><span>Megjelenése</span><b>Ikonikus</b></li>
-          <li data-reveal><span>Ízvilága</span><b>Kifinomult</b></li>
-          <li data-reveal><span>Karaktere</span><b>Egyedi&nbsp;és megismételhetetlen</b></li>
+          <li data-reveal><span>Ízvilága</span><b>Egyedi&nbsp;és megismételhetetlen</b></li>
+          <li data-reveal><span>Karaktere</span><b>Te magad vagy maga az&nbsp;ICON Spirante</b></li>
         </ul>
       </div>
     </div>
@@ -1104,14 +1123,22 @@ h1,h2,h3,.slogan__txt,.band__fig,.flav b,.flyer figcaption,.nav__brand,.foot__h{
     <div class="wrap">
       <div class="eds__head">
         <p class="tag eds__tag">ICON · Brand és&nbsp;ami mögötte rejlik</p>
-        <h2 class="eds__h" id="eds-h" data-reveal>Az&nbsp;ICON azért született, hogy emlékeztessen valamire, amit sokan <span class="eds__em">elfelejtettek</span></h2>
+        <h2 class="eds__h" id="eds-h" data-reveal>Az&nbsp;ICON azért született, hogy emlékeztessen valamire, amit sokan <span class="eds__em">elfelejtettek</span>…</h2>
       </div>
       <div class="eds__list">
         <article class="ed">
           <figure class="frame fr-45" data-reveal>
             <picture class="pc"><source type="image/avif" sizes="(max-width:900px) 84vw, 38vw" srcset="media/p-bar-540.avif?v=sr1 540w, media/p-bar-900.avif?v=sr1 900w"><img src="media/p-bar-900.webp?v=sr1" srcset="media/p-bar-540.webp?v=sr1 540w, media/p-bar-900.webp?v=sr1 900w" sizes="(max-width:900px) 84vw, 38vw" width="1122" height="1402" loading="lazy" decoding="async" alt="Fiatal társaság bárpultnál, zöldalmás ICON Spirante IX doboz, No trends. This is ICON felirat"></picture>
           </figure>
-          <h3 class="ed__h" data-reveal><span class="ed__ln">Legyél te az, aki</span><span class="ed__ln">nem követni, hanem</span><span class="ed__ln"><span class="swipe">formálni akarja</span> a&nbsp;világot</span></h3>
+          <div class="ed__txt" data-reveal>
+            <h3 class="ed__lead">Az&nbsp;ICON azoknak született, akik mernek saját döntéseket hozni.</h3>
+            <p>Akik értékelik a&nbsp;minőséget.<br>
+            Akik tudják, hogy a&nbsp;stílus nem a&nbsp;hangosságban, hanem a&nbsp;karakterben rejlik.</p>
+            <p class="ed__mid">Minden korty egy emlékeztető:<br>
+            az&nbsp;élet nem a&nbsp;véletlenek sorozata, hanem tudatos választások története.</p>
+            <p>Az&nbsp;ICON egy különleges pillanat, amikor a&nbsp;minőség, az&nbsp;élmény és&nbsp;az&nbsp;önazonosság találkozik.<br>
+            Ikonikus megjelenésével kitűnik, kifinomult ízvilágával pedig emlékezetes marad.</p>
+          </div>
         </article>
         <article class="ed ed--r">
           <figure class="frame" data-reveal>
