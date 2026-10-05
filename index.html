@@ -267,6 +267,13 @@ body.menu-open .mnav a{opacity:1;translate:0 0}
   -webkit-mask-image:linear-gradient(180deg,#000 0,#000 calc(100% - 44vh),rgba(0,0,0,.55) calc(100% - 24vh),transparent 100%);mask-image:linear-gradient(180deg,#000 0,#000 calc(100% - 44vh),rgba(0,0,0,.55) calc(100% - 24vh),transparent 100%)}
 .hero__poster{position:relative;z-index:1;height:100%;aspect-ratio:1672/941;max-width:100%;margin:0 auto}
 .hero__poster img{width:100%;height:100%;object-fit:cover}
+/* arany feny-sopres a hero kepen (a 750 ml-es oldal goldsweep effektje, 2026-10-05) */
+.hero__poster{overflow:hidden}
+.hero__poster::after{content:'';position:absolute;inset:0;z-index:2;pointer-events:none;
+  background:linear-gradient(115deg,transparent 35%,rgba(231,181,63,.40) 50%,transparent 65%);
+  transform:translateX(-130%);animation:goldsweep 6.5s ease-in-out 1.6s infinite;mix-blend-mode:screen}
+@keyframes goldsweep{0%{transform:translateX(-130%)}22%,100%{transform:translateX(130%)}}
+@media (prefers-reduced-motion:reduce){.hero__poster::after{display:none}}
 .hero__band{position:relative;z-index:1;flex:none;display:flex;align-items:flex-start;padding:clamp(2.6rem,6vh,4.5rem) var(--pad) clamp(2.2rem,5vh,3.6rem)}
 .hero__title{width:100%;max-width:var(--maxw);margin-inline:auto;transform:rotate(-2deg);transform-origin:0 100%}
 .hero__l1,.hero__l2{display:block}
@@ -1202,6 +1209,8 @@ h1,h2,h3,.slogan__txt,.band__fig,.flav b,.flyer figcaption,.nav__brand,.foot__h{
           <div>
             <dt>E-mail</dt>
             <dd><a href="mailto:info@iconspirante.eu">info@iconspirante.eu</a></dd>
+            <dd><a href="mailto:office@iconspirante.eu">office@iconspirante.eu</a></dd>
+            <dd><a href="mailto:sales@iconspirante.eu">sales@iconspirante.eu</a></dd>
           </div>
           <div>
             <dt>Telefon</dt>
