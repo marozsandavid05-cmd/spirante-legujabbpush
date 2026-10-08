@@ -455,7 +455,7 @@ body.menu-open .mnav a{opacity:1;translate:0 0}
 .hero__stage{position:relative;z-index:1;flex:none;height:var(--stageh);overflow:hidden}
 /* a plakat melletti elmosott kepagy a stage ala is lenyulik, es alfaval atuszik a lap hatterebe:
    nincs kemeny vagas a ket oldalon (kep alfazik 0-ra a hatter folott, nem szin a szinbe) */
-.hero__bed{position:absolute;left:-60px;right:-60px;top:calc(var(--navh) - 40px);height:calc(var(--stageh) + 40px + 26vh);background:url(media/v2-nyito-blur.jpg?v=w1v) center/cover;filter:blur(26px) brightness(.4) saturate(1.2);
+.hero__bed{position:absolute;left:-60px;right:-60px;top:calc(var(--navh) - 40px);height:calc(var(--stageh) + 40px + 26vh);background:url(media/hero-ambassador-blur.jpg?v=h1) center/cover;filter:blur(26px) brightness(.4) saturate(1.2);
   -webkit-mask-image:linear-gradient(180deg,#000 0,#000 calc(100% - 44vh),rgba(0,0,0,.55) calc(100% - 24vh),transparent 100%);mask-image:linear-gradient(180deg,#000 0,#000 calc(100% - 44vh),rgba(0,0,0,.55) calc(100% - 24vh),transparent 100%)}
 .hero__poster{position:relative;z-index:1;height:100%;aspect-ratio:1672/941;max-width:100%;margin:0 auto}
 .hero__poster img{width:100%;height:100%;object-fit:cover}
@@ -484,6 +484,18 @@ body.menu-open .mnav a{opacity:1;translate:0 0}
 .ticker.is-off .ticker__row{animation-play-state:paused}
 
 /* ---------- ICON PHILOSOPHY ---------- */
+/* termekleiras a hero alatt */
+.intro{padding-block:clamp(3.5rem,9vh,6.5rem) clamp(2rem,5vh,3.5rem)}
+.intro__in{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(1.2rem,3vw,3rem);row-gap:clamp(1.4rem,3vh,2.2rem);align-items:end}
+.intro__txt{grid-column:2/9}
+.intro__p{font-size:clamp(1.12rem,1.55vw,1.42rem);line-height:1.62;color:var(--ink);max-width:52ch}
+.intro__p+.intro__p{margin-top:1.1em}
+.intro__cta{grid-column:8/13;justify-self:end;text-align:right;font-family:var(--f-disp);font-weight:800;text-transform:uppercase;line-height:1.12;letter-spacing:.02em;font-size:clamp(1.5rem,2.6vw,2.5rem);color:var(--pink)}
+.intro__cta--b{grid-column:6/13;font-size:clamp(2.2rem,4.4vw,4.4rem);color:var(--ink);margin-top:-.4rem}
+@media (max-width:900px){
+  .intro__txt{grid-column:1/-1}
+  .intro__cta,.intro__cta--b{grid-column:1/-1;justify-self:start;text-align:left}
+}
 .philo{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(1.2rem,3vw,3rem);row-gap:clamp(3rem,9vh,6.5rem);align-items:center}
 .philo__poster{grid-column:1/6;aspect-ratio:1024/1536;transform:rotate(-2.2deg)}
 .philo__head{grid-column:1/-1}
@@ -1196,8 +1208,8 @@ html.menu-lock{overflow:hidden}
     <div class="hero__stage">
       <figure class="hero__poster">
         <picture>
-          <source type="image/webp" sizes="100vw" srcset="media/v2-nyito-760.webp?v=w1v 760w, media/v2-nyito-1200.webp?v=w1v 1200w, media/v2-nyito-1672.webp?v=w1v 1672w">
-          <img src="media/v2-nyito-1200.jpg?v=w1v" width="1672" height="941" decoding="async" alt="Két ICON Spirante IX doboz graffitis falon, szívet formáló festett kezek, No rules. Just vibes! és Spirante Spritz felirat">
+          <source type="image/webp" sizes="100vw" srcset="media/hero-ambassador-760.webp?v=h1 760w, media/hero-ambassador-1200.webp?v=h1 1200w, media/hero-ambassador-1672.webp?v=h1 1672w">
+          <img src="media/hero-ambassador-1200.jpg?v=h1" width="1672" height="941" decoding="async" alt="Tetovált, ősz szakállas férfi két ICON Spirante IX dobozzal, Hibiscus és Green Apple">
         </picture>
       </figure>
     </div>
@@ -1210,7 +1222,17 @@ html.menu-lock{overflow:hidden}
     </div>
   </header>
 
-  
+  <!-- TERMEKLEIRAS (Balazs szovege, 2026-10-08; csak helyesirasi javitas) -->
+  <section class="sec intro" aria-label="Az ICON Spirante IX">
+    <div class="wrap intro__in">
+      <div class="intro__txt">
+        <p class="intro__p" data-reveal>Spirante IX, mint a&nbsp;minőségi fehérbor és a&nbsp;spirit ital izgalmas találkozása, mint a&nbsp;vodka vagy a&nbsp;gin, különleges ízek hozzáadásával lett megalkotva! Karakteres alkoholtartalommal (9%) és erőteljes szénsavassággal!</p>
+        <p class="intro__p" data-reveal>Egyedi és megismételhetetlen ízvilág, amivel az&nbsp;alkohol világában egy új kategóriát alkottunk neked!</p>
+      </div>
+      <p class="intro__cta" data-reveal>Keresd-bontsd-élvezd!</p>
+      <p class="intro__cta intro__cta--b" data-reveal>Legyél te is <span class="swipe">ICON</span>!</p>
+    </div>
+  </section>
 
   <!-- ICON PHILOSOPHY -->
   <section class="sec" id="philo" aria-labelledby="philo-h">
@@ -1325,8 +1347,8 @@ html.menu-lock{overflow:hidden}
         <figcaption>Make it ICON</figcaption>
       </figure>
       <figure class="flyer t1">
-        <div class="flyer__img"><picture class="pc"><source type="image/avif" sizes="(max-width:767px) 89vh, (max-width:1023px) 100vh, 36vh" srcset="media/p-ambassador-760.avif?v=sr1 760w, media/p-ambassador-1200.avif?v=sr1 1200w, media/p-ambassador-1672.avif?v=sr1 1672w"><img src="media/p-ambassador-1200.webp?v=sr1" srcset="media/p-ambassador-760.webp?v=sr1 760w, media/p-ambassador-1200.webp?v=sr1 1200w, media/p-ambassador-1672.webp?v=sr1 1672w" sizes="(max-width:767px) 89vh, (max-width:1023px) 100vh, 36vh" width="1672" height="941" loading="lazy" decoding="async" alt="Tetovált, ősz szakállas férfi két ICON Spirante IX dobozzal, Hibiscus és Green Apple"></picture></div>
-        <figcaption>What's your story?</figcaption>
+        <div class="flyer__img"><img src="media/v2-nyito-1200.webp?v=w1v" srcset="media/v2-nyito-760.webp?v=w1v 760w, media/v2-nyito-1200.webp?v=w1v 1200w, media/v2-nyito-1672.webp?v=w1v 1672w" sizes="(max-width:767px) 89vh, (max-width:1023px) 100vh, 36vh" width="1672" height="941" loading="lazy" decoding="async" alt="Két ICON Spirante IX doboz graffitis falon, szívet formáló festett kezek, No rules. Just vibes! és Spirante Spritz felirat"></div>
+        <figcaption>No rules. Just vibes</figcaption>
       </figure>
       <figure class="flyer t3">
         <div class="flyer__img"><picture class="pc"><source type="image/avif" sizes="(max-width:767px) 40vh, (max-width:1023px) 45vh, 36vh" srcset="media/p-club-540.avif?v=sr1 540w, media/p-club-900.avif?v=sr1 900w"><img src="media/p-club-900.webp?v=sr1" srcset="media/p-club-540.webp?v=sr1 540w, media/p-club-900.webp?v=sr1 900w" sizes="(max-width:767px) 40vh, (max-width:1023px) 45vh, 36vh" width="1122" height="1402" loading="lazy" decoding="async" alt="Nő lila felsőben koncerten, felemelt ICON Spirante IX dobozzal, Be your own ICON felirat"></picture></div>
