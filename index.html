@@ -1085,6 +1085,9 @@ body.menu-open .lang--nav{visibility:hidden}
 /* fekvo telefon: a jobb also sarokban a Botaniqa-plakat all, ezert felul, a bal plakat es a Botaniqa-felirat kozotti savban */
 @media(max-width:767px) and (orientation:landscape){.lang--land{right:auto;left:34%;top:0;bottom:auto}}
 @media (prefers-reduced-motion:reduce){.js .landing .lang--land{opacity:1;transition:none}.lang a::after{transition:none}}
+/* korkapu nyelvválasztó (2026-10-13) */
+.lang--gate{justify-content:center;font-size:.92rem;margin:0 0 1.1rem}
+.lang--gate a{min-height:40px}
 /* EKEZET-VEDELEM 2 (2026-10-13): a maradek arany cimek (ekezet-ellenor merte) */
 #philo .pr__t{padding-top:.22em;margin-top:-.22em}
 .card__h{padding-top:.22em;margin-top:calc(.6rem - .22em)}
@@ -1115,24 +1118,25 @@ body.menu-open .lang--nav{visibility:hidden}
     <div class="lo-ix">IX</div>
     <div class="loader__bar"><i></i></div>
     <form class="agegate" id="ageGate" novalidate autocomplete="off" hidden>
-      <p class="agegate__lead">Enter your date of birth to&nbsp;continue.</p>
+      <!--lang:gate--><nav class="lang lang--gate" aria-label="Nyelv"><a href="index.html" data-lang="hu" data-clean="/" hreflang="hu" lang="hu" title="Magyar" aria-current="true">HU</a><a href="en/index.html" data-lang="en" data-clean="/en/" hreflang="en" lang="en" title="English">EN</a><a href="de/index.html" data-lang="de" data-clean="/de/" hreflang="de" lang="de" title="Deutsch">DE</a></nav><!--/lang-->
+      <p class="agegate__lead">Add meg a&nbsp;születési dátumodat a&nbsp;belépéshez.</p>
       <div class="agegate__fields">
         <label class="agegate__f">
-          <span>Year</span>
-          <input id="ag-year" class="agegate__in" type="text" inputmode="numeric" autocomplete="off" maxlength="4" placeholder="YYYY" aria-label="Year of birth, four digits">
+          <span>Év</span>
+          <input id="ag-year" class="agegate__in" type="text" inputmode="numeric" autocomplete="off" maxlength="4" placeholder="ÉÉÉÉ" aria-label="Születési év, négy számjegy">
         </label>
         <label class="agegate__f">
-          <span>Month</span>
-          <input id="ag-month" class="agegate__in" type="text" inputmode="numeric" autocomplete="off" maxlength="2" placeholder="MM" aria-label="Month of birth">
+          <span>Hónap</span>
+          <input id="ag-month" class="agegate__in" type="text" inputmode="numeric" autocomplete="off" maxlength="2" placeholder="HH" aria-label="Születési hónap">
         </label>
         <label class="agegate__f">
-          <span>Day</span>
-          <input id="ag-day" class="agegate__in" type="text" inputmode="numeric" autocomplete="off" maxlength="2" placeholder="DD" aria-label="Day of birth">
+          <span>Nap</span>
+          <input id="ag-day" class="agegate__in" type="text" inputmode="numeric" autocomplete="off" maxlength="2" placeholder="NN" aria-label="Születési nap">
         </label>
       </div>
       <p class="agegate__err" id="ag-err" role="alert" aria-live="assertive"></p>
-      <button class="agegate__btn" id="ag-submit" type="submit">Enter</button>
-      <p class="agegate__legal">For adults aged 18 and over only. Excessive alcohol consumption is harmful to&nbsp;your&nbsp;health.</p>
+      <button class="agegate__btn" id="ag-submit" type="submit">Belépés</button>
+      <p class="agegate__legal">Csak 18 éven felülieknek. A&nbsp;túlzott alkoholfogyasztás károsítja az&nbsp;egészséget.</p>
     </form>
   </div>
 </div>
@@ -1713,10 +1717,10 @@ document.addEventListener('DOMContentLoaded',function(){
   var gateEl=$('#ageGate');
   var elY=$('#ag-year'), elM=$('#ag-month'), elD=$('#ag-day'), elErr=$('#ag-err');
   var MSG={
-    empty:'Please fill in all three fields (year, month, day).',
-    format:'Numbers only: year (4 digits), month, day.',
-    unreal:'Please enter a valid date of birth.',
-    underage:'You must be 18 or over to enter this site.'
+    empty:'Kérjük, töltsd ki mind a három mezőt (év, hónap, nap).',
+    format:'Csak számokat adj meg: év (4 jegy), hónap, nap.',
+    unreal:'Kérjük, valós születési dátumot adj meg.',
+    underage:'18 éven aluliak nem léphetnek be.'
   };
   function showGate(){
     if(!gateEl) return;

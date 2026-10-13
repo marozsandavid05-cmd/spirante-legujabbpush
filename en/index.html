@@ -1087,6 +1087,9 @@ body.menu-open .lang--nav{visibility:hidden}
 /* fekvo telefon: a jobb also sarokban a Botaniqa-plakat all, ezert felul, a bal plakat es a Botaniqa-felirat kozotti savban */
 @media(max-width:767px) and (orientation:landscape){.lang--land{right:auto;left:34%;top:0;bottom:auto}}
 @media (prefers-reduced-motion:reduce){.js .landing .lang--land{opacity:1;transition:none}.lang a::after{transition:none}}
+/* korkapu nyelvválasztó (2026-10-13) */
+.lang--gate{justify-content:center;font-size:.92rem;margin:0 0 1.1rem}
+.lang--gate a{min-height:40px}
 /* EKEZET-VEDELEM 2 (2026-10-13): a maradek arany cimek (ekezet-ellenor merte) */
 #philo .pr__t{padding-top:.22em;margin-top:-.22em}
 .card__h{padding-top:.22em;margin-top:calc(.6rem - .22em)}
@@ -1117,6 +1120,7 @@ body.menu-open .lang--nav{visibility:hidden}
     <div class="lo-ix">IX</div>
     <div class="loader__bar"><i></i></div>
     <form class="agegate" id="ageGate" novalidate autocomplete="off" hidden>
+      <!--lang:gate--><nav class="lang lang--gate" aria-label="Language"><a href="../index.html" data-lang="hu" data-clean="/" hreflang="hu" lang="hu" title="Magyar">HU</a><a href="index.html" data-lang="en" data-clean="/en/" hreflang="en" lang="en" title="English" aria-current="true">EN</a><a href="../de/index.html" data-lang="de" data-clean="/de/" hreflang="de" lang="de" title="Deutsch">DE</a></nav><!--/lang-->
       <p class="agegate__lead">Enter your date of birth to&nbsp;continue.</p>
       <div class="agegate__fields">
         <label class="agegate__f">
