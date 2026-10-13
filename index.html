@@ -8,7 +8,12 @@
 <!-- Egyetlen változat. A „vodka” és „gin” szó szándékosan NINCS a title-ben és a description-ben: az EU 2019/787 12. cikk (2) szerint a szeszes ital nevére utalás mellé ugyanabban a látómezőben az alkoholos összetevők aránya kell, ez egy találati snippetben nem fér el (SEO-TERV.md 3. és 5. pont). -->
 <title>ICON Spirante IX · Prémium dobozos spritz, két ízben</title>
 <meta name="description" content="ICON Spirante IX prémium dobozos spritz fehérborból, két ízben: Green Apple és Hibiscus, 250 ml-es dobozban. Csak 18 éven felülieknek.">
-<link rel="canonical" href="https://iconspirante.eu/">
+<link rel="canonical" href="https://iconspirante.eu/"><!--hreflang-->
+<link rel="alternate" hreflang="hu" href="https://iconspirante.eu/">
+<link rel="alternate" hreflang="en" href="https://iconspirante.eu/en/">
+<link rel="alternate" hreflang="de" href="https://iconspirante.eu/de/">
+<link rel="alternate" hreflang="x-default" href="https://iconspirante.eu/">
+<!--/hreflang-->
 <meta name="robots" content="index, follow, max-image-preview:large">
 
 <!-- Favikon: a fájlok a gyökérbe kerülnek (Claude tesztelés\spirante-seo-2026-10-05\favicon\) -->
@@ -1048,6 +1053,47 @@ html.menu-lock{overflow:hidden}
   .philo__lead{margin-top:calc(1.1rem - clamp(2rem,4.5svh,3rem))}
   .philo__sub{margin-block-start:calc(-.75rem - .22em)}
 }
+/* =========================================================
+   NYELVVALTO (2026-10-13): HU / EN / DE, a fejlecben, a mobilmenuben es a valaszto jobb also sarkaban.
+   A fejlec stilusa: Big Shoulders kondenzalt caps, arany, az aktualis nyelv pink alahuzassal (mint az aktiv menupont).
+   Nincs zaszlo, nincs pill: harom betupar vekony fuggoleges valasztovonallal.
+   ========================================================= */
+.lang{display:flex;align-items:center;font-family:var(--f-disp);font-weight:800;text-transform:uppercase;letter-spacing:.08em;line-height:1}
+.lang a{position:relative;display:inline-flex;align-items:center;justify-content:center;min-width:36px;min-height:44px;padding:0 .45rem;color:rgba(220,187,104,.62);transition:color .2s}
+.lang a+a::before{content:'';position:absolute;left:0;top:50%;height:.9em;width:1px;background:rgba(220,187,104,.32);transform:translateY(-50%)}
+.lang a::after{content:'';position:absolute;left:.45rem;right:.45rem;bottom:.7rem;height:2px;background:var(--pink);transform:scaleX(0);transform-origin:left;transition:transform .25s var(--ease)}
+.lang a:hover{color:#DCBB68}
+.lang a:hover::after{transform:scaleX(1)}
+.lang a[aria-current]{color:#F3DFA6}
+.lang a[aria-current]::after{transform:scaleX(1)}
+.lang--nav{font-size:.95rem;margin-left:clamp(.2rem,1vw,1rem)}
+.lang--mnav{font-size:1.35rem;margin-top:1.4rem;border-top:1px solid var(--line);padding-top:.6rem}
+.mnav .lang--mnav a{display:inline-flex;font-size:inherit;border-bottom:0;padding:0 .7rem;min-height:48px;opacity:1;translate:none}
+.mnav .lang--mnav a:first-child{padding-left:0}
+.mnav .lang--mnav a:first-child::after{left:0}
+@media(max-width:400px){.lang--nav{font-size:.88rem}.lang--nav a{min-width:32px;padding:0 .35rem}}
+/* nyitott mobilmenunel a menu aljan levo valto a tobbi menuponttal egy helyen van, a fejlecben ne legyen ketszer */
+body.menu-open .lang--nav{visibility:hidden}
+/* valaszto: jobb also sarok (gepen a Botaniqa-plakat alatti savban, telefonon a jobb felso sarokban) */
+.lang--land{position:absolute;z-index:7;right:clamp(.8rem,2vw,2rem);bottom:clamp(.2rem,1.2svh,.9rem);font-size:.95rem;
+  text-shadow:0 1px 10px rgba(0,0,0,.8)}
+.js .landing .lang--land{opacity:0}
+.js .landing.is-in .lang--land{opacity:1;transition:opacity 1s var(--ease) .35s}
+@media(max-width:767px) and (orientation:portrait){
+  .lang--land{top:auto;bottom:auto;top:calc(clamp(1rem,3.4svh,1.8rem) + min(88vw,calc(22svh * 1.7768)) / 1.7768 + 24px);right:.6rem;font-size:.9rem}
+}
+/* fekvo telefon: a jobb also sarokban a Botaniqa-plakat all, ezert felul, a bal plakat es a Botaniqa-felirat kozotti savban */
+@media(max-width:767px) and (orientation:landscape){.lang--land{right:auto;left:34%;top:0;bottom:auto}}
+@media (prefers-reduced-motion:reduce){.js .landing .lang--land{opacity:1;transition:none}.lang a::after{transition:none}}
+/* EKEZET-VEDELEM 2 (2026-10-13): a maradek arany cimek (ekezet-ellenor merte) */
+#philo .pr__t{padding-top:.22em;margin-top:-.22em}
+.card__h{padding-top:.22em;margin-top:calc(.6rem - .22em)}
+.band__h{padding-top:.22em;margin-top:-.22em}
+#philo .philo__h{padding-top:.22em;margin-top:calc(1rem - .22em)}
+#philo .philo__big{padding-top:.22em;margin-top:calc(.6rem - .22em)}
+.eds__h{padding-top:.22em;margin-top:-.22em}
+.news__card h3{padding-top:.22em;margin-top:calc(.6rem - .22em)}
+.flyer figcaption{padding-top:.22em;margin-top:calc(1.1rem - .22em)}
 </style>
 </head>
 <body>
@@ -1144,6 +1190,8 @@ html.menu-lock{overflow:hidden}
   <div class="landing__center">
     <img class="landing__slogan" src="media/slogan-notrends-720.webp?v=5" srcset="media/slogan-notrends-720.webp?v=5 720w, media/slogan-notrends-1080.webp?v=5 1080w, media/slogan-notrends.webp?v=5 1200w" sizes="(max-width:767px) 42vw, 360px" width="1200" height="770" decoding="async" alt="No trends. This is ICON">
   </div>
+
+  <!--lang:land--><nav class="lang lang--land" aria-label="Nyelv"><a href="index.html" data-lang="hu" data-clean="/" hreflang="hu" lang="hu" title="Magyar" aria-current="true">HU</a><a href="en/index.html" data-lang="en" data-clean="/en/" hreflang="en" lang="en" title="English">EN</a><a href="de/index.html" data-lang="de" data-clean="/de/" hreflang="de" lang="de" title="Deutsch">DE</a></nav><!--/lang-->
 </section>
 
 <!-- =========================================================
@@ -1171,6 +1219,7 @@ html.menu-lock{overflow:hidden}
     <li><a class="nav__link" href="#hirek" data-scroll>Hírek</a></li>
     <li><a class="nav__link" href="#kapcsolat" data-scroll>Kapcsolat</a></li>
   </ul>
+  <!--lang:nav--><nav class="lang lang--nav" aria-label="Nyelv"><a href="index.html" data-lang="hu" data-clean="/" hreflang="hu" lang="hu" title="Magyar" aria-current="true">HU</a><a href="en/index.html" data-lang="en" data-clean="/en/" hreflang="en" lang="en" title="English">EN</a><a href="de/index.html" data-lang="de" data-clean="/de/" hreflang="de" lang="de" title="Deutsch">DE</a></nav><!--/lang-->
   <a class="nav__switch" href="#botaniqa" data-scroll>Botaniqa</a>
   <button class="nav__burger" type="button" aria-expanded="false" aria-controls="mnav" aria-label="Menü megnyitása"><span></span><span></span></button>
 </nav>
@@ -1187,6 +1236,7 @@ html.menu-lock{overflow:hidden}
   <a href="#hirek" data-scroll>Hírek</a>
   <a href="#kapcsolat" data-scroll>Kapcsolat</a>
   <a class="mnav__switch" href="#botaniqa" data-scroll>Botaniqa</a>
+  <!--lang:mnav--><nav class="lang lang--mnav" aria-label="Nyelv"><a href="index.html" data-lang="hu" data-clean="/" hreflang="hu" lang="hu" title="Magyar" aria-current="true">HU</a><a href="en/index.html" data-lang="en" data-clean="/en/" hreflang="en" lang="en" title="English">EN</a><a href="de/index.html" data-lang="de" data-clean="/de/" hreflang="de" lang="de" title="Deutsch">DE</a></nav><!--/lang-->
 </div>
 
 <!-- =========================================================
@@ -1964,15 +2014,42 @@ document.addEventListener('DOMContentLoaded',function(){
     initStage();
   }
 
-  /* ---- DEEP LINK: #view--icon, #botaniqa (regi #view--bottle / #view--can is) ---- */
-  function hashTarget(){ var h=location.hash||''; return (h==='#botaniqa' || /^#view--/.test(h)) ? h : null; }
+  /* ---- DEEP LINK: #view--icon, #botaniqa (regi #view--bottle / #view--can is), es 2026-10-13 ota a nezet barmely szekcioja
+     (#philo, #kapcsolat ...), hogy a nyelvvaltas ugyanarra a szekciora erkezzen. A korkapu elotte mindig lefut. ---- */
+  function hashTarget(){
+    var h=location.hash||'';
+    if(h==='#botaniqa' || /^#view--/.test(h)) return h;
+    if(/^#[\w-]+$/.test(h)){ var el=doc.getElementById(h.slice(1)); if(el && el.closest && el.closest('#view--icon')) return h; }
+    return null;
+  }
   function openFromHash(){
     var h=hashTarget(); if(!h || !gatePassed) return;
-    if(current){ if(h==='#botaniqa') jumpTo('#botaniqa',false); return; }
-    showView(h==='#botaniqa' ? '#botaniqa' : null);
+    var sec=/^#view--/.test(h) ? null : h;
+    if(current){ if(sec) jumpTo(sec,false); return; }
+    showView(sec);
   }
   if(ageOk && hashTarget()) setTimeout(openFromHash,reduce?0:140);
   addEventListener('hashchange',openFromHash);
+
+  /* ---- NYELVVALTO: http(s) alatt tiszta ut (/, /en/, /de/), file:// alatt relativ index.html.
+     A nezetben az eppen olvasott szekcio horgonyat viszi at (a korkapu az uj oldalon is lefut). ---- */
+  var LANG_SEC=['top','philo','termekek','izvilag','kiadasok','megjelenesek','social','hirek','botaniqa','kapcsolat'];
+  function currentSection(){
+    var lim=navH()+innerHeight*.35, hit=null;
+    LANG_SEC.forEach(function(id){ var el=doc.getElementById(id); if(el && el.getBoundingClientRect().top<=lim) hit=id; });
+    return hit;
+  }
+  var webProto=/^https?:$/.test(location.protocol);
+  $$('.lang a[data-lang]').forEach(function(a){
+    if(webProto) a.setAttribute('href',a.getAttribute('data-clean'));
+    a.addEventListener('click',function(e){
+      if(a.hasAttribute('aria-current')){ e.preventDefault(); closeMenu(); return; }
+      if(!current) return;
+      var sec=currentSection();
+      e.preventDefault();
+      location.href=a.href.split('#')[0]+'#'+((!sec || sec==='top') ? 'view--icon' : sec);
+    });
+  });
 
   /* ---- KURZOR (sajat rAF, gsap-fuggetlen) ---- */
   if(!reduce && !touch){
