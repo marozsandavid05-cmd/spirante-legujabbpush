@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cookie policy · ICON SPIRANTE Kft.</title>
+<meta name="description" content="iconspirante.eu does not use cookies: what this means, which external elements are loaded and why there is no cookie banner.">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#0B0512">
+<link rel="canonical" href="https://iconspirante.eu/en/cookies">
+<link rel="alternate" hreflang="hu" href="https://iconspirante.eu/sutik">
+<link rel="alternate" hreflang="en" href="https://iconspirante.eu/en/cookies">
+<link rel="alternate" hreflang="de" href="https://iconspirante.eu/de/cookies">
+<link rel="alternate" hreflang="x-default" href="https://iconspirante.eu/sutik">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ICON Spirante IX">
+<meta property="og:title" content="Cookie policy · ICON SPIRANTE Kft.">
+<meta property="og:description" content="iconspirante.eu does not use cookies: what this means, which external elements are loaded and why there is no cookie banner.">
+<meta property="og:url" content="https://iconspirante.eu/en/cookies">
+<meta property="og:locale" content="en_GB">
+<meta property="og:locale:alternate" content="hu_HU">
+<meta property="og:locale:alternate" content="de_DE">
+<link rel="icon" href="../favicon.ico?v=i2" sizes="16x16 32x32 48x48">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png?v=i2">
+<link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png?v=i2">
+<link rel="manifest" href="../site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil:opsz,wght@10..72,600..900&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+@font-face{font-family:"Big Shoulders";src:url(../fonts/BigShoulders-ICON.woff2?v=p1) format("woff2");font-weight:100 900;font-style:normal;font-display:swap}
+/* ICON Spirante · jogi oldalak (impresszum, adatkezelés, ÁSZF, sütik), 2026-10-19
+   A főoldal világa: éjszakai lila-fekete alap, Big Shoulders caps arany címek, Jost szövegtörzs, pink él.
+   Termékkép, palack, szlogen itt NINCS (Grt. 18. §). Mozgás nincs, ezért Lenis/GSAP sem. */
+:root{
+  --night:#0B0512;--night-2:#140A1C;--night-3:#1D1128;
+  --gold:#DCBB68;--gold-hi:#F3DFA6;--text:#E6D6AE;--muted:#C9B68A;
+  --pink:#FF2E5C;--line:rgba(220,187,104,.16);--line-2:rgba(220,187,104,.3);
+  --f-disp:'Big Shoulders','Arial Narrow',system-ui,sans-serif;
+  --f-sten:'Big Shoulders Stencil','Big Shoulders','Arial Narrow',system-ui,sans-serif;
+  --f-body:'Jost',system-ui,sans-serif;
+  --pad:clamp(1.1rem,4.2vw,4.5rem);--maxw:1240px;--ease:cubic-bezier(.23,1,.32,1)
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:auto;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{background:var(--night);color:var(--text);font-family:var(--f-body);font-size:1.0625rem;line-height:1.7;overflow-x:clip;
+  background-image:radial-gradient(60% 40% at 100% 0%,rgba(160,75,216,.10),transparent 70%),radial-gradient(50% 35% at 0% 100%,rgba(255,46,92,.07),transparent 70%);background-attachment:fixed}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--pink);outline-offset:3px}
+.sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.skip{position:absolute;left:var(--pad);top:-60px;z-index:20;background:var(--gold);color:var(--night);padding:.7rem 1rem;font-family:var(--f-disp);font-weight:800;text-transform:uppercase;letter-spacing:.1em;text-decoration:none}
+.skip:focus{top:.6rem}
+
+/* ---------- fejléc ---------- */
+.top{max-width:var(--maxw);margin:0 auto;padding:1.1rem var(--pad) 0;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.top__logo{display:block;width:clamp(118px,13vw,150px);flex:none}
+.top__logo img{width:100%;height:auto}
+.top__r{display:flex;align-items:center;gap:clamp(.6rem,2vw,1.6rem)}
+.top__home{font-family:var(--f-disp);font-weight:800;text-transform:uppercase;letter-spacing:.12em;font-size:.95rem;color:var(--gold);text-decoration:none;display:inline-flex;align-items:center;min-height:44px;gap:.5rem}
+.top__home::before{content:'';width:.55em;height:.55em;border-left:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg);margin-right:.1rem;transition:transform .25s var(--ease)}
+.top__home:hover::before{transform:translateX(-3px) rotate(45deg)}
+.top__home:hover{color:var(--gold-hi)}
+
+/* nyelvváltó: ugyanaz a jel, mint a főoldalon */
+.lang{display:flex;align-items:center;font-family:var(--f-disp);font-weight:800;text-transform:uppercase;letter-spacing:.08em;line-height:1;font-size:.95rem}
+.lang a{position:relative;display:inline-flex;align-items:center;justify-content:center;min-width:38px;min-height:44px;padding:0 .45rem;color:rgba(220,187,104,.72);text-decoration:none;transition:color .2s}
+.lang a+a::before{content:'';position:absolute;left:0;top:50%;height:.9em;width:1px;background:rgba(220,187,104,.32);transform:translateY(-50%)}
+.lang a::after{content:'';position:absolute;left:.45rem;right:.45rem;bottom:.7rem;height:2px;background:var(--pink);transform:scaleX(0);transform-origin:left;transition:transform .25s var(--ease)}
+.lang a:hover{color:var(--gold)}
+.lang a:hover::after,.lang a[aria-current]::after{transform:scaleX(1)}
+.lang a[aria-current]{color:var(--gold-hi)}
+
+/* ---------- címfej ---------- */
+.hd{max-width:var(--maxw);margin:0 auto;padding:clamp(2.6rem,8vh,5rem) var(--pad) clamp(1.8rem,4vh,2.6rem);border-bottom:3px solid var(--pink)}
+.hd__h{font-family:var(--f-disp);font-weight:800;text-transform:uppercase;color:var(--gold);font-size:clamp(2.4rem,5.2vw,4.75rem);line-height:1.12;letter-spacing:.004em;text-wrap:balance;max-width:18ch;padding-top:.12em;margin-top:-.12em}
+.hd__kicker{margin-top:1.4rem;font-family:var(--f-sten);font-weight:700;text-transform:uppercase;letter-spacing:.2em;font-size:.82rem;line-height:1.5;color:var(--gold)}
+.hd__meta{margin-top:.5rem;font-size:.95rem;color:var(--muted)}
+.hd__note{margin-top:1rem;max-width:40em;font-size:.95rem;color:var(--text);padding-left:1rem;border-left:2px solid var(--pink)}
+
+/* ---------- törzs: tartalomjegyzék + olvasóhasáb ---------- */
+.doc{max-width:var(--maxw);margin:0 auto;padding:clamp(2.2rem,6vh,4rem) var(--pad) clamp(3.5rem,9vh,5.5rem)}
+.doc--toc{display:grid;grid-template-columns:minmax(220px,300px) minmax(0,1fr);column-gap:clamp(2rem,6vw,6rem);align-items:start}
+.toc{position:sticky;top:1.5rem;max-height:calc(100svh - 3rem);overflow:auto;scrollbar-width:thin}
+.toc summary{list-style:none;display:flex;align-items:baseline;justify-content:space-between;gap:1rem;padding-bottom:.7rem;border-bottom:1px solid var(--line-2);font-family:var(--f-disp);font-weight:800;text-transform:uppercase;letter-spacing:.14em;font-size:1rem;color:var(--gold);cursor:default}
+.toc summary::-webkit-details-marker{display:none}
+.toc summary small{font-family:var(--f-body);font-weight:400;text-transform:none;letter-spacing:0;font-size:.85rem;color:var(--muted)}
+.toc__l{list-style:none;margin-top:.4rem}
+.toc__l a{display:grid;grid-template-columns:2.1rem 1fr;align-items:baseline;gap:.2rem;padding:.42rem 0;min-height:44px;align-content:center;text-decoration:none;color:var(--muted);font-size:.95rem;line-height:1.35;transition:color .2s}
+.toc__n{font-family:var(--f-disp);font-weight:800;font-size:1rem;color:rgba(220,187,104,.7)}
+.toc__l a:hover,.toc__l a[aria-current="true"]{color:var(--gold-hi)}
+.toc__l a[aria-current="true"] .toc__n{color:var(--pink)}
+
+.art{max-width:38em;min-width:0}
+.sz{scroll-margin-top:1.5rem}
+.sz+.sz{margin-top:clamp(2.6rem,6vh,3.6rem)}
+.sh{display:grid;grid-template-columns:3.2rem 1fr;align-items:baseline;column-gap:.4rem;font-family:var(--f-disp);font-weight:800;text-transform:uppercase;color:var(--gold);font-size:clamp(1.5rem,2.4vw,2rem);line-height:1.12;letter-spacing:.01em;padding-top:.12em;margin-top:-.12em}
+.sh__n{font-size:1.35em;line-height:1;color:transparent;-webkit-text-stroke:1.4px var(--pink);padding-top:.15em}
+.sz__b{margin-top:1rem;padding-left:3.6rem}
+.sz__b p+p,.sz__b p+.ls,.sz__b .ls+p{margin-top:1rem}
+.sz__b a{color:var(--gold);text-decoration:underline;text-decoration-color:rgba(255,46,92,.75);text-decoration-thickness:1px;text-underline-offset:.22em;overflow-wrap:anywhere;transition:color .2s,text-decoration-color .2s}
+.sz__b a:hover{color:var(--gold-hi);text-decoration-color:var(--pink)}
+.ls{list-style:none;display:grid;gap:.9rem}
+.ls li{position:relative;padding:1rem 1.1rem 1rem 1.25rem;background:var(--night-2);border-left:2px solid var(--line-2)}
+.ls strong{display:block;font-family:var(--f-sten);font-weight:700;text-transform:uppercase;letter-spacing:.14em;font-size:.82rem;line-height:1.4;color:var(--gold);margin-bottom:.25rem}
+
+/* ---------- impresszum: adatlap ---------- */
+.art--reg{max-width:none}
+.doc--reg .sz{display:grid;grid-template-columns:minmax(200px,300px) minmax(0,1fr);column-gap:clamp(2rem,6vw,6rem);padding-block:clamp(1.6rem,4vh,2.4rem);border-top:1px solid var(--line)}
+.doc--reg .sz+.sz{margin-top:0}
+.doc--reg .sz:first-child{border-top:0;padding-top:0}
+.sh--reg{display:block;font-size:clamp(1.25rem,1.9vw,1.6rem);letter-spacing:.04em}
+.doc--reg .sz__b{margin-top:0;padding-left:0;max-width:44em}
+.reg{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.1rem 2rem}
+.fld--w{grid-column:1/-1}
+.reg dt{font-family:var(--f-sten);font-weight:700;text-transform:uppercase;letter-spacing:.16em;font-size:.78rem;line-height:1.4;color:var(--muted)}
+.reg dd{margin-top:.2rem;font-size:1.0625rem;line-height:1.5;color:var(--text)}
+.reg__nev{font-family:var(--f-body);font-weight:500;font-size:1.25rem;line-height:1.4;color:var(--gold-hi)}
+.reg__nev+.reg__nev{margin-top:.5rem}
+.reg__nev+.reg{margin-top:1rem}
+.doc--reg .sz__b>p:not(.reg__nev){max-width:38em}
+
+/* ---------- lábléc ---------- */
+.ft{border-top:3px solid var(--pink);background:#070309;padding:2rem var(--pad) 1.6rem}
+.ft__legal,.ft__row{max-width:var(--maxw);margin:0 auto}
+.ft__legal{display:flex;flex-wrap:wrap;align-items:center;column-gap:.7rem;row-gap:.2rem;font-family:var(--f-disp);font-weight:800;text-transform:uppercase;letter-spacing:.1em;font-size:1rem}
+.ft__legal>span{color:rgba(220,187,104,.7)}
+.ft__legal a{display:inline-flex;align-items:center;min-height:44px;color:var(--gold);text-decoration:none;background:linear-gradient(var(--pink),var(--pink)) left 76%/0 2px no-repeat;transition:background-size .25s var(--ease),color .2s}
+.ft__legal a:hover,.ft__legal a[aria-current="page"]{background-size:100% 2px;color:var(--gold-hi)}
+.ft__row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.6rem 2rem;margin-top:1rem;padding-top:1rem;border-top:1px solid var(--line)}
+.ft__row .lang{margin-left:-.45rem}
+.ft__copy{font-family:var(--f-sten);font-weight:700;text-transform:uppercase;letter-spacing:.16em;font-size:.8rem;color:var(--muted)}
+
+/* ---------- reszponzív ---------- */
+@media(max-width:900px){
+  .doc--toc{grid-template-columns:1fr}
+  .toc{position:static;max-height:none;margin-bottom:2.4rem;border:1px solid var(--line-2);background:var(--night-2);padding:0 1rem}
+  .toc summary{cursor:pointer;min-height:48px;align-items:center;padding:.6rem 0;border-bottom:0}
+  .toc summary span::after{content:'';display:inline-block;width:.45em;height:.45em;margin-left:.7em;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:translateY(-.2em) rotate(45deg);transition:transform .2s}
+  .toc[open] summary span::after{transform:translateY(.05em) rotate(-135deg)}
+  .toc[open] summary{border-bottom:1px solid var(--line-2)}
+  .toc__l{padding-bottom:.6rem}
+  .doc--reg .sz{grid-template-columns:1fr;row-gap:1rem}
+}
+@media(max-width:600px){
+  body{font-size:1rem}
+  .top{padding-top:.8rem}
+  .top__home{font-size:.88rem;letter-spacing:.08em}
+  .lang a{min-width:34px;padding:0 .35rem}
+  .hd__h{font-size:clamp(1.9rem,9.4vw,3.4rem);overflow-wrap:break-word}
+  .sh{grid-template-columns:2.5rem 1fr;font-size:1.45rem}
+  .sz__b{padding-left:0}
+  .reg{grid-template-columns:1fr}
+  .ls li{padding:.9rem 1rem}
+  .ft__row{flex-direction:column;align-items:flex-start}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{transition:none!important}
+}
+@media print{
+  body{background:#fff;color:#000}
+  .top,.ft,.toc,.skip{display:none}
+  .hd__h,.sh,.reg__nev{color:#000}
+  .sh__n{color:#000;-webkit-text-stroke:0}
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://iconspirante.eu/en/cookies#webpage",
+      "url": "https://iconspirante.eu/en/cookies",
+      "name": "Cookie policy",
+      "description": "iconspirante.eu does not use cookies: what this means, which external elements are loaded and why there is no cookie banner.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@id": "https://iconspirante.eu/#website"
+      },
+      "publisher": {
+        "@id": "https://iconspirante.eu/#org"
+      },
+      "dateModified": "2026-10-19"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://iconspirante.eu/en/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Cookie policy",
+          "item": "https://iconspirante.eu/en/cookies"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body class="lg lg--sutik">
+<a class="skip" href="#tartalom">Skip to content</a>
+<header class="top">
+  <a class="top__logo" href="index.html" data-clean="/en/"><img src="../media/logo-gold-alfa-450.webp" width="450" height="225" alt="ICON Spirante, back to the homepage"></a>
+  <div class="top__r">
+    <a class="top__home" href="index.html" data-clean="/en/">Home</a>
+    <nav class="lang" aria-label="Language"><a href="../sutik.html" data-clean="/sutik" hreflang="hu" lang="hu" title="Magyar">HU</a><a href="cookies.html" data-clean="/en/cookies" hreflang="en" lang="en" title="English" aria-current="true">EN</a><a href="../de/cookies.html" data-clean="/de/cookies" hreflang="de" lang="de" title="Deutsch">DE</a></nav>
+  </div>
+</header>
+<main id="tartalom">
+  <header class="hd">
+    <h1 class="hd__h">Cookie policy</h1>
+    <p class="hd__kicker">ICON SPIRANTE · iconspirante.eu · Cookie policy</p><p class="hd__meta">Version: 1.0 · Effective from the date of publication (19 October 2026)</p><p class="hd__note">This is a translation. The Hungarian version is legally binding.</p>
+  </header>
+  <div class="doc doc--toc"><details class="toc" open><summary><span>Contents</span><small>9 sections</small></summary><nav aria-label="Contents"><ol class="toc__l"><li><a href="#p1"><span class="toc__n">1</span><span class="toc__t">Operator</span></a></li><li><a href="#p2"><span class="toc__n">2</span><span class="toc__t">What is a cookie?</span></a></li><li><a href="#p3"><span class="toc__n">3</span><span class="toc__t">The website does not use cookies</span></a></li><li><a href="#p4"><span class="toc__n">4</span><span class="toc__t">Statistics cookies</span></a></li><li><a href="#p5"><span class="toc__n">5</span><span class="toc__t">Marketing and social media technologies</span></a></li><li><a href="#p6"><span class="toc__n">6</span><span class="toc__t">Consent</span></a></li><li><a href="#p7"><span class="toc__n">7</span><span class="toc__t">Cookie list</span></a></li><li><a href="#p8"><span class="toc__n">8</span><span class="toc__t">Rights and contact</span></a></li><li><a href="#p9"><span class="toc__n">9</span><span class="toc__t">Legal sources</span></a></li></ol></nav></details><article class="art"><section class="sz" aria-labelledby="p1"><h2 class="sh" id="p1"><span class="sh__n" aria-hidden="true">1</span><span class="sh__t"><span class="sr-only">1. </span>Operator</span></h2><div class="sz__b"><p>The website is operated by ICON SPIRANTE Korlátolt Felelősségű Társaság (ICON SPIRANTE Kft.), registered office and postal address: Fő utca 38., 9094 Tápszentmiklós, Hungary, company registration number: 08-09-038620 (Court of Registration of the Győr Regional Court), tax number: 33055806-2-08, e-mail: <a href="mailto:info@iconspirante.eu">info@iconspirante.eu</a>, phone: <a href="tel:+36203501212">+36&nbsp;20&nbsp;350&nbsp;1212</a>. The hosting provider and further company details are listed in the <a class="xref" href="imprint.html" data-clean="/en/imprint">Legal notice</a>.</p></div></section><section class="sz" aria-labelledby="p2"><h2 class="sh" id="p2"><span class="sh__n" aria-hidden="true">2</span><span class="sh__t"><span class="sr-only">2. </span>What is a cookie?</span></h2><div class="sz__b"><p>Cookies and similar identifiers (such as the browser's local storage) can store information in the browser or on the device. The GDPR also applies to the processing of personal data connected with their use.</p></div></section><section class="sz" aria-labelledby="p3"><h2 class="sh" id="p3"><span class="sh__n" aria-hidden="true">3</span><span class="sh__t"><span class="sr-only">3. </span>The website does not use cookies</span></h2><div class="sz__b"><p>The website iconspirante.eu, including its English (/en/) and German (/de/) versions, does not place cookies on the visitor's device and does not use the browser's local storage (localStorage, sessionStorage) to store data. The age gate checks the date of birth entered only in the browser and does not save it, which is why the gate appears again on every visit.</p></div></section><section class="sz" aria-labelledby="p4"><h2 class="sh" id="p4"><span class="sh__n" aria-hidden="true">4</span><span class="sh__t"><span class="sr-only">4. </span>Statistics cookies</span></h2><div class="sz__b"><p>The website does not use any statistics or traffic measurement tool (such as Google Analytics or Matomo).</p></div></section><section class="sz" aria-labelledby="p5"><h2 class="sh" id="p5"><span class="sh__n" aria-hidden="true">5</span><span class="sh__t"><span class="sr-only">5. </span>Marketing and social media technologies</span></h2><div class="sz__b"><p>The website does not use any marketing or remarketing tool (such as Meta Pixel or TikTok Pixel) and does not embed social media content. The links to social media pages (Instagram, Facebook) are simple links that open only when clicked, subject to the terms of the page opened.</p></div></section><section class="sz" aria-labelledby="p6"><h2 class="sh" id="p6"><span class="sh__n" aria-hidden="true">6</span><span class="sh__t"><span class="sr-only">6. </span>Consent</span></h2><div class="sz__b"><p>As the website does not store any information on the visitor's device and does not access it, no consent needs to be requested, and therefore the website has no cookie banner (section 155(4) of Hungarian Act C of 2003). Should the operator introduce cookies or measurement tools that are not strictly necessary in the future, it will activate them only after prior, active consent; in the banner, accepting and rejecting will be equally easy, without pre-ticked options, and this policy will be updated.</p></div></section><section class="sz" aria-labelledby="p7"><h2 class="sh" id="p7"><span class="sh__n" aria-hidden="true">7</span><span class="sh__t"><span class="sr-only">7. </span>Cookie list</span></h2><div class="sz__b"><p>The website's cookie list is empty: the website does not use cookies. Last check of the list: 19 October 2026, on the live website, by browser measurement (Hungarian, English and German versions, age gate completed, whole page scrolled through).</p><p>The website loads two elements from external providers (Google Fonts font, OpenFreeMap map). According to their own information, these providers do not set cookies; however, for technical reasons they do receive the visitor's IP address. Details are given in section 6 of the <a class="xref" href="privacy.html" data-clean="/en/privacy">Privacy policy</a>.</p></div></section><section class="sz" aria-labelledby="p8"><h2 class="sh" id="p8"><span class="sh__n" aria-hidden="true">8</span><span class="sh__t"><span class="sr-only">8. </span>Rights and contact</span></h2><div class="sz__b"><p>Rights relating to personal data and remedies are described in the Privacy policy. There is no link to open cookie settings, because the website does not use cookies.</p></div></section><section class="sz" aria-labelledby="p9"><h2 class="sh" id="p9"><span class="sh__n" aria-hidden="true">9</span><span class="sh__t"><span class="sr-only">9. </span>Legal sources</span></h2><div class="sz__b"><p>Electronic communications provisions of Hungarian Act C of 2003 (section 155(4)), Article 5(3) of Directive 2002/58/EC, Regulation (EU) 2016/679 (GDPR), the relevant guidelines of the EDPB and the authorities.</p><p>Of the language versions of this policy, the Hungarian text is legally binding.</p></div></section></article></div>
+</main>
+<footer class="ft">
+  <nav class="ft__legal" aria-label="Legal information"><a href="imprint.html" data-clean="/en/imprint">Legal notice</a><span aria-hidden="true">·</span><a href="privacy.html" data-clean="/en/privacy">Privacy</a><span aria-hidden="true">·</span><a href="terms.html" data-clean="/en/terms">Terms</a><span aria-hidden="true">·</span><a href="cookies.html" data-clean="/en/cookies" aria-current="page">Cookies</a></nav>
+  <div class="ft__row"><nav class="lang" aria-label="Language"><a href="../sutik.html" data-clean="/sutik" hreflang="hu" lang="hu" title="Magyar">HU</a><a href="cookies.html" data-clean="/en/cookies" hreflang="en" lang="en" title="English" aria-current="true">EN</a><a href="../de/cookies.html" data-clean="/de/cookies" hreflang="de" lang="de" title="Deutsch">DE</a></nav><p class="ft__copy">© 2026 ICON SPIRANTE Kft.</p></div>
+</footer>
+<script>
+(function(){
+  // tiszta URL http(s) alatt (file:// dupla kattra a relatív .html marad)
+  if(/^https?:$/.test(location.protocol)){
+    document.querySelectorAll('a[data-clean]').forEach(function(a){ a.setAttribute('href', a.getAttribute('data-clean')); });
+  }
+  var toc=document.querySelector('.toc');
+  if(!toc) return;
+  // mobilon a tartalomjegyzék alapból csukva, gépen nyitva és nem csukható
+  var mq=matchMedia('(max-width:900px)');
+  function allit(){ if(mq.matches) toc.removeAttribute('open'); else toc.setAttribute('open',''); }
+  allit(); mq.addEventListener('change',allit);
+  toc.querySelector('summary').addEventListener('click',function(e){ if(!mq.matches) e.preventDefault(); });
+  toc.querySelectorAll('a').forEach(function(a){ a.addEventListener('click',function(){ if(mq.matches) toc.removeAttribute('open'); }); });
+  // az éppen olvasott pont jelölése a tartalomjegyzékben
+  if(!('IntersectionObserver' in window)) return;
+  var linkek={}; toc.querySelectorAll('a[href^="#"]').forEach(function(a){ linkek[a.getAttribute('href').slice(1)]=a; });
+  var akt=null;
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if(!e.isIntersecting) return;
+      var a=linkek[e.target.id]; if(!a||a===akt) return;
+      if(akt) akt.removeAttribute('aria-current');
+      a.setAttribute('aria-current','true'); akt=a;
+    });
+  },{rootMargin:'-20% 0px -70% 0px'});
+  document.querySelectorAll('.sh[id]').forEach(function(h){ io.observe(h); });
+})();
+</script>
+</body>
+</html>

@@ -3,7 +3,7 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://iconspirante.eu/</loc>
-    <lastmod>2026-10-13</lastmod>
+    <lastmod>2026-10-19</lastmod>
     <xhtml:link rel="alternate" hreflang="hu" href="https://iconspirante.eu/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://iconspirante.eu/en/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://iconspirante.eu/de/"/>
@@ -11,7 +11,7 @@
   </url>
   <url>
     <loc>https://iconspirante.eu/en/</loc>
-    <lastmod>2026-10-13</lastmod>
+    <lastmod>2026-10-19</lastmod>
     <xhtml:link rel="alternate" hreflang="hu" href="https://iconspirante.eu/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://iconspirante.eu/en/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://iconspirante.eu/de/"/>
@@ -19,10 +19,106 @@
   </url>
   <url>
     <loc>https://iconspirante.eu/de/</loc>
-    <lastmod>2026-10-13</lastmod>
+    <lastmod>2026-10-19</lastmod>
     <xhtml:link rel="alternate" hreflang="hu" href="https://iconspirante.eu/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://iconspirante.eu/en/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://iconspirante.eu/de/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://iconspirante.eu/"/>
+  </url>
+  <url>
+    <loc>https://iconspirante.eu/impresszum</loc>
+    <lastmod>2026-10-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://iconspirante.eu/impresszum"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconspirante.eu/en/imprint"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://iconspirante.eu/de/impressum"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconspirante.eu/impresszum"/>
+  </url>
+  <url>
+    <loc>https://iconspirante.eu/en/imprint</loc>
+    <lastmod>2026-10-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://iconspirante.eu/impresszum"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconspirante.eu/en/imprint"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://iconspirante.eu/de/impressum"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconspirante.eu/impresszum"/>
+  </url>
+  <url>
+    <loc>https://iconspirante.eu/de/impressum</loc>
+    <lastmod>2026-10-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://iconspirante.eu/impresszum"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconspirante.eu/en/imprint"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://iconspirante.eu/de/impressum"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconspirante.eu/impresszum"/>
+  </url>
+  <url>
+    <loc>https://iconspirante.eu/adatkezeles</loc>
+    <lastmod>2026-10-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://iconspirante.eu/adatkezeles"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconspirante.eu/en/privacy"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://iconspirante.eu/de/datenschutz"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconspirante.eu/adatkezeles"/>
+  </url>
+  <url>
+    <loc>https://iconspirante.eu/en/privacy</loc>
+    <lastmod>2026-10-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://iconspirante.eu/adatkezeles"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconspirante.eu/en/privacy"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://iconspirante.eu/de/datenschutz"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconspirante.eu/adatkezeles"/>
+  </url>
+  <url>
+    <loc>https://iconspirante.eu/de/datenschutz</loc>
+    <lastmod>2026-10-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://iconspirante.eu/adatkezeles"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconspirante.eu/en/privacy"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://iconspirante.eu/de/datenschutz"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconspirante.eu/adatkezeles"/>
+  </url>
+  <url>
+    <loc>https://iconspirante.eu/aszf</loc>
+    <lastmod>2026-10-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://iconspirante.eu/aszf"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconspirante.eu/en/terms"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://iconspirante.eu/de/agb"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconspirante.eu/aszf"/>
+  </url>
+  <url>
+    <loc>https://iconspirante.eu/en/terms</loc>
+    <lastmod>2026-10-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://iconspirante.eu/aszf"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconspirante.eu/en/terms"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://iconspirante.eu/de/agb"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconspirante.eu/aszf"/>
+  </url>
+  <url>
+    <loc>https://iconspirante.eu/de/agb</loc>
+    <lastmod>2026-10-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://iconspirante.eu/aszf"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconspirante.eu/en/terms"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://iconspirante.eu/de/agb"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconspirante.eu/aszf"/>
+  </url>
+  <url>
+    <loc>https://iconspirante.eu/sutik</loc>
+    <lastmod>2026-10-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://iconspirante.eu/sutik"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconspirante.eu/en/cookies"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://iconspirante.eu/de/cookies"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconspirante.eu/sutik"/>
+  </url>
+  <url>
+    <loc>https://iconspirante.eu/en/cookies</loc>
+    <lastmod>2026-10-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://iconspirante.eu/sutik"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconspirante.eu/en/cookies"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://iconspirante.eu/de/cookies"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconspirante.eu/sutik"/>
+  </url>
+  <url>
+    <loc>https://iconspirante.eu/de/cookies</loc>
+    <lastmod>2026-10-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://iconspirante.eu/sutik"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iconspirante.eu/en/cookies"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://iconspirante.eu/de/cookies"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iconspirante.eu/sutik"/>
   </url>
 </urlset>

@@ -1099,6 +1099,12 @@ body.menu-open .lang--nav{visibility:hidden}
 .eds__h{padding-top:.22em;margin-top:-.22em}
 .news__card h3{padding-top:.22em;margin-top:calc(.6rem - .22em)}
 .flyer figcaption{padding-top:.22em;margin-top:calc(1.1rem - .22em)}
+/* JOGI SOR a laclecben (2026-10-19): Impresszum · Adatkezeles · ASZF · Sutik, a foot__base utolso sora */
+.foot__legal{flex:1 1 100%;display:flex;flex-wrap:wrap;align-items:center;column-gap:.7rem;row-gap:0;margin-top:.2rem;font-family:var(--f-disp);font-weight:800;letter-spacing:.1em}
+.foot__legal span{color:rgba(220,187,104,.7)}
+.foot__legal a{display:inline-flex;align-items:center;min-height:44px;color:#DCBB68;background:linear-gradient(#FF2E5C,#FF2E5C) left 76%/0 2px no-repeat;transition:background-size .25s var(--ease),color .2s}
+.foot__legal a:hover,.foot__legal a:focus-visible{background-size:100% 2px;color:#F3DFA6}
+@media (prefers-reduced-motion:reduce){.foot__legal a{transition:none}}
 </style>
 </head>
 <body>
@@ -1607,6 +1613,7 @@ body.menu-open .lang--nav{visibility:hidden}
       <span class="foot__tag">Sei auch du ein ICON! Dein Leben. Deine Geschichte.</span>
       <span class="foot__18" aria-label="Nur für Personen ab 18 Jahren">18+</span>
       <span>Übermäßiger Alkoholkonsum schadet der Gesundheit. Nur für Personen ab 18&nbsp;Jahren.</span>
+      <nav class="foot__legal" aria-label="Rechtliche Hinweise"><a href="impressum.html" data-clean="/de/impressum">Impressum</a><span aria-hidden="true">·</span><a href="datenschutz.html" data-clean="/de/datenschutz">Datenschutz</a><span aria-hidden="true">·</span><a href="agb.html" data-clean="/de/agb">AGB</a><span aria-hidden="true">·</span><a href="cookies.html" data-clean="/de/cookies">Cookies</a></nav>
     </div>
   </footer>
 </main>
@@ -2047,6 +2054,7 @@ document.addEventListener('DOMContentLoaded',function(){
     return hit;
   }
   var webProto=/^https?:$/.test(location.protocol);
+  if(webProto) $$('.foot__legal a[data-clean]').forEach(function(a){ a.setAttribute('href',a.getAttribute('data-clean')); });
   $$('.lang a[data-lang]').forEach(function(a){
     if(webProto) a.setAttribute('href',a.getAttribute('data-clean'));
     a.addEventListener('click',function(e){
