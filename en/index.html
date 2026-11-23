@@ -16,7 +16,7 @@
 <!--/hreflang-->
 <meta name="robots" content="index, follow, max-image-preview:large">
 
-<!-- Favikon: a fájlok a gyökérbe kerülnek (Claude tesztelés\spirante-seo-2026-10-05\favicon\) -->
+<!-- Favikon -->
 <link rel="icon" href="../favicon.ico?v=i2" sizes="16x16 32x32 48x48">
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png?v=i2">
 <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png?v=i2">
@@ -207,7 +207,7 @@
 <meta name="theme-color" content="#0B0512">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="image" type="image/webp" imagesrcset="../media/v2-nyito-760.webp?v=w1v 760w, ../media/v2-nyito-1200.webp?v=w1v 1200w, ../media/v2-nyito-1672.webp?v=w1v 1672w" imagesizes="(max-width:767px) 88vw, 38vw" fetchpriority="high">
+<link rel="preload" as="image" type="image/webp" imagesrcset="../media/v2-nyito-760.webp?v=95 760w, ../media/v2-nyito-1200.webp?v=95 1200w, ../media/v2-nyito-1672.webp?v=95 1672w" imagesizes="(max-width:767px) 88vw, 38vw" fetchpriority="high">
 <link rel="preload" as="image" type="image/webp" imagesrcset="../media/v2-botaniqa-760.webp 760w, ../media/v2-botaniqa-1200.webp 1200w, ../media/v2-botaniqa-1672.webp 1672w" imagesizes="(max-width:767px) 88vw, 38vw" fetchpriority="high">
 <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil:opsz,wght@10..72,600..900&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -323,7 +323,7 @@ body.age-locked{overflow:hidden}
 .half--bota{z-index:1;clip-path:polygon(55% 0,100% 0,100% 100%,46% 100%)}
 .half--icon{z-index:2;clip-path:polygon(0 0,55% 0,46% 100%,0 100%)}
 .half__bed{position:absolute;inset:-6%;background-position:center;background-size:cover;filter:blur(30px) brightness(.44) saturate(1.25)}
-.half__bed--icon{background-image:url(../media/v2-nyito-blur.jpg?v=w1v)}
+.half__bed--icon{background-image:url(../media/v2-nyito-blur.jpg?v=95)}
 .half__bed--bota{background-image:url(../media/v2-botaniqa-blur.jpg)}
 .half__scrim{position:absolute;inset:0;pointer-events:none}
 .half--icon .half__scrim{background:linear-gradient(18deg,rgba(11,5,18,.78) 0%,rgba(11,5,18,.2) 42%,transparent 68%)}
@@ -462,7 +462,7 @@ body.menu-open .mnav a{opacity:1;translate:0 0}
 .hero__stage{position:relative;z-index:1;flex:none;height:var(--stageh);overflow:hidden}
 /* a plakat melletti elmosott kepagy a stage ala is lenyulik, es alfaval atuszik a lap hatterebe:
    nincs kemeny vagas a ket oldalon (kep alfazik 0-ra a hatter folott, nem szin a szinbe) */
-.hero__bed{position:absolute;left:-60px;right:-60px;top:calc(var(--navh) - 40px);height:calc(var(--stageh) + 40px + 26vh);background:url(../media/hero-ambassador-blur.jpg?v=h1) center/cover;filter:blur(26px) brightness(.4) saturate(1.2);
+.hero__bed{position:absolute;left:-60px;right:-60px;top:calc(var(--navh) - 40px);height:calc(var(--stageh) + 40px + 26vh);background:url(../media/hero-ambassador-blur.jpg?v=95) center/cover;filter:blur(26px) brightness(.4) saturate(1.2);
   -webkit-mask-image:linear-gradient(180deg,#000 0,#000 calc(100% - 44vh),rgba(0,0,0,.55) calc(100% - 24vh),transparent 100%);mask-image:linear-gradient(180deg,#000 0,#000 calc(100% - 44vh),rgba(0,0,0,.55) calc(100% - 24vh),transparent 100%)}
 .hero__poster{position:relative;z-index:1;height:100%;aspect-ratio:1672/941;max-width:100%;margin:0 auto}
 .hero__poster img{width:100%;height:100%;object-fit:cover}
@@ -1017,7 +1017,7 @@ h1,h2,h3,.slogan__txt,.band__fig,.flav b,.flyer figcaption,.nav__brand,.foot__h{
 .nav__panel--cans img,.mnav__cans img{filter:drop-shadow(0 16px 18px rgba(40,20,0,.45))}
 
 /* =========================================================
-   MOBIL-OPTIMALIZALAS (2026-10-05, Aurora): csak 1023 px alatt hat, a gepes (1440) latvany valtozatlan.
+   MOBIL-OPTIMALIZALAS: csak 1023 px alatt hat, a gepes (1440) latvany valtozatlan.
    Kivetel a reduced-motion korkapu-javitas: az minden meretben kell, mert enelkul a kapu lathatatlan volt.
    ========================================================= */
 /* KORKAPU reduced motion alatt: a .loader{display:none} a kaput is elrejtette, igy senki nem tudott belepni */
@@ -1183,8 +1183,8 @@ body.menu-open .lang--nav{visibility:hidden}
     <div class="half__scrim" aria-hidden="true"></div>
     <figure class="half__poster half__poster--icon">
       <picture>
-        <source type="image/webp" sizes="(max-width:767px) 88vw, 38vw" srcset="../media/v2-nyito-760.webp?v=w1v 760w, ../media/v2-nyito-1200.webp?v=w1v 1200w, ../media/v2-nyito-1672.webp?v=w1v 1672w">
-        <img src="../media/v2-nyito-1200.jpg?v=w1v" width="1672" height="941" fetchpriority="high" decoding="async" alt="Two ICON Spirante IX cans on a graffiti wall, painted hands forming a heart, “No rules. Just vibes!” lettering">
+        <source type="image/webp" sizes="(max-width:767px) 88vw, 38vw" srcset="../media/v2-nyito-760.webp?v=95 760w, ../media/v2-nyito-1200.webp?v=95 1200w, ../media/v2-nyito-1672.webp?v=95 1672w">
+        <img src="../media/v2-nyito-1200.jpg?v=95" width="1672" height="941" fetchpriority="high" decoding="async" alt="Two ICON Spirante IX cans on a graffiti wall, painted hands forming a heart, “No rules. Just vibes!” lettering">
       </picture>
       <span class="sticker" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span>
     </figure>
@@ -1270,8 +1270,8 @@ body.menu-open .lang--nav{visibility:hidden}
     <div class="hero__stage">
       <figure class="hero__poster">
         <picture>
-          <source type="image/webp" sizes="100vw" srcset="../media/hero-ambassador-760.webp?v=h1 760w, ../media/hero-ambassador-1200.webp?v=h1 1200w, ../media/hero-ambassador-1672.webp?v=h1 1672w">
-          <img src="../media/hero-ambassador-1200.jpg?v=h1" width="1672" height="941" decoding="async" alt="Tattooed man with a grey beard holding two ICON Spirante IX cans, Hibiscus and Green Apple">
+          <source type="image/webp" sizes="100vw" srcset="../media/hero-ambassador-760.webp?v=95 760w, ../media/hero-ambassador-1200.webp?v=95 1200w, ../media/hero-ambassador-1672.webp?v=95 1672w">
+          <img src="../media/hero-ambassador-1200.jpg?v=95" width="1672" height="941" decoding="async" alt="Tattooed man with a grey beard holding two ICON Spirante IX cans, Hibiscus and Green Apple">
         </picture>
       </figure>
     </div>
@@ -1353,21 +1353,21 @@ body.menu-open .lang--nav{visibility:hidden}
             <span class="card__num" aria-hidden="true">I</span>
             <h3 class="card__h">The Moment That Defines You</h3>
           </div>
-          <figure class="card__img"><img src="../media/p-jeg-900.webp?v=sr1" srcset="../media/p-jeg-540.webp?v=sr1 540w, ../media/p-jeg-900.webp?v=sr1 900w" sizes="(max-width:900px) 92vw, 42vw" width="900" height="1350" loading="lazy" decoding="async" alt="ICON Spirante IX cans on crushed ice, Green Apple and Hibiscus flavours"></figure>
+          <figure class="card__img"><img src="../media/p-jeg-900.webp?v=95" srcset="../media/p-jeg-540.webp?v=95 540w, ../media/p-jeg-900.webp?v=95 900w" sizes="(max-width:900px) 92vw, 42vw" width="900" height="1350" loading="lazy" decoding="async" alt="ICON Spirante IX cans on crushed ice, Green Apple and Hibiscus flavours"></figure>
         </li>
         <li class="card" id="can-hibiscus">
           <div class="card__body">
             <span class="card__num" aria-hidden="true">II</span>
             <h3 class="card__h">Don't Follow Others. Shape Your Own Life.</h3>
           </div>
-          <figure class="card__img"><img src="../media/p-jewel-900.webp?v=sr1" srcset="../media/p-jewel-540.webp?v=sr1 540w, ../media/p-jewel-900.webp?v=sr1 900w" sizes="(max-width:900px) 92vw, 42vw" width="900" height="1350" loading="lazy" decoding="async" alt="Hibiscus ICON Spirante IX can in golden light, “Every sip is magic” lettering"></figure>
+          <figure class="card__img"><img src="../media/p-jewel-900.webp?v=95" srcset="../media/p-jewel-540.webp?v=95 540w, ../media/p-jewel-900.webp?v=95 900w" sizes="(max-width:900px) 92vw, 42vw" width="900" height="1350" loading="lazy" decoding="async" alt="Hibiscus ICON Spirante IX can in golden light, “Every sip is magic” lettering"></figure>
         </li>
         <li class="card">
           <div class="card__body">
             <span class="card__num" aria-hidden="true">III</span>
             <h3 class="card__h">Your Life. Your Story.</h3>
           </div>
-          <figure class="card__img"><img src="../media/p-matteo-900.webp?v=sr1" srcset="../media/p-matteo-540.webp?v=sr1 540w, ../media/p-matteo-900.webp?v=sr1 900w" sizes="(max-width:900px) 92vw, 42vw" width="900" height="1350" loading="lazy" decoding="async" alt="Tattooed man with a grey beard holding an ICON Spirante IX can, “What's your story?” lettering"></figure>
+          <figure class="card__img"><img src="../media/p-matteo-900.webp?v=95" srcset="../media/p-matteo-540.webp?v=95 540w, ../media/p-matteo-900.webp?v=95 900w" sizes="(max-width:900px) 92vw, 42vw" width="900" height="1350" loading="lazy" decoding="async" alt="Tattooed man with a grey beard holding an ICON Spirante IX can, “What's your story?” lettering"></figure>
         </li>
       </ol>
     </div>
@@ -1375,7 +1375,7 @@ body.menu-open .lang--nav{visibility:hidden}
 
   <!-- 9% SAV (a 750-es band helye) -->
   <section class="band" aria-label="9.5%">
-    <div class="band__bg" aria-hidden="true"><picture class="pc"><source type="image/avif" sizes="100vw" srcset="../media/band-splash-720.avif?v=sr1 720w, ../media/band-splash-1280.avif?v=sr1 1280w, ../media/band-splash-1672.avif?v=sr1 1672w"><img src="../media/band-splash-1280.webp?v=sr1" srcset="../media/band-splash-720.webp?v=sr1 720w, ../media/band-splash-1280.webp?v=sr1 1280w, ../media/band-splash-1672.webp?v=sr1 1672w" sizes="100vw" width="1672" height="941" loading="lazy" decoding="async" alt=""></picture></div>
+    <div class="band__bg" aria-hidden="true"><picture class="pc"><source type="image/avif" sizes="100vw" srcset="../media/band-splash-720.avif?v=95 720w, ../media/band-splash-1280.avif?v=95 1280w, ../media/band-splash-1672.avif?v=95 1672w"><img src="../media/band-splash-1280.webp?v=95" srcset="../media/band-splash-720.webp?v=95 720w, ../media/band-splash-1280.webp?v=95 1280w, ../media/band-splash-1672.webp?v=95 1672w" sizes="100vw" width="1672" height="941" loading="lazy" decoding="async" alt=""></picture></div>
     <div class="band__in wrap">
       <p class="band__fig" data-reveal aria-hidden="true">9<span>%</span></p>
       <h2 class="band__h" data-reveal>Quality Isn't a Luxury. It's a <span class="swipe">Principle</span>.</h2>
@@ -1386,11 +1386,11 @@ body.menu-open .lang--nav{visibility:hidden}
   <section class="strip strip--a" id="galeria" aria-label="Posters" data-speed="52">
     <div class="strip__row">
       <figure class="flyer t1">
-        <div class="flyer__img"><picture class="pc"><source type="image/avif" sizes="(max-width:767px) 40vh, (max-width:1023px) 45vh, 36vh" srcset="../media/p-pool2-540.avif?v=sr1 540w, ../media/p-pool2-900.avif?v=sr1 900w"><img src="../media/p-pool2-900.webp?v=sr1" srcset="../media/p-pool2-540.webp?v=sr1 540w, ../media/p-pool2-900.webp?v=sr1 900w" sizes="(max-width:767px) 40vh, (max-width:1023px) 45vh, 36vh" width="1122" height="1402" loading="lazy" decoding="async" alt="Two young people on poolside steps with a Green Apple ICON Spirante IX can, “What's your story?” lettering"></picture></div>
+        <div class="flyer__img"><picture class="pc"><source type="image/avif" sizes="(max-width:767px) 40vh, (max-width:1023px) 45vh, 36vh" srcset="../media/p-pool2-540.avif?v=95 540w, ../media/p-pool2-900.avif?v=95 900w"><img src="../media/p-pool2-900.webp?v=95" srcset="../media/p-pool2-540.webp?v=95 540w, ../media/p-pool2-900.webp?v=95 900w" sizes="(max-width:767px) 40vh, (max-width:1023px) 45vh, 36vh" width="1122" height="1402" loading="lazy" decoding="async" alt="Two young people on poolside steps with a Green Apple ICON Spirante IX can, “What's your story?” lettering"></picture></div>
         <figcaption>Good times. Great drinks</figcaption>
       </figure>
       <figure class="flyer t2">
-        <div class="flyer__img"><img src="../media/p-nun-900.webp?v=sr1" srcset="../media/p-nun-540.webp?v=sr1 540w, ../media/p-nun-900.webp?v=sr1 900w" sizes="(max-width:767px) 38vh, (max-width:1023px) 42vh, 36vh" width="900" height="1200" loading="lazy" decoding="async" alt="Tattooed woman leaning against a vintage car, two ICON Spirante IX cans"></div>
+        <div class="flyer__img"><img src="../media/p-nun-900.webp?v=95" srcset="../media/p-nun-540.webp?v=95 540w, ../media/p-nun-900.webp?v=95 900w" sizes="(max-width:767px) 38vh, (max-width:1023px) 42vh, 36vh" width="900" height="1200" loading="lazy" decoding="async" alt="Tattooed woman leaning against a vintage car, two ICON Spirante IX cans"></div>
         <figcaption>Live iconic</figcaption>
       </figure>
       <figure class="flyer t3">
@@ -1398,7 +1398,7 @@ body.menu-open .lang--nav{visibility:hidden}
         <figcaption>No trends. This is ICON</figcaption>
       </figure>
       <figure class="flyer t1">
-        <div class="flyer__img"><picture class="pc"><source type="image/avif" sizes="(max-width:767px) 43vh, (max-width:1023px) 48vh, 36vh" srcset="../media/p-apple-540.avif?v=sr1 540w, ../media/p-apple-900.avif?v=sr1 900w"><img src="../media/p-apple-900.webp?v=sr1" srcset="../media/p-apple-540.webp?v=sr1 540w, ../media/p-apple-900.webp?v=sr1 900w" sizes="(max-width:767px) 43vh, (max-width:1023px) 48vh, 36vh" width="1159" height="1357" loading="lazy" decoding="async" alt="Green Apple ICON Spirante IX can with green apple, grapefruit, lime and ice, gold ICON lettering"></picture></div>
+        <div class="flyer__img"><picture class="pc"><source type="image/avif" sizes="(max-width:767px) 43vh, (max-width:1023px) 48vh, 36vh" srcset="../media/p-apple-540.avif?v=95 540w, ../media/p-apple-900.avif?v=95 900w"><img src="../media/p-apple-900.webp?v=95" srcset="../media/p-apple-540.webp?v=95 540w, ../media/p-apple-900.webp?v=95 900w" sizes="(max-width:767px) 43vh, (max-width:1023px) 48vh, 36vh" width="1159" height="1357" loading="lazy" decoding="async" alt="Green Apple ICON Spirante IX can with green apple, grapefruit, lime and ice, gold ICON lettering"></picture></div>
         <figcaption>Pure taste. Iconic moments</figcaption>
       </figure>
       <figure class="flyer t1">
@@ -1410,7 +1410,7 @@ body.menu-open .lang--nav{visibility:hidden}
         <figcaption>Make it ICON</figcaption>
       </figure>
       <figure class="flyer t1">
-        <div class="flyer__img"><img src="../media/v2-nyito-1200.webp?v=w1v" srcset="../media/v2-nyito-760.webp?v=w1v 760w, ../media/v2-nyito-1200.webp?v=w1v 1200w, ../media/v2-nyito-1672.webp?v=w1v 1672w" sizes="(max-width:767px) 89vh, (max-width:1023px) 100vh, 36vh" width="1672" height="941" loading="lazy" decoding="async" alt="Two ICON Spirante IX cans on a graffiti wall, painted hands forming a heart, “No rules. Just vibes!” and “Spirante Spritz” lettering"></div>
+        <div class="flyer__img"><img src="../media/v2-nyito-1200.webp?v=95" srcset="../media/v2-nyito-760.webp?v=95 760w, ../media/v2-nyito-1200.webp?v=95 1200w, ../media/v2-nyito-1672.webp?v=95 1672w" sizes="(max-width:767px) 89vh, (max-width:1023px) 100vh, 36vh" width="1672" height="941" loading="lazy" decoding="async" alt="Two ICON Spirante IX cans on a graffiti wall, painted hands forming a heart, “No rules. Just vibes!” and “Spirante Spritz” lettering"></div>
         <figcaption>No rules. Just vibes</figcaption>
       </figure>
       <figure class="flyer t3">
@@ -1418,7 +1418,7 @@ body.menu-open .lang--nav{visibility:hidden}
         <figcaption>Your life is your story</figcaption>
       </figure>
       <figure class="flyer t2">
-        <div class="flyer__img"><img src="../media/p-gin-900.webp?v=sr1" srcset="../media/p-gin-540.webp?v=sr1 540w, ../media/p-gin-900.webp?v=sr1 900w" sizes="(max-width:767px) 33vh, (max-width:1023px) 37vh, 36vh" width="900" height="1350" loading="lazy" decoding="async" alt="Woman with a straw and an ICON Spirante IX can, “No trends. This is ICON” lettering"></div>
+        <div class="flyer__img"><img src="../media/p-gin-900.webp?v=95" srcset="../media/p-gin-540.webp?v=95 540w, ../media/p-gin-900.webp?v=95 900w" sizes="(max-width:767px) 33vh, (max-width:1023px) 37vh, 36vh" width="900" height="1350" loading="lazy" decoding="async" alt="Woman with a straw and an ICON Spirante IX can, “No trends. This is ICON” lettering"></div>
         <figcaption>Be your own ICON</figcaption>
       </figure>
       <figure class="flyer t1">
@@ -1435,7 +1435,7 @@ body.menu-open .lang--nav{visibility:hidden}
   <!-- IZVILAG (a 750-es szerkezet szerint) -->
   <section class="sec" id="izvilag" aria-labelledby="flavor-h">
     <div class="wrap duo">
-      <figure class="frame duo__img di-17" data-reveal><picture class="pc"><source type="image/avif" sizes="(max-width:900px) 84vw, 36vw" srcset="../media/p-duo-cans-540.avif?v=sr1 540w, ../media/p-duo-cans-900.avif?v=sr1 900w"><img src="../media/p-duo-cans-900.webp?v=sr1" srcset="../media/p-duo-cans-540.webp?v=sr1 540w, ../media/p-duo-cans-900.webp?v=sr1 900w" sizes="(max-width:900px) 84vw, 36vw" width="1163" height="1353" loading="lazy" decoding="async" alt="Hibiscus and Green Apple ICON Spirante IX cans side by side, gold ICON Spirante lettering"></picture></figure>
+      <figure class="frame duo__img di-17" data-reveal><picture class="pc"><source type="image/avif" sizes="(max-width:900px) 84vw, 36vw" srcset="../media/p-duo-cans-540.avif?v=95 540w, ../media/p-duo-cans-900.avif?v=95 900w"><img src="../media/p-duo-cans-900.webp?v=95" srcset="../media/p-duo-cans-540.webp?v=95 540w, ../media/p-duo-cans-900.webp?v=95 900w" sizes="(max-width:900px) 84vw, 36vw" width="1163" height="1353" loading="lazy" decoding="async" alt="Hibiscus and Green Apple ICON Spirante IX cans side by side, gold ICON Spirante lettering"></picture></figure>
       <div class="duo__text">
         <p class="tag">Flavour Experience</p>
         <h2 class="duo__h" id="flavor-h" data-reveal>A Taste That Takes You Into a Whole New <span class="swipe">World</span></h2>
@@ -1473,7 +1473,7 @@ body.menu-open .lang--nav{visibility:hidden}
         </article>
         <article class="ed ed--r">
           <figure class="frame" data-reveal>
-            <img src="../media/p-crown-900.webp?v=sr1" srcset="../media/p-crown-540.webp?v=sr1 540w, ../media/p-crown-900.webp?v=sr1 900w" sizes="(max-width:900px) 84vw, 38vw" width="900" height="1200" loading="lazy" decoding="async" alt="Gold crown and ICON lettering, “No rules. Just vibes”, ICON Spirante IX cans">
+            <img src="../media/p-crown-900.webp?v=95" srcset="../media/p-crown-540.webp?v=95 540w, ../media/p-crown-900.webp?v=95 900w" sizes="(max-width:900px) 84vw, 38vw" width="900" height="1200" loading="lazy" decoding="async" alt="Gold crown and ICON lettering, “No rules. Just vibes”, ICON Spirante IX cans">
           </figure>
           <figure class="frame frame--emb" data-reveal><img src="../media/keyart-gold-emblem-720.webp?v=sr1" srcset="../media/keyart-gold-emblem-720.webp?v=sr1 720w, ../media/keyart-gold-emblem.webp?v=sr1 1024w" sizes="(max-width:900px) 84vw, 38vw" width="1024" height="1536" loading="lazy" decoding="async" alt="Gold ICON Spirante IX emblem, Sparkling Rush"></figure>
         </article>
@@ -1493,11 +1493,11 @@ body.menu-open .lang--nav{visibility:hidden}
         <figcaption>Expo</figcaption>
       </figure>
       <figure class="flyer t2">
-        <div class="flyer__img"><picture class="pc"><source type="image/avif" sizes="(max-width:767px) 51vh, (max-width:1023px) 66vh, 36vh" srcset="../media/e-busstop-760.avif?v=sr1 760w, ../media/e-busstop-1200.avif?v=sr1 1200w, ../media/e-busstop-1536.avif?v=sr1 1536w"><img src="../media/e-busstop-1200.webp?v=sr1" srcset="../media/e-busstop-760.webp?v=sr1 760w, ../media/e-busstop-1200.webp?v=sr1 1200w, ../media/e-busstop-1536.webp?v=sr1 1536w" sizes="(max-width:767px) 51vh, (max-width:1023px) 66vh, 36vh" width="1536" height="1024" loading="lazy" decoding="async" alt="ICON Spirante IX poster at a bus stop in the evening, Green Apple can"></picture></div>
+        <div class="flyer__img"><picture class="pc"><source type="image/avif" sizes="(max-width:767px) 51vh, (max-width:1023px) 66vh, 36vh" srcset="../media/e-busstop-760.avif?v=95 760w, ../media/e-busstop-1200.avif?v=95 1200w, ../media/e-busstop-1536.avif?v=95 1536w"><img src="../media/e-busstop-1200.webp?v=95" srcset="../media/e-busstop-760.webp?v=95 760w, ../media/e-busstop-1200.webp?v=95 1200w, ../media/e-busstop-1536.webp?v=95 1536w" sizes="(max-width:767px) 51vh, (max-width:1023px) 66vh, 36vh" width="1536" height="1024" loading="lazy" decoding="async" alt="ICON Spirante IX poster at a bus stop in the evening, Green Apple can"></picture></div>
         <figcaption>In the City</figcaption>
       </figure>
       <figure class="flyer t1">
-        <div class="flyer__img"><picture class="pc"><source type="image/avif" sizes="(max-width:767px) 51vh, (max-width:1023px) 66vh, 36vh" srcset="../media/e-festival-760.avif 760w, ../media/e-festival-1200.avif 1200w, ../media/e-festival-1536.avif 1536w"><img src="../media/e-festival-1200.webp" srcset="../media/e-festival-760.webp 760w, ../media/e-festival-1200.webp 1200w, ../media/e-festival-1536.webp 1536w" sizes="(max-width:767px) 51vh, (max-width:1023px) 66vh, 36vh" width="1536" height="1024" loading="lazy" decoding="async" alt="ICON Spirante IX festival tent in the evening light, with a Ferris wheel in the background"></picture></div>
+        <div class="flyer__img"><picture class="pc"><source type="image/avif" sizes="(max-width:767px) 51vh, (max-width:1023px) 66vh, 36vh" srcset="../media/e-festival-760.avif?v=95 760w, ../media/e-festival-1200.avif?v=95 1200w, ../media/e-festival-1536.avif?v=95 1536w"><img src="../media/e-festival-1200.webp?v=95" srcset="../media/e-festival-760.webp?v=95 760w, ../media/e-festival-1200.webp?v=95 1200w, ../media/e-festival-1536.webp?v=95 1536w" sizes="(max-width:767px) 51vh, (max-width:1023px) 66vh, 36vh" width="1536" height="1024" loading="lazy" decoding="async" alt="ICON Spirante IX festival tent in the evening light, with a Ferris wheel in the background"></picture></div>
         <figcaption>Festivals</figcaption>
       </figure>
       </div>
@@ -1538,7 +1538,7 @@ body.menu-open .lang--nav{visibility:hidden}
         </ul>
       </div>
       <figure class="frame social__post" data-reveal>
-        <img src="../media/v2-feed-931.webp" srcset="../media/v2-feed-560.webp 560w, ../media/v2-feed-931.webp 931w" sizes="(max-width:900px) 92vw, 500px" width="931" height="1689" loading="lazy" decoding="async" alt="ICON Spirante Instagram post: a tattooed man pours the Green Apple can, the spritz pours into a woman's glass">
+        <img src="../media/v2-feed-931.webp?v=95" srcset="../media/v2-feed-560.webp?v=95 560w, ../media/v2-feed-931.webp?v=95 931w" sizes="(max-width:900px) 92vw, 500px" width="931" height="1689" loading="lazy" decoding="async" alt="ICON Spirante Instagram post: a tattooed man pours the Green Apple can, the spritz pours into a woman's glass">
       </figure>
     </div>
   </section>
