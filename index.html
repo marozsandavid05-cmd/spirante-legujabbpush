@@ -385,6 +385,7 @@ body.age-locked{overflow:hidden}
 body.menu-open .nav__burger span:first-child{top:21px;transform:rotate(45deg)}
 body.menu-open .nav__burger span:last-child{top:21px;transform:rotate(-45deg)}
 @media(max-width:1180px){.nav__menu{display:none}.nav__burger{display:block}}
+@media(min-width:1181px) and (max-width:1320px){.nav{gap:clamp(.8rem,1.1vw,2rem)}.nav__menu{gap:clamp(.6rem,.9vw,1.7rem)}}
 @media(max-width:520px){.nav__switch{display:none}}
 
 .mnav{position:fixed;inset:0;z-index:105;background:var(--night);padding:calc(var(--navh) + 1.6rem) var(--pad) 2rem;overflow-y:auto;display:flex;flex-direction:column}
