@@ -1654,7 +1654,7 @@ document.addEventListener('DOMContentLoaded',function(){
     underage:'Du musst mindestens 18 Jahre alt sein, um diese Seite zu betreten.'
   };
   function showGate(){
-    if(!gateEl) return;
+    if(!gateEl || !gateEl.hasAttribute('hidden')) return;
     [elY,elM,elD].forEach(function(el){ if(el) el.value=''; });
     if(elErr) elErr.textContent='';
     gateEl.removeAttribute('hidden');

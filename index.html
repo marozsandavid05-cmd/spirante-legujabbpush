@@ -1651,7 +1651,7 @@ document.addEventListener('DOMContentLoaded',function(){
     underage:'18 éven aluliak nem léphetnek be.'
   };
   function showGate(){
-    if(!gateEl) return;
+    if(!gateEl || !gateEl.hasAttribute('hidden')) return;
     [elY,elM,elD].forEach(function(el){ if(el) el.value=''; });
     if(elErr) elErr.textContent='';
     gateEl.removeAttribute('hidden');
