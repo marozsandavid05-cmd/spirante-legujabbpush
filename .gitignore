@@ -1,30 +1,10 @@
 Thumbs.db
 desktop.ini
 .DS_Store
-
-# Drawbridge visual-feedback bridge (never commit)
-.moat/
-
-# Claude Code configuration
-.claude/
-
-# Windsurf configuration
-.windsurf/
-
-# Codex CLI configuration
-.codex/
-
-# preview/demo/QA artifacts (never deploy)
+.*/
+_*/
 chooser-b.html
 chooser-motion-*.html
-_aurora-ref/
-_caesar-qa-uj-push/
-_qa-greed-0709/
-
-# tooling junk
-.claude-flow/
-
-# forras-anyagok es kulon al-projekt (nem az elo oldal resze)
 Coming soon/
 media/Spirante szöveg doxc forma/
 media/keyart-bottlP-*
